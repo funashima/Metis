@@ -1,0 +1,40 @@
+a = 1.000000 (err=0.000e+00)
+b = 1.000000 (err=1.110e-16)
+c = 1.000000 (err=2.112e-08)
+alpha = 58.39409 (err=7.448e-07)
+beta  = 58.39410 (err=7.448e-07)
+gamma = 58.39409 (err=0.000e+00)
+----- symmetrized structure(conventional unit cell) -----
+Full Formula (As2)
+Reduced Formula: As
+abc   :   1.000000   1.000000   1.000000
+angles:  58.394095  58.394101  58.394094
+Sites (2)
+  #  SP            a          b          c
+---  ----  ---------  ---------  ---------
+  0  As     0.272273   0.272273   0.272273
+  1  As    -0.272273  -0.272273  -0.272273
+
+----- primitive structure -----
+Full Formula (As2)
+Reduced Formula: As
+abc   :   0.975629   0.975629   1.000000
+angles:  60.802953  60.802953  60.000000
+Sites (2)
+  #  SP           a         b        c
+---  ----  --------  --------  -------
+  0  As    0.272273  0.272273  0.18318
+  1  As    0.727727  0.727727  0.81682
+
+--- infomation of space group ---
+  HM symbol: R-3m 
+  Space Group number = #166
+  point group : -3m
+
+
+--- crystal system ---
+  crystal system:trigonal
+  lattice type:rhombohedral
+  # of kinds of atoms = 1
+
+  atom:As  wyckoff: 2c-site

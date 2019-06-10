@@ -1,0 +1,14 @@
+#
+# lattice constant
+#
+
+lattice_length =        1.0, 1.0014024086034001, 1.001186308736323
+lattice_angle  = 58.41435249449155, 58.38734934043849, 58.38438648491764
+
+#
+# atomic position in conventional unit cell
+#
+begin_atomlist:
+    atom_type = As ; position =  0.2721409,  0.2723557,  0.2722869
+    atom_type = As ; position = -0.2721409, -0.2723557, -0.2722869
+end_atomlist:

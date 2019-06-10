@@ -1,0 +1,37 @@
+#======================================================================
+
+# CRYSTAL DATA
+
+#----------------------------------------------------------------------
+
+data_VESTA_phase_1
+
+
+_pd_phase_name                         'XCrySDen XSF file'
+_cell_length_a                         2.67627
+_cell_length_b                         5.60788
+_cell_length_c                         4.57100
+_cell_angle_alpha                      114.04598
+_cell_angle_beta                       90.02445
+_cell_angle_gamma                      76.16449
+_symmetry_space_group_name_H-M         'P 1'
+_symmetry_Int_Tables_number            1
+
+loop_
+_symmetry_equiv_pos_as_xyz
+   'x, y, z'
+
+loop_
+   _atom_site_label
+   _atom_site_occupancy
+   _atom_site_fract_x
+   _atom_site_fract_y
+   _atom_site_fract_z
+   _atom_site_adp_type
+   _atom_site_B_iso_or_equiv
+   _atom_site_type_symbol
+   Si1        1.0     0.372866      0.282820      0.176053     Biso  1.000000 Si
+   Si2        1.0     0.125074      0.782942      0.427481     Biso  1.000000 Si
+   Si3        1.0     0.621171      0.782920      0.927615     Biso  1.000000 Si
+   Si4        1.0     0.871360      0.282920      0.676205     Biso  1.000000 Si
+

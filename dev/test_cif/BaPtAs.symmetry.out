@@ -1,0 +1,62 @@
+a = 6.716000 (err=0.000e+00)
+b = 6.716000 (err=0.000e+00)
+c = 1.000000 (err=5.716e+00)
+alpha = 90.00000 (err=2.842e-14)
+beta  = 90.00000 (err=2.842e-14)
+gamma = 90.00000 (err=0.000e+00)
+----- symmetrized structure(conventional unit cell) -----
+Full Formula (Ba4 As4 Pt4)
+Reduced Formula: BaAsPt
+abc   :   6.716000   6.716000   6.716000
+angles:  90.000000  90.000000  90.000000
+Sites (12)
+  #  SP          a        b        c
+---  ----  -------  -------  -------
+  0  Ba0+   0.3864  -0.1136  -0.3864
+  1  Ba0+  -0.1136  -0.3864   0.3864
+  2  Ba0+  -0.3864   0.3864  -0.1136
+  3  Ba0+   0.1136   0.1136   0.1136
+  4  Pt0+   0.096   -0.404   -0.096
+  5  Pt0+  -0.404   -0.096    0.096
+  6  Pt0+  -0.096    0.096   -0.404
+  7  Pt0+   0.404    0.404    0.404
+  8  As0+  -0.3293   0.1707   0.3293
+  9  As0+   0.1707   0.3293  -0.3293
+ 10  As0+   0.3293  -0.3293   0.1707
+ 11  As0+  -0.1707  -0.1707  -0.1707
+
+----- primitive structure -----
+Full Formula (Ba4 As4 Pt4)
+Reduced Formula: BaAsPt
+abc   :   6.716000   6.716000   6.716000
+angles:  90.000000  90.000000  90.000000
+Sites (12)
+  #  SP         a       b       c
+---  ----  ------  ------  ------
+  0  Ba0+  0.3864  0.8864  0.6136
+  1  Ba0+  0.8864  0.6136  0.3864
+  2  Ba0+  0.6136  0.3864  0.8864
+  3  Ba0+  0.1136  0.1136  0.1136
+  4  Pt0+  0.096   0.596   0.904
+  5  Pt0+  0.596   0.904   0.096
+  6  Pt0+  0.904   0.096   0.596
+  7  Pt0+  0.404   0.404   0.404
+  8  As0+  0.6707  0.1707  0.3293
+  9  As0+  0.1707  0.3293  0.6707
+ 10  As0+  0.3293  0.6707  0.1707
+ 11  As0+  0.8293  0.8293  0.8293
+
+--- infomation of space group ---
+  HM symbol: P2_13 
+  Space Group number = #198
+  point group : 23
+
+
+--- crystal system ---
+  crystal system:cubic
+  lattice type:cubic
+  # of kinds of atoms = 3
+
+  atom:Ba0+  wyckoff: 4a-site
+  atom:Pt0+  wyckoff: 4a-site
+  atom:As0+  wyckoff: 4a-site

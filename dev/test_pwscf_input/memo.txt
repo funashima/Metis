@@ -1,0 +1,5 @@
+#
+# test suite for determination space group from inputfile for pw.x (Quantum Espresso)
+#   using QE2Spg.py
+#
+(1) execute ./sample_test.py

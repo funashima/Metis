@@ -1,0 +1,76 @@
+#
+# lattice constant
+#
+
+lattice_length = 1.014499517580609, 1.0144709416236708, 1.0144837323778342
+lattice_angle  = 90.2621186821753, 90.26443095286216, 90.26128998562059
+
+#
+# atomic position in conventional unit cell
+#
+begin_atomlist:
+    atom_type = Ti ; position =  0.0245463,  0.0244649,  0.0245363
+    atom_type = Na ; position =  0.4926910,  0.0069746,  0.0070250
+    atom_type = Na ; position =  0.0070459,  0.4925884,  0.0070049
+    atom_type = Na ; position =  0.5095509,  0.5094244,  0.0080761
+    atom_type = Na ; position =  0.0070408,  0.0069464,  0.4926272
+    atom_type = Na ; position =  0.5096140,  0.0079400,  0.5095669
+    atom_type = Na ; position =  0.0081780,  0.5093792,  0.5094507
+    atom_type = Na ; position =  0.5062609,  0.5061920,  0.5062334
+    atom_type = Na ; position =  0.2591688,  0.2590953, -0.0009712
+    atom_type = Na ; position =  0.7574039,  0.2532892,  0.0062861
+    atom_type = Na ; position =  0.2533593,  0.7573294,  0.0063002
+    atom_type = Na ; position =  0.7662266,  0.7661419,  0.0102210
+    atom_type = Na ; position =  0.2591656,  0.2590103,  0.5127039
+    atom_type = Na ; position =  0.7564581,  0.2586224,  0.5103957
+    atom_type = Na ; position =  0.2586732,  0.7563293,  0.5103642
+    atom_type = Na ; position =  0.7584489,  0.7582972,  0.5097489
+    atom_type = Na ; position =  0.2592167, -0.0010309,  0.2591969
+    atom_type = Na ; position =  0.7573900,  0.0062191,  0.2533453
+    atom_type = Na ; position =  0.2591710,  0.5126387,  0.2590945
+    atom_type = Na ; position =  0.7564384,  0.5102968,  0.2586550
+    atom_type = Na ; position =  0.2533737,  0.0062140,  0.7573748
+    atom_type = Na ; position =  0.7662643,  0.0101628,  0.7662316
+    atom_type = Na ; position =  0.2586768,  0.5102857,  0.7564030
+    atom_type = Na ; position =  0.7584445,  0.5096799,  0.7583773
+    atom_type = Na ; position = -0.0009688,  0.2590972,  0.2591462
+    atom_type = Na ; position =  0.5127353,  0.2590332,  0.2591140
+    atom_type = Na ; position =  0.0063107,  0.7573039,  0.2533484
+    atom_type = Na ; position =  0.5103847,  0.7563189,  0.2586169
+    atom_type = Na ; position =  0.0063284,  0.2532774,  0.7573589
+    atom_type = Na ; position =  0.5104048,  0.2585855,  0.7563987
+    atom_type = Na ; position =  0.0102645,  0.7661307,  0.7661937
+    atom_type = Na ; position =  0.5097812,  0.7583103,  0.7584162
+    atom_type = H ; position =  0.1344048,  0.1343138,  0.1344220
+    atom_type = H ; position =  0.7529053,  0.2621819,  0.2622532
+    atom_type = H ; position =  0.2622798,  0.7528239,  0.2622422
+    atom_type = H ; position =  0.7555266,  0.7554301,  0.2599623
+    atom_type = H ; position =  0.2622900,  0.2621784,  0.7528532
+    atom_type = H ; position =  0.7555535,  0.2598996,  0.7555165
+    atom_type = H ; position =  0.2599882,  0.7554359,  0.7555039
+    atom_type = H ; position =  0.7609706,  0.7608613,  0.7609322
+    atom_type = H ; position = -0.0111459, -0.0112170,  0.2242101
+    atom_type = H ; position =  0.5097054,  0.0057311,  0.2512651
+    atom_type = H ; position =  0.0058617,  0.5095878,  0.2512501
+    atom_type = H ; position =  0.5113143,  0.5112106,  0.2559266
+    atom_type = H ; position =  0.0105069,  0.0104138,  0.8124157
+    atom_type = H ; position =  0.5099105,  0.0077652,  0.7643691
+    atom_type = H ; position =  0.0078936,  0.5097790,  0.7643612
+    atom_type = H ; position =  0.5099553,  0.5098556,  0.7606838
+    atom_type = H ; position = -0.0111225,  0.2241392, -0.0111580
+    atom_type = H ; position =  0.5096935,  0.2511934,  0.0057896
+    atom_type = H ; position =  0.0105020,  0.8123430,  0.0104850
+    atom_type = H ; position =  0.5098822,  0.7643151,  0.0078488
+    atom_type = H ; position =  0.0058319,  0.2511783,  0.5096719
+    atom_type = H ; position =  0.5114070,  0.2559243,  0.5113615
+    atom_type = H ; position =  0.0078890,  0.7642962,  0.5098422
+    atom_type = H ; position =  0.5099349,  0.7605531,  0.5098997
+    atom_type = H ; position =  0.2242041, -0.0111910, -0.0111497
+    atom_type = H ; position =  0.8124280,  0.0104202,  0.0104845
+    atom_type = H ; position =  0.2512833,  0.5096033,  0.0058054
+    atom_type = H ; position =  0.7644098,  0.5097900,  0.0078345
+    atom_type = H ; position =  0.2512922,  0.0057184,  0.5096744
+    atom_type = H ; position =  0.7644004,  0.0077709,  0.5098736
+    atom_type = H ; position =  0.2559897,  0.5112078,  0.5112734
+    atom_type = H ; position =  0.7607666,  0.5098325,  0.5098948
+end_atomlist:

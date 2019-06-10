@@ -1,0 +1,5 @@
+#
+# test suite for Silicon Structure
+#   using Cif2Spg.py
+#
+(1) execute ./sample_test.py

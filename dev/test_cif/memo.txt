@@ -1,0 +1,5 @@
+#
+# test suite for determination space group from cif file
+#   using Cif2Spg.py
+#
+(1) execute ./sample_test.py

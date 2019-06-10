@@ -1,0 +1,24 @@
+#
+# lattice constant
+#
+
+lattice_length =     6.7160,     6.7160,     6.7160
+lattice_angle  =       90.0,       90.0,       90.0
+
+#
+# atomic position in conventional unit cell
+#
+begin_atomlist:
+    atom_type = Ba0+ ; position =  0.3864000, -0.1136000, -0.3864000
+    atom_type = Ba0+ ; position = -0.1136000, -0.3864000,  0.3864000
+    atom_type = Ba0+ ; position = -0.3864000,  0.3864000, -0.1136000
+    atom_type = Ba0+ ; position =  0.1136000,  0.1136000,  0.1136000
+    atom_type = Pt0+ ; position =  0.0960000, -0.4040000, -0.0960000
+    atom_type = Pt0+ ; position = -0.4040000, -0.0960000,  0.0960000
+    atom_type = Pt0+ ; position = -0.0960000,  0.0960000, -0.4040000
+    atom_type = Pt0+ ; position =  0.4040000,  0.4040000,  0.4040000
+    atom_type = As0+ ; position = -0.3293000,  0.1707000,  0.3293000
+    atom_type = As0+ ; position =  0.1707000,  0.3293000, -0.3293000
+    atom_type = As0+ ; position =  0.3293000, -0.3293000,  0.1707000
+    atom_type = As0+ ; position = -0.1707000, -0.1707000, -0.1707000
+end_atomlist:

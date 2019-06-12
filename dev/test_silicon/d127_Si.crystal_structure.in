@@ -1,0 +1,16 @@
+#
+# lattice constant
+#
+
+lattice_length =   3.867520,   5.466820,   3.867280
+lattice_angle  =  90.006580,  89.995380,  90.003650
+
+#
+# atomic position in conventional unit cell
+#
+begin_atomlist:
+    atom_type = Si ; position = -0.3814740,  0.3092340,  0.4817820
+    atom_type = Si ; position = -0.3814910, -0.4407390, -0.0182040
+    atom_type = Si ; position =  0.1184740,  0.0593310,  0.4818790
+    atom_type = Si ; position =  0.1185630, -0.1906800, -0.0182400
+end_atomlist:

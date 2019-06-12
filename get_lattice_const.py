@@ -10,17 +10,17 @@ from Metis.Structure.GetRandomLatticeConstant import GetRandomLatticeConstant
 
 
 if __name__ == '__main__':
-    const_volume = 1000
+    const_volume = 100
     max_coa_ratio = 4.0
-    #  crystal_system = 'ortho'
-    crystal_system = 'triclinic'
+    crystal_system = 'ortho'
+    #crystal_system = 'triclinic'
     #  crystal_system = 'hexagonal'
     lattice = GetRandomLatticeConstant(const_volume=const_volume,
                                        crystal_system=crystal_system)
 
     #  variate = 'random'
     #  variate = 'normal'
-    max_trial = 10
+    max_trial = 5
     #  print('variate:{}'.format(variate))
     for x in range(max_trial):
         print('*** trial random length index = {}'.format(x))

@@ -20,7 +20,15 @@ class Cif2Spg(object):
             exit()
         self.outfile = outfile
         self.parse()
+        self.change_lattice_unit()
         self.write_crystal_in()
+
+
+    def change_lattice_unit(self):
+        # angstrom -> bohr
+        self.cell_length_a /= 0.529177249
+        self.cell_length_b /= 0.529177249
+        self.cell_length_c /= 0.529177249
 
     def _get_linebuf(self, line):
         linebuf = line.strip()

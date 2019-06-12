@@ -1,0 +1,42 @@
+a = 3.867520 (err=0.000e+00)
+b = 5.466820 (err=0.000e+00)
+c = 1.000000 (err=2.867e+00)
+alpha = 90.02545 (err=1.887e-02)
+beta  = 89.98213 (err=1.325e-02)
+gamma = 90.00365 (err=0.000e+00)
+----- symmetrized structure(conventional unit cell) -----
+Full Formula (Si4)
+Reduced Formula: Si
+abc   :   3.867520   5.466820   3.867280
+angles:  90.006580  89.995380  90.003650
+Sites (4)
+  #  SP            a          b          c
+---  ----  ---------  ---------  ---------
+  0  Si    -0.381474   0.309234   0.481782
+  1  Si    -0.381491  -0.440739  -0.018204
+  2  Si     0.118474   0.059331   0.481879
+  3  Si     0.118563  -0.19068   -0.01824
+
+----- primitive structure -----
+Full Formula (Si2)
+Reduced Formula: Si
+abc   :   3.866808   3.866808   3.866808
+angles:  60.000000  60.000000  60.000000
+Sites (2)
+  #  SP       a     b     c
+---  ----  ----  ----  ----
+  0  Si    0.5   0.5   0.5
+  1  Si    0.75  0.75  0.75
+
+--- infomation of space group ---
+  HM symbol: Fd-3m 
+  Space Group number = #227
+  point group : 4/mmm
+
+
+--- crystal system ---
+  crystal system:cubic
+  lattice type:cubic
+  # of kinds of atoms = 1
+
+  atom:Si  wyckoff: 4b-site

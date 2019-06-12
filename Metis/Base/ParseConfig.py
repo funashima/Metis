@@ -6,7 +6,6 @@
 
 import math
 import os
-import sys
 
 
 class ParseConfig(object):
@@ -114,12 +113,12 @@ class ParseConfig(object):
         basis = [None] * 3
         cn, sn = self._get_trigonometric_funcs()
         basis[0] = [float(a), 0.0, 0.0]
-        basis[1] = [b*cn[2], b*sn[2], 0.0]
+        basis[1] = [a*cn[2], b*sn[2], 0.0]
 
-        cx = c * cn[1]
-        cy = (c/sn[2])*(cn[0] - cn[1]*cn[2])
+        cx = cn[1]
+        cy = (1/sn[2])*(cn[0] - cn[1]*cn[2])
         cz = math.sqrt(1.0 - (cx**2 + cy**2))
-        basis[2] = [cx, cy, cz]
+        basis[2] = [a * cx,  b * cy, c * cz]
         return basis
 
     def generate_basis_vectors(self):
@@ -141,11 +140,19 @@ class ParseConfig(object):
         cos_ang = in_prd / (self.get_norm(u) * self.get_norm(v))
         return math.acos(cos_ang) * 180.0 / math.pi
 
-    def maeasure_length(self, u, v):
-        dv = [v[i] - u[i] for i in range(2)]
-        lvec = [0.0] * 3
-        for i in range(3): # a, b, c
-            for j in range(3): # x, y, z
+    def _measure_length(self, u, v):
+        dd = [v[i] - u[i] for i in range(3)]
+        #
+        # considering the periodic condition...
+        #
+        dv = [None, None, None]
+        for i in range(3):
+            dv[i] = min([abs(-1+dd[i]), abs(dd[i]), abs(1+dd[i])])
+            if dd[i] < 0.0:
+                dv[i] = -1.0 * dv[i]
+        lvec = [0.0, 0.0, 0.0]
+        for i in range(3):  # a, b, c
+            for j in range(3):  # x, y, z
                 lvec[j] += dv[i] * self.basis[i][j]
         return self.get_norm(lvec)
 
@@ -163,8 +170,22 @@ class ParseConfig(object):
         for i in range(3):
             j1 = (i+1) % 3
             j2 = (i+2) % 3
-            u = self.basis[j1]
-            v = self.basis[j2]
+            # u = self.basis[j1]
+            # v = self.basis[j2]
             angle = self.get_angle(self.basis[j1], self.basis[j2])
             err = abs(angle - self.lattice_angle[i])
-            print('{0:5s} = {1:8.5f} (err={2:5.3e})'.format(ang[i], angle, err))
+            print('{0:5s} = {1:8.5f} (err={2:5.3e})'.
+                  format(ang[i], angle, err))
+
+    def calc_length(self, i, j, aunit=False):
+        #
+        # self.atomic_position[k] : wyckoff position
+        # self.atom_list[k] : atom_type
+        #
+        u = self.atomic_position[i]
+        v = self.atomic_position[j]
+        if aunit:
+            return self._measure_length(u, v) / self.lattice_length[0]
+        else:
+            return self._measure_length(u, v)
+

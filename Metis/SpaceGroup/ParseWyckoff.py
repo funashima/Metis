@@ -65,7 +65,7 @@ class WyckoffPositionData(object):
     def set_data(self, linebuf, data_type):
         data = linebuf.split()
         if data_type == 'number':
-            self.ispg, self.npos = list(map(lambda x: int(x), data[:2]))
+            self.ispg, self.npos = [int(x) for x in data[:2]]
         elif data_type == 'position':
             if not len(data) == 4:
                 print('data format is incorrect in wyckoff file(position)')

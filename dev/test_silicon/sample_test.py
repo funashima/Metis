@@ -4,7 +4,7 @@ import os
 import subprocess
 
 for ciffile in glob.glob('*.cif'):
-    command = '../Cif2Spg.py {}'.format(ciffile)
+    command = '../../convert_cif2spg.py {}'.format(ciffile)
     print('test ...{}'.format(ciffile))
     proc = subprocess.Popen(command,
                             stdout=subprocess.PIPE,

@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 from Metis.SpaceGroup.ParseGenerator import ParseGenerator
 from Metis.SpaceGroup.PointGroupName import PointGroupName
 from fractions import Fraction
@@ -127,6 +126,73 @@ class GenerateSpaceGroup(object):
             if not get_new_element:
                 check_full = True
         self.sort_wk_group_elements()
+        self.modified_tvec()
+
+    def modified_tvec(self):
+        for (i, element) in enumerate(self.group_elements):
+            tvec = element['translation']
+            m_tvec = self.check_tvec(tvec)
+            self.group_elements[i]['translation'] = m_tvec
+        return self
+
+    def check_tvec(self, tvec):
+        if self.il in [0, 1]:
+            return tvec
+        u = self.tsp2frac(tvec)
+        if self.il == 2:
+            u = self.check_tvec_fc(u)
+        elif self.il == 3:
+            u = self.check_tvec_bc(u)
+        elif self.il == 4:
+            u = self.check_tvec_cc(u)
+        elif self.il == -1:
+            u = self.check_tvec_rh(u)
+        return self.frac2tsp(u)
+
+    def check_tvec_fc(self, u):
+        half = Fraction('1/2')
+        if all([x >= half for x in u[:2]]):
+            for i in range(2):
+                u[i] -= half
+            return u
+        if all([x >= half for x in u[1:3]]):
+            for i in range(1, 3):
+                u[i] -= half
+            return u
+        if all([x >= half for x in [u[0], u[2]]]):
+            for i in [0, 2]:
+                u[i] -= half
+            return u
+        return u
+
+    def check_tvec_bc(self, u):
+        half = Fraction('1/2')
+        if all([x >= half for x in u]):
+            for i in range(3):
+                u[i] -= half
+        return u
+
+    def check_tvec_cc(self, u):
+        half = Fraction('1/2')
+        if all([x >= half for x in u[:2]]):
+            for i in range(2):
+                u[i] -= half
+        return u
+
+    def check_tvec_rh(self, u):
+        tr1 = Fraction('1/3')
+        tr2 = 2 * tr1
+        if u[0] >= tr2 and all([x >= tr1 for x in u[1:3]]):
+            u[0] -= tr2
+            for i in [1, 2]:
+                u[i] -= tr1
+            return u
+        if u[0] >= tr1 and all([x >= tr2 for x in u[1:3]]):
+            u[0] -= tr1
+            for i in [1, 2]:
+                u[i] -= tr2
+            return u
+        return u
 
     def multiply_generate_operators(self, gen1, gen2):
         #

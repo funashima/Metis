@@ -102,8 +102,11 @@ class GenerateSpaceGroup(object):
             for element in self._wk_group_elements:
                 op_name = self.operator_name_list[i-1]
                 if element['rotation'] == i:
+                    char_rep = self.tspcode2char(element['rotation'])
+                    mtx = self.convert_rotmatrix(char_rep)
                     new_element = {'rotation': element['rotation'],
                                    'translation': element['translation'],
+                                   'rot_matrix': mtx,
                                    'operator_name': op_name}
                     self.group_elements.append(new_element)
 

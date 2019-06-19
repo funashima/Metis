@@ -1,8 +1,8 @@
 a = 10.200000 (err=0.000e+00)
 b = 10.200000 (err=0.000e+00)
-c = 1.000000 (err=9.200e+00)
-alpha = 90.00000 (err=2.842e-14)
-beta  = 90.00000 (err=2.842e-14)
+c = 10.200000 (err=0.000e+00)
+alpha = 90.00000 (err=0.000e+00)
+beta  = 90.00000 (err=0.000e+00)
 gamma = 90.00000 (err=0.000e+00)
 ----- symmetrized structure(conventional unit cell) -----
 Full Formula (Si8)

@@ -6,9 +6,8 @@ from Metis.SpaceGroup.ParseSpaceGroup import ParseSpaceGroup
 
 
 class SearchSpaceGroup(object):
-    def __init__(self, generator_file=None, wyckoff_data=None):
-        self.spg_info = ParseSpaceGroup(generator_file='generator',
-                                        wyckoff_data='wycoff')
+    def __init__(self):
+        self.spg_info = ParseSpaceGroup()
 
     def set_space_group(self, ispg, ichoice=1):
         self.spg_info.set_space_group(ispg)

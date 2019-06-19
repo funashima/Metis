@@ -38,8 +38,7 @@ min_spg_index = config_obj.min_spg_index
 max_spg_index = config_obj.max_spg_index
 natoms = config_obj.natoms
 
-spg_obj = SearchSpaceGroup(generator_file='generator',
-                           wyckoff_data='wyckoff')
+spg_obj = SearchSpaceGroup()
 
 for ispg in range(min_spg_index, max_spg_index+1):
     print('Space Group #{}'.format(ispg))

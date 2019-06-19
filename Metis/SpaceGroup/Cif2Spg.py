@@ -23,7 +23,6 @@ class Cif2Spg(object):
         self.change_lattice_unit()
         self.write_crystal_in()
 
-
     def change_lattice_unit(self):
         # angstrom -> bohr
         self.cell_length_a /= 0.529177249

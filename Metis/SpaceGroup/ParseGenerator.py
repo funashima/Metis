@@ -1,20 +1,16 @@
 #!/usr/bin/env python3
-import os
+from Metis.SpaceGroup.LibTspaceDataBase import LibTspaceDataBase
 
 
 class ParseGenerator(object):
-    def __init__(self, generator_file):
-        if os.path.isfile(generator_file):
-            self.generator_file = generator_file
-        else:
-            print('file:{} is not found.'.format(generator_file))
-            exit()
+    def __init__(self):
         self.parse()
         self.data_check()
 
     def parse(self):
         self.generator_list = [[] for x in range(230)]
-        for line in open(self.generator_file):
+        generator_file = LibTspaceDataBase().generator_database().split('\n')
+        for line in generator_file:
             linebuf = line.strip()
             for comment_symbol in ['#', '!']:
                 if comment_symbol in linebuf:
@@ -43,6 +39,49 @@ class ParseGenerator(object):
                     print(gen)
                     exit()
 
+    def spgname2ispg(self, spgname):
+        try:
+            return int(spgname)
+        except ValueError:
+            for i in range(230):
+                for gen in self.generator_list[i]:
+                    if gen.schname == spgname or gen.hmname == spgname:
+                        return i+1
+            return None
+
+    def get_generator(self, spgname, ichoice=1):
+        ispg = self.spgname2ispg(spgname)
+        if ispg is None:
+            print('space group name:{} is incorrect.'.format(spgname))
+            exit()
+        if len(self.generator_list[ispg - 1]) < ichoice:
+            return None
+        return self.generator_list[ispg - 1][ichoice - 1].generator
+
+    def get_il(self, spgname, ichoice=1):
+        ispg = self.spgname2ispg(spgname)
+        if ispg is None:
+            print('space group name:{} is incorrect.'.format(spgname))
+            exit()
+        return self.generator_list[ispg - 1][ichoice - 1].il
+
+    def get_hmname(self, spgname, ichoice=1):
+        ispg = self.spgname2ispg(spgname)
+        if ispg is None:
+            print('space group name:{} is incorrect.'.format(spgname))
+            exit()
+        return self.generator_list[ispg - 1][ichoice - 1].hmname
+
+    def get_schname(self, spgname, ichoice=1):
+        ispg = self.spgname2ispg(spgname)
+        if ispg is None:
+            print('space group name:{} is incorrect.'.format(spgname))
+            exit()
+        return self.generator_list[ispg - 1][ichoice - 1].schname
+
+    def get_ispg(self, spgname, ichoice=1):
+        return self.spgname2ispg(spgname)
+
     def show_info(self):
         for i in range(230):
             print('space group = {}'.format(i+1))
@@ -64,12 +103,11 @@ class GeneratorData(object):
     def set_data(self, linebuf, data_type):
         data = linebuf.split()
         if data_type == 'spg':
-            self.ispg, self.il, self.ngen = list(map(lambda x: int(x),
-                                                     data[:3]))
+            self.ispg, self.il, self.ngen = [int(x) for x in data[:3]]
             self.schname, self.hmname = data[3:5]
         elif data_type == 'operator':
             rot = int(data[0])
-            tvec = list(map(lambda x: int(x), data[1:7]))
+            tvec = [int(x) for x in data[1:7]]
             self.generator.append({'rotation': rot, 'translation': tvec})
         else:
             print('unknown data_type')

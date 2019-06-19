@@ -4,9 +4,9 @@ from Metis.SpaceGroup.ParseWyckoff import ParseWyckoff
 
 
 class ParseSpaceGroup(object):
-    def __init__(self, generator_file=None, wyckoff_data=None):
-        self.generator_obj = ParseGenerator(generator_file)
-        self.wyckoff_obj = ParseWyckoff(wyckoff_data)
+    def __init__(self):
+        self.generator_obj = ParseGenerator()
+        self.wyckoff_obj = ParseWyckoff()
 
     def set_space_group(self, ispg, ichoice=1):
         spg_obj = self.generator_obj.generator_list[ispg-1][ichoice-1]

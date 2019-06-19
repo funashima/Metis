@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
 #
-import os
+from Metis.SpaceGroup.LibTspaceDataBase import LibTspaceDataBase
 
 
 class ParseWyckoff(object):
-    def __init__(self, wyckoff_data):
-        if os.path.isfile(wyckoff_data):
-            self.wyckoff_data = wyckoff_data
-        else:
-            print('file:{} is not found.'.format(wyckoff_data))
-            exit()
+    def __init__(self):
         self.parse()
         self.data_check()
 
@@ -24,7 +19,8 @@ class ParseWyckoff(object):
     def parse(self):
         self.wyckoff_position = [[] for x in range(230)]
         ispg = None
-        for line in open(self.wyckoff_data, 'r'):
+        wyckoff_data = LibTspaceDataBase().wyckoff_database().split('\n')
+        for line in wyckoff_data:
             linebuf = line.strip()
             for comment_symbol in ['#', '!']:
                 if comment_symbol in linebuf:
@@ -57,6 +53,66 @@ class ParseWyckoff(object):
                     print('num of op = {}'.format(len(pos.position)))
                     exit()
 
+    def get_wyckoff_position(self, ispg=None, ichoice=1,
+                             wyckoff_letter=None):
+        if len(self.wyckoff_position[ispg - 1]) < ichoice:
+            return None
+        pos = self.wyckoff_position[ispg - 1][ichoice - 1].position
+        input_wyckoff_letter = wyckoff_letter[-1].lower()
+        for site_type in pos:
+            if site_type['site_name'][-1] == input_wyckoff_letter:
+                return site_type['position']
+        return None
+
+    def get_atomic_position(self, ispg=None, ichoice=1,
+                            wyckoff_letter=None,
+                            x=None, y=None, z=None):
+        tspace_notation = self.get_wyckoff_position(ispg=ispg,
+                                                    ichoice=ichoice,
+                                                    wyckoff_letter=wyckoff_letter)
+        if tspace_notation is None:
+            return None
+
+        tsp_table = {'0': '0',
+                     'h': '1/2',
+                     'q': '1/4',
+                     't': '3/4',
+                     '1': '1/3',
+                     '2': '2/3',
+                     '3': '3/8',
+                     '5': '5/6',
+                     '6': '1/6',
+                     '7': '7/8',
+                     '8': '1/8',
+                     'f': '5/8',
+                     'x': 'x',
+                     'y': 'y',
+                     'z': 'z',
+                     '-': '-(x)',
+                     'w': '-(y)',
+                     'd': '2 * (x)',
+                     'm': '-(y) + 1/2',
+                     'p': 'y + 1/2',
+                     'n': '-(y) + 1/4',
+                     'r': 'y + 1/4',
+                     's': 'x + 1/2',
+                     'u': '-(x) + 1/2',
+                     'v': 'x + 1/4'
+                     }
+        for i in range(3):
+            for (keycode, op) in tsp_table.items():
+                if tspace_notation[i] == keycode:
+                    tspace_notation[i] = tspace_notation[i].\
+                                         replace(keycode, op)
+                    break
+        if x is not None:
+            tspace_notation = [n.replace('x', str(x)) for n in tspace_notation]
+        if y is not None:
+            tspace_notation = [n.replace('y', str(y)) for n in tspace_notation]
+        if z is not None:
+            tspace_notation = [n.replace('z', str(z)) for n in tspace_notation]
+        return tspace_notation
+
 
 class WyckoffPositionData(object):
     def __init__(self):
@@ -82,5 +138,5 @@ class WyckoffPositionData(object):
 
 
 if __name__ == '__main__':
-    obj = ParseWyckoff('wycoff')
+    obj = ParseWyckoff()
     obj.show_info()

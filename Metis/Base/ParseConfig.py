@@ -147,9 +147,12 @@ class ParseConfig(object):
         #
         dv = [None, None, None]
         for i in range(3):
-            dv[i] = min([abs(-1+dd[i]), abs(dd[i]), abs(1+dd[i])])
-            if dd[i] < 0.0:
-                dv[i] = -1.0 * dv[i]
+            if abs(-1+dd[i]) < abs(dd[i]):
+                dv[i] = -1 + dd[i]
+            else:
+                dv[i] = dd[i]
+            if abs(1+dd[i]) < dv[i]:
+                dv[i] = 1 + dd[i]
         lvec = [0.0, 0.0, 0.0]
         for i in range(3):  # a, b, c
             for j in range(3):  # x, y, z

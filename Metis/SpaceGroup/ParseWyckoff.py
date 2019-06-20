@@ -71,7 +71,12 @@ class ParseWyckoff(object):
                                                     ichoice=ichoice,
                                                     wyckoff_letter=wyckoff_letter)
         if tspace_notation is None:
-            return None
+            print('====== Error(get_atomic_position in ParseWyckoff) ======')
+            print(' wyckoff letter: "{}" is invalid for this space group'.
+                  format(wyckoff_letter))
+            print(' check international table of crystallography.')
+            print()
+            exit()
 
         tsp_table = {'0': '0',
                      'h': '1/2',

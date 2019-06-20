@@ -173,8 +173,6 @@ class ParseConfig(object):
         for i in range(3):
             j1 = (i+1) % 3
             j2 = (i+2) % 3
-            # u = self.basis[j1]
-            # v = self.basis[j2]
             angle = self.get_angle(self.basis[j1], self.basis[j2])
             err = abs(angle - self.lattice_angle[i])
             print('{0:5s} = {1:8.5f} (err={2:5.3e})'.

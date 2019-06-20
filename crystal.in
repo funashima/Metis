@@ -1,0 +1,16 @@
+
+space_group = Fd-3m
+ichoice = 1
+#
+begin_atom_info:
+    element: Si, wyckoff_position: i
+end_atom_info:
+
+
+#space_group = I4/mmm
+#ichoice = 1
+#begin_atom_info:
+#    element: Ca, wyckoff_position: 2a
+#    element: Fe, wyckoff_position: 4d
+#    element: As, wyckoff_position: 4e
+#end_atom_info:

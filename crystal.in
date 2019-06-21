@@ -1,9 +1,17 @@
+#
+# 
+#
+min_
 
 space_group = Fd-3m
 ichoice = 1
+max_coa_ratio = 2.0
+apf = 0.52
+max_try = 10
+
 #
 begin_atom_info:
-    element: Si, wyckoff_position: i
+    element: Si, wyckoff_position: a
 end_atom_info:
 
 

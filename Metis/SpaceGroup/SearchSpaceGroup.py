@@ -13,7 +13,6 @@ class SearchSpaceGroup(object):
         self.spg_info.set_space_group(ispg)
         self.nop = self.spg_info.position_index_list
         self.wyckoff_freedom = self.spg_info.wyckoff_freedom
-        self.show_spginfo()
 
     def get_pattern(self, n):
         composition = []

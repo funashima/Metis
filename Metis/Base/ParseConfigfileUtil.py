@@ -6,6 +6,7 @@ import re
      written by Hiroki Funashima in Kobe 2018-2019
 '''
 
+
 class ParseConfigfileUtil(object):
     def __init__(self):
         pass
@@ -20,7 +21,9 @@ class ParseConfigfileUtil(object):
         if vtype == 'int':
             exec('self.{0} = int({1})'.format(var_name, value))
         elif vtype == 'float':
-            exec('self.{0} = float({1})'.format(var_name, value.lower().replace('d','e')))
+            exec('self.{0} = float({1})'.
+                 format(var_name,
+                        value.lower().replace('d', 'e')))
         elif vtype == 'bool':
             if re.search('^(y|t)', value.lower()):
                 exec('self.{} = True'.format(var_name, value))

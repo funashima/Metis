@@ -13,7 +13,6 @@ class GenerateSpaceGroup(TspaceToolbox):
         self.schname = Gen_obj.get_schname(ispg, ichoice)
         self.hmname = Gen_obj.get_hmname(ispg, ichoice)
         self.ispg = Gen_obj.get_ispg(ispg, ichoice)
-        self.ichoice = ichoice
         self.define_rotation_operator()
         self.initialize_operator()
         self.generate_group_elements()
@@ -221,6 +220,33 @@ class GenerateSpaceGroup(TspaceToolbox):
         new_tvec = self.rotate_tvec(tvec1, tvec2, rot2)
         return {'rotation': new_rotation, 'translation': new_tvec}
 
+'''
+    def multiply_matrices(self, r1, r2):
+        #
+        # calculate r1 * r2
+        #
+        matrix = [[0 for x in range(3)] for y in range(3)]
+        for i in range(3):
+            for j in range(3):
+                for k in range(3):
+                    matrix[i][j] += r1[i][k] * r2[k][j]
+        return matrix
+
+    def tsp2frac(self, tvec):
+        x = Fraction('{0}/{1}'.format(tvec[0], tvec[1]))
+        y = Fraction('{0}/{1}'.format(tvec[2], tvec[3]))
+        z = Fraction('{0}/{1}'.format(tvec[4], tvec[5]))
+        return [x, y, z]
+
+    def frac2tsp(self, frac):
+        ary = [str(x).split('/') for x in frac]
+        for (i, x) in enumerate(ary):
+            if len(x) == 1:
+                ary[i] = [0, 1]
+            else:
+                ary[i] = [int(y) for y in x]
+        return [flatten for inner in ary for flatten in inner]
+'''
     def rotate_tvec(self, tvec1, tvec2, rot):
         #
         # In Seitz natation
@@ -257,6 +283,13 @@ class GenerateSpaceGroup(TspaceToolbox):
             print('===== Error =====')
             print('unknown operator in matrix2tspcode')
             exit()
+
+'''
+    def unknown_operator(self):
+        print("===== error =====")
+        print("unknown operator")
+        exit()
+'''
 
     def define_rotation_operator_Oh(self):
         self.operator_list = [
@@ -377,6 +410,44 @@ class GenerateSpaceGroup(TspaceToolbox):
         for x in code:
             matrix.append(self.to_matrix_representation(x))
         return matrix
+
+    def to_matrix_representation(self, code):
+        if code.strip().lower() == 'x':
+            return [1, 0, 0]
+        if code.strip().lower() == 'y':
+            return [0, 1, 0]
+        if code.strip().lower() == 'z':
+            return [0, 0, 1]
+        if code.strip().lower() == 'w':
+            return [1, -1, 0]
+        if code.strip().lower() == '-x':
+            return [-1, 0, 0]
+        if code.strip().lower() == '-y':
+            return [0, -1, 0]
+        if code.strip().lower() == '-z':
+            return [0, 0, -1]
+        if code.strip().lower() == '-w':
+            return [-1, 1, 0]
+        self.unknown_operator
+
+    def to_charcode(self, row):
+        if row == [1, 0, 0]:
+            return 'x'
+        if row == [0, 1, 0]:
+            return 'y'
+        if row == [0, 0, 1]:
+            return 'z'
+        if row == [1, -1, 0]:
+            return 'w'
+        if row == [-1, 0, 0]:
+            return '-x'
+        if row == [0, -1, 0]:
+            return '-y'
+        if row == [0, 0, -1]:
+            return '-z'
+        if row == [-1, 1, 0]:
+            return '-w'
+        self.unknown_operator
 
     def display_group_table(self):
         ngen = len(self.group_elements)

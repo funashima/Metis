@@ -67,9 +67,10 @@ class ParseWyckoff(object):
     def get_atomic_position(self, ispg=None, ichoice=1,
                             wyckoff_letter=None,
                             x=None, y=None, z=None):
-        tspace_notation = self.get_wyckoff_position(ispg=ispg,
-                                                    ichoice=ichoice,
-                                                    wyckoff_letter=wyckoff_letter)
+        tspace_notation = self.\
+                          get_wyckoff_position(ispg=ispg,
+                                               ichoice=ichoice,
+                                               wyckoff_letter=wyckoff_letter)
         if tspace_notation is None:
             print('====== Error(get_atomic_position in ParseWyckoff) ======')
             print(' wyckoff letter: "{}" is invalid for this space group'.

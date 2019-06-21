@@ -7,11 +7,12 @@
 #
 
 import math
+from Metis.Base.TspaceToolbox import TspaceToolbox
 import random
 import re
 
 
-class GetRandomLatticeConstant(object):
+class GetRandomLatticeConstant(TspaceToolbox):
     def __init__(self, const_volume=None, crystal_system=None,
                  min_angle=60.0, max_angle=120.0):
         self.const_volume = const_volume
@@ -19,19 +20,6 @@ class GetRandomLatticeConstant(object):
         self.min_angle = min_angle
         self.max_angle = max_angle
         random.seed(a=None, version=2)
-
-    def _get_deg2rad(self, angle):
-        '''
-           degree -> radian
-        '''
-        return angle * math.pi / 180.0
-
-    def _get_deg2cosine(self, angle):
-        '''
-           get cos(angle), where angular unit is degree.
-        '''
-        theta = self.deg2rad(angle)
-        return math.cos(theta)
 
     def set_angle(self):
         self.alpha = 90.0
@@ -61,7 +49,7 @@ class GetRandomLatticeConstant(object):
             self.freedom = 3
         else:
             print('===== Error(set_angle) =====')
-            print('unknown crystal system:{}'.format(crystal_system))
+            print('unknown crystal system:{}'.format(self.crystal_system))
             exit()
         self.set_volume_coefficient()
 
@@ -71,9 +59,9 @@ class GetRandomLatticeConstant(object):
           this method, we get `self.vo'
           in detail, see notes
         """
-        ca = self._get_deg2rad(self.gamma)
-        cb = self._get_deg2rad(self.beta)
-        cc = self._get_deg2rad(self.alpha)
+        ca = self.deg2rad(self.gamma)
+        cb = self.deg2rad(self.beta)
+        cc = self.deg2rad(self.alpha)
         # ref http://gisaxs.com/index.php/Unit_cell
         try:
             self.vo = math.sqrt(1.0 + (2*ca*cb*cc) - (ca**2 + cb**2 + cc**2))
@@ -113,7 +101,7 @@ class GetRandomLatticeConstant(object):
         return [a, b, c]
 
     def get_lattice_length(self,
-                           max_coa_ratio=4.00,
+                           max_coa_ratio=2.00,
                            variate='normal'):
         self.set_angle()
         coa_check = False
@@ -147,37 +135,3 @@ class GetRandomLatticeConstant(object):
 
     def volume(self, a, b, c):
         return self.vo * a * b * c
-
-
-if __name__ == '__main__':
-    const_volume = 1000
-    max_coa_ratio = 4.0
-    #  crystal_system = 'ortho'
-    crystal_system = 'triclinic'
-    #  crystal_system = 'hexagonal'
-    lattice = GetRandomLatticeConstant(const_volume=const_volume,
-                                       crystal_system=crystal_system)
-
-    #  variate = 'random'
-    #  variate = 'normal'
-    max_trial = 10
-    #  print('variate:{}'.format(variate))
-    for x in range(max_trial):
-        print('*** trial random length index = {}'.format(x))
-        a, b, c = lattice.get_lattice_length(max_coa_ratio=max_coa_ratio)
-        print('  a = {:>6.2f}'.format(a))
-        print('  b = {:>6.2f}'.format(b))
-        print('  c = {:>6.2f}'.format(c))
-        print('c/a = {:>6.2f}'.format(c/a))
-        print('--')
-        alpha, beta, gamma = lattice.get_lattice_angle()
-        print('alpha = {:>6.2f}'.format(alpha))
-        print('beta  = {:>6.2f}'.format(beta))
-        print('gamma = {:>6.2f}'.format(gamma))
-        print('--')
-        new_vol = lattice.volume(a, b, c)
-        err = abs(const_volume - new_vol)
-        print('  vol = {0:5.2f} (err={1:5.2e})'.format(new_vol, err))
-        err = abs(const_volume - lattice.volume(a, b, c))
-        print()
-    print()

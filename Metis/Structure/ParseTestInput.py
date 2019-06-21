@@ -15,6 +15,7 @@ class ParseTestInput(object):
     def main(self):
         atom_info_region = False
         self.ichoice = 1
+        self.max_coa_ratio = 2.0
         self.atom_info = []
         for line in open(self.inputfile, 'r'):
             linebuf = line.strip()
@@ -50,3 +51,9 @@ class ParseTestInput(object):
                         self.space_group = value
                     if key == 'ichoice':
                         self.ichoice = int(value)
+                    if key == 'max_coa_ratio':
+                        self.max_coa_ratio = float(value)
+                    if key == 'apf':
+                        self.apf = float(value)
+                    if key == 'max_try':
+                        self.max_try = int(value)

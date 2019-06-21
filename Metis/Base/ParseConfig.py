@@ -3,12 +3,11 @@
 # modified ParseConfig
 #   written by Hiroki Funashima in Kobe 4 June 2019
 #
-
-import math
+from Metis.Base.TspaceToolbox import TspaceToolbox
 import os
 
 
-class ParseConfig(object):
+class ParseConfig(TspaceToolbox):
     def __init__(self, configfile):
         if os.path.isfile(configfile):
             self.configfile = configfile
@@ -16,7 +15,6 @@ class ParseConfig(object):
             print('file:{} is not found.'.format(configfile))
             exit()
         self.main()
-        self.test_basis()
 
     def _get_linebuf(self, line):
         linebuf = line.strip().replace(',', ' ')
@@ -83,110 +81,4 @@ class ParseConfig(object):
                         self.lattice_length = self._get_value_array(value)
                     elif key == 'lattice_angle':
                         self.lattice_angle = self._get_value_array(value)
-
-    def _deg2rad(self, angle):
-        return float(angle) * math.pi / 180.0
-
-    def _deg2cosine(self, angle):
-        rad_angle = self._deg2rad(angle)
-        return math.cos(rad_angle)
-
-    def _deg2sine(self, angle):
-        rad_angle = self._deg2rad(angle)
-        return math.sin(rad_angle)
-
-    def _get_trigonometric_funcs(self):
-        #
-        # cn[0] = cos(alpha)
-        # cn[1] = cos(beta)
-        # cn[2] = cos(gamma)
-        #
-        # sn[0] = sin(alpha)
-        # sn[1] = sin(beta)
-        # sn[2] = sin(gamma)
-        #
-        cn = [self._deg2cosine(x) for x in self.lattice_angle]
-        sn = [self._deg2sine(x) for x in self.lattice_angle]
-        return [cn, sn]
-
-    def set_basis(self, a, b, c):
-        basis = [None] * 3
-        cn, sn = self._get_trigonometric_funcs()
-        basis[0] = [float(a), 0.0, 0.0]
-        basis[1] = [a*cn[2], b*sn[2], 0.0]
-
-        cx = cn[1]
-        cy = (1/sn[2])*(cn[0] - cn[1]*cn[2])
-        cz = math.sqrt(1.0 - (cx**2 + cy**2))
-        basis[2] = [a * cx,  b * cy, c * cz]
-        return basis
-
-    def generate_basis_vectors(self):
-        #
-        a, b, c = [float(x) for x in self.lattice_length[0:3]]
-        self.basis = self.set_basis(a, b, c)
-
-    def get_norm(self, v):
-        norm = 0
-        for i in range(3):
-            norm += v[i]*v[i]
-        return math.sqrt(norm)
-
-    def get_angle(self, u, v):
-        in_prd = 0
-        for i in range(3):
-            in_prd += u[i] * v[i]
-        # angle for cosine
-        cos_ang = in_prd / (self.get_norm(u) * self.get_norm(v))
-        return math.acos(cos_ang) * 180.0 / math.pi
-
-    def _measure_length(self, u, v):
-        dd = [v[i] - u[i] for i in range(3)]
-        #
-        # considering the periodic condition...
-        #
-        dv = [None, None, None]
-        for i in range(3):
-            if abs(-1+dd[i]) < abs(dd[i]):
-                dv[i] = -1 + dd[i]
-            else:
-                dv[i] = dd[i]
-            if abs(1+dd[i]) < dv[i]:
-                dv[i] = 1 + dd[i]
-        lvec = [0.0, 0.0, 0.0]
-        for i in range(3):  # a, b, c
-            for j in range(3):  # x, y, z
-                lvec[j] += dv[i] * self.basis[i][j]
-        return self.get_norm(lvec)
-
-    #
-    #  methods for test
-    #
-    def test_basis(self):
-        lat = ['a', 'b', 'c']
-        ang = ['alpha', 'beta', 'gamma']
-        for i in range(3):
-            length = self.get_norm(self.basis[i])
-            err = abs(length - self.lattice_length[i])
-            print('{0} = {1:8.6f} (err={2:5.3e})'.format(lat[i], length, err))
-
-        for i in range(3):
-            j1 = (i+1) % 3
-            j2 = (i+2) % 3
-            angle = self.get_angle(self.basis[j1], self.basis[j2])
-            err = abs(angle - self.lattice_angle[i])
-            print('{0:5s} = {1:8.5f} (err={2:5.3e})'.
-                  format(ang[i], angle, err))
-
-    def calc_length(self, i, j, aunit=False):
-        #
-        # self.atomic_position[k] : wyckoff position
-        # self.atom_list[k] : atom_type
-        #
-        u = self.atomic_position[i]
-        v = self.atomic_position[j]
-        if aunit:
-            return self._measure_length(u, v) / self.lattice_length[0]
-        else:
-            return self._measure_length(u, v)
 

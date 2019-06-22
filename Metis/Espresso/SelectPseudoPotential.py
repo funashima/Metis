@@ -34,10 +34,9 @@ class SelectPseudoPotential(object):
 
     def get_pp_dir(self, dft_type, spin_orbit):
         pre_dirname = self.get_dirname(dft_type, spin_orbit)
-        dirname = os.path.join(self.pslib,
-                               pre_dirname,
-                               'PSEUDOPOTENTIALS')
-        return dirname
+        return os.path.join(self.pslib,
+                            pre_dirname,
+                            'PSEUDOPOTENTIALS')
 
     def get_ppfile_name(self, element,
                         dft_type, spin_orbit,

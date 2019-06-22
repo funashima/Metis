@@ -1,25 +1,29 @@
 #!/usr/bin/env python3
 import os
-home = os.environ['HOME']
-pslib = os.path.join(home, 'QE/pseudo/pslibrary.1.0.0/')
-pslib_version = '1.0.0'
+import glob
+
 
 class SelectPseudoPotential(object):
-    def __init__(self, pslib, pslib_version):
+    def __init__(self, pslib):
         if os.path.isdir(pslib):
             self.pslib = pslib
-            self.pslib_version = pslib_version
         else:
             print('dir:{} is not found.'.format(pslib))
             exit()
         
-    def get_pseudo_potential(self, element, dft_type='pbesol',
-                             semi_core=True, pp_type='USPP'):
-        if semi_core:
-            sc_type = 'dn'
-        else:
-            sc_type = 'n'
-        if dft_type == 'pbesol':
+    def get_pseudo_potential(self, element,
+                             dft_type='pbesol',
+                             spin_orbit=False,
+                             semi_core=[], pp_type='USPP'):
+        electron_config = 'n'
+        for x in semi_core:
+            for lname in ['s', 'p', 'd', 'f']:
+                if x == lname:
+                    electron_config = lname + electron_config
+
+        if dft_type == 'pbe':
+            pre_dirname = dft_type
+        elif dft_type == 'pbesol':
             pre_dirname = dft_type
         elif dft_type == 'pz':
             pre_dirname = dft_type
@@ -27,12 +31,12 @@ class SelectPseudoPotential(object):
             pre_dirname = dft_type
         elif dft_type == 'bp':
             pre_dirname = dft_type
-        elif dft_type == 'rel-bp':
-            pre_dirname = dft_type
-        elif dft_type == 'rel-pbe':
-            pre_dirname = dft_type
 
-        dirname = self.pslib + '{}/PSEUDOPOTENTIALS/'.format(pre_dirname)
+        if spin_orbit:
+            dft_type = 'rel-' + dft_type
+            pre_dirname = 'rel-' + pre_dirname
+
+        dirname = os.path.join(self.pslib, pre_dirname, 'PSEUDOPOTENTIALS')
 
         if pp_type == 'USPP':
             pp_name = 'rrkjus'
@@ -42,29 +46,36 @@ class SelectPseudoPotential(object):
             print('unknown pp_type')
             exit()
 
-        ps_name = '{0}.{1}-{2}-{3}_psl.{4}.UPF'.format(element, dft_type,
-                                                      sc_type, pp_name,
-                                                      self.pslib_version)
-        pp_file = '{0}{1}'.format(dirname, ps_name)
-        if os.path.isfile(pp_file):
-            return pp_file
-        else:
-            return None
+        ps_name = '{0}.{1}-{2}-{3}_psl.*.UPF'.format(element, dft_type,
+                                                      electron_config, pp_name)
+        pp_file = '{0}/{1}'.format(dirname, ps_name)
+        if len(glob.glob(pp_file)) > 0:
+            return glob.glob(pp_file)[0]
+        return None
 
 if __name__ == '__main__':
-    element = 'Se'
-    semi_core = True
+    pslib = '/home/funashima/QE/pseudo/pslibrary'
+    dft_type = 'pbe'
     #dft_type = 'pbesol'
     #dft_type = 'pz'
-    dft_type = 'pw91'
-    pp_type = 'PAW'
-    pp = SelectPseudoPotential(pslib, pslib_version)
 
-    for element in ['Se', 'Te', 'Bi']:
+    pp_type = 'PAW'
+    #pp_type = 'USPP'
+
+    spin_orbit = True
+
+    atoms = [{'element':'Se', 'semi_core': []},
+             {'element':'Te', 'semi_core': ['d']},
+             {'element':'Bi', 'semi_core': ['d']}]
+
+    pp = SelectPseudoPotential(pslib)
+
+    for atom_info in atoms:
+        element = atom_info['element']
+        semi_core = atom_info['semi_core']
+
         ppfile = pp.get_pseudo_potential(element,
-                                         semi_core=True,
+                                         semi_core=semi_core,
+                                         spin_orbit=spin_orbit,
                                          pp_type=pp_type)
         print(ppfile)
-
-        
-

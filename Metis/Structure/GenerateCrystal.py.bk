@@ -75,39 +75,55 @@ class GenerateCrystal(TspaceToolbox):
         self.atom_data = []
         for atom in self.atom_info:
             atom_name = atom['element']
-            atom_site = atom['wyckoff_position']
             atom_name_list.append(atom_name)
-            wyckoff_letters.append(atom_site)
+            wyckoff_letters.append(atom['wyckoff_position'])
+               
 
         nka = len(atom_name_list)
         wyckoff = ParseWyckoff()
         for i in range(nka):
-            wletter = wyckoff_letters[i]
-            wyckoff_params = []
-            pos = wyckoff.get_atomic_position(ispg=self.ispg,
-                                              ichoice=self.ichoice,
-                                              wyckoff_letter=wletter)
-            if any(['x' in x for x in pos]):
-                x = random.random()
-            else:
-                x = None
-            if any(['y' in x for x in pos]):
-                y = random.random()
-            else:
-                y = None
-            if any(['z' in x for x in pos]):
-                z = random.random()
-            else:
-                z = None
-            wyckoff_params = {'letter': wletter, 'variables': [x, y, z]}
-            atom_site = GenerateAtomicPosition(ispg=self.ispg,
-                                               ichoice=self.ichoice,
-                                               wyckoff_params=wyckoff_params)
-            atomic_pos = atom_site.atomic_position
-            wyckoff_letter = atom_site.wyckoff_params['letter']
+            wyckoff_letter_list = []
+            atomic_pos_list = []
+            for wletter in wyckoff_letters[i]:
+                wyckoff_params = []
+                pos = wyckoff.get_atomic_position(ispg=self.ispg,
+                                                  ichoice=self.ichoice,
+                                                  wyckoff_letter=wletter)
+                if any(['x' in x for x in pos]):
+                    x = random.random()
+                else:
+                    x = None
+                if any(['y' in x for x in pos]):
+                    y = random.random()
+                else:
+                    y = None
+                if any(['z' in x for x in pos]):
+                    z = random.random()
+                else:
+                    z = None
+                wyckoff_params = {'letter': wletter, 'variables': [x, y, z]}
+                atom_site = GenerateAtomicPosition(ispg=self.ispg,
+                                                   ichoice=self.ichoice,
+                                                   wyckoff_params=wyckoff_params)
+                atomic_pos = atom_site.atomic_position
+                wyckoff_letter = atom_site.wyckoff_params['letter']
+                wyckoff_letter_list.append(wyckoff_letter)
+                atomic_pos_list.append(atomic_pos)
             self.atom_data.append({'element': atom_name_list[i],
-                                   'wyckoff_position': wyckoff_letter,
-                                   'positions': atomic_pos})
+                                   'wyckoff_position': wyckoff_letter_list,
+                                   'positions': atomic_pos_list})
+        self.count_num_atoms()
+
+
+    def count_num_atoms(self):
+        for (j, atom) in enumerate(self.atom_data):
+            element = atom['element']
+            n = 0
+            for i in range(len(atom['wyckoff_position'])):
+                n += len(atom['positions'][i])
+            self.atom_info[j]['natoms'] = n
+            self.atom_data[j]['natoms'] = n
+
     #
     #  test methods for basis
     #
@@ -151,17 +167,17 @@ class GenerateCrystal(TspaceToolbox):
         iatom = 0
         for atom in self.atom_data:
             element = atom['element']
-            wyckoff_position = atom['wyckoff_position']
-            print('Atom:{}  wyckoff_position:{}'.
-                  format(element, wyckoff_position))
-            for atomic_position in atom['positions']:
-                iatom += 1
-                print(' ({:>3d})'.format(iatom), end='')
-                for i in range(3):
-                    print('  {:9.6f}'.
-                          format(float(atomic_position[i])),
-                          end='')
-                print()
+            for (i, wyckoff_position) in enumerate(atom['wyckoff_position']):
+                print('Atom:{}  wyckoff_position:{}'.
+                      format(element, wyckoff_position))
+                for atomic_position in atom['positions'][i]:
+                    iatom += 1
+                    print(' ({:>3d})'.format(iatom), end='')
+                    for i in range(3):
+                        print('  {:9.6f}'.
+                              format(float(atomic_position[i])),
+                              end='')
+                    print()
         print()
         print('-- Atomic Position(including sublattice):')
         print('sublattice points in this lattice:')
@@ -265,18 +281,18 @@ class GenerateCrystal(TspaceToolbox):
 
         for atom in self.atom_data:
             element = atom['element']
-            wyckoff_position = atom['wyckoff_position']
-            for v in atom['positions']:
-                info = {'element': element,
-                        'wyckoff_position': wyckoff_position,
-                        'positions': v}
-                self.full_atomic_position.append(info)
-                for sub_lattice in self.sub_lattice_pattern:
-                    vv = self.add_sublattice(v, sub_lattice)
+            for (i, wyckoff_position) in enumerate(atom['wyckoff_position']):
+                for v in atom['positions'][i]:
                     info = {'element': element,
                             'wyckoff_position': wyckoff_position,
-                            'positions': vv}
+                            'positions': v}
                     self.full_atomic_position.append(info)
+                    for sub_lattice in self.sub_lattice_pattern:
+                        vv = self.add_sublattice(v, sub_lattice)
+                        info = {'element': element,
+                                'wyckoff_position': wyckoff_position,
+                                'positions': vv}
+                        self.full_atomic_position.append(info)
 
 
 class GenerateAtomicPosition(TspaceToolbox):

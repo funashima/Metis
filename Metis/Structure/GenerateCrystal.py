@@ -43,7 +43,7 @@ class GenerateCrystal(TspaceToolbox):
         #      simple cubic lattice = 0.52
         #
         volume = 0.0
-        for atom in self.atom_data:
+        for atom in self.atom_info:
             atom_name = atom['element']
             natom = len(atom['positions'])
             r = self.get_radius(atom_name)
@@ -72,7 +72,6 @@ class GenerateCrystal(TspaceToolbox):
     def get_atomic_positions(self):
         wyckoff_letters = []
         atom_name_list = []
-        self.atom_data = []
         for atom in self.atom_info:
             atom_name = atom['element']
             atom_name_list.append(atom_name)
@@ -106,17 +105,13 @@ class GenerateCrystal(TspaceToolbox):
                                                    ichoice=self.ichoice,
                                                    wyckoff_params=wyckoff_params)
                 atomic_pos = atom_site.atomic_position
-                wyckoff_letter = atom_site.wyckoff_params['letter']
-                wyckoff_letter_list.append(wyckoff_letter)
                 atomic_pos_list.append(atomic_pos)
-            self.atom_data.append({'element': atom_name_list[i],
-                                   'wyckoff_position': wyckoff_letter_list,
-                                   'positions': atomic_pos_list})
+            self.atom_info[i]['positions'] = atomic_pos_list
         self.count_num_atoms()
 
 
     def count_num_atoms(self):
-        for (j, atom) in enumerate(self.atom_data):
+        for (j, atom) in enumerate(self.atom_info):
             element = atom['element']
             n = 0
             for i in range(len(atom['wyckoff_position'])):
@@ -164,7 +159,7 @@ class GenerateCrystal(TspaceToolbox):
     def test_atomic_position(self):
         print('-- Atomic Position(not including sublattice):')
         iatom = 0
-        for atom in self.atom_data:
+        for atom in self.atom_info:
             element = atom['element']
             for (i, wyckoff_position) in enumerate(atom['wyckoff_position']):
                 print('Atom:{}  wyckoff_position:{}'.
@@ -278,7 +273,7 @@ class GenerateCrystal(TspaceToolbox):
         self.full_atomic_position = []
         self.sub_lattice_pattern = self.get_sub_lattices()
 
-        for atom in self.atom_data:
+        for atom in self.atom_info:
             element = atom['element']
             for (i, wyckoff_position) in enumerate(atom['wyckoff_position']):
                 for v in atom['positions'][i]:

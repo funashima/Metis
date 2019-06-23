@@ -56,12 +56,13 @@ def get_wyckoff_list(space_group_list, natoms):
 
 min_spg_index = config_obj.min_spg_index
 max_spg_index = config_obj.max_spg_index
-print(min_spg_index)
-print(max_spg_index)
+print('minimum index for space group = {}'.format(min_spg_index))
+print('maximum index for space group = {}'.format(max_spg_index))
 
 space_group_list = list(range(min_spg_index, max_spg_index + 1))
 
 total_pattern = 0
+print('now constructing database. please wait few seconds...')
 for info in get_wyckoff_list(space_group_list, config_obj.natoms):
     ispg = info['spg_index']
     positions = info['wyckoff_positions']

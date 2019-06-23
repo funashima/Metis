@@ -3,22 +3,22 @@
 #
 min_
 
-space_group = Fd-3m
+#space_group = Fd-3m
 ichoice = 1
 max_coa_ratio = 2.0
 apf = 0.52
 max_try = 10
 
 #
-begin_atom_info:
-    element: Si, wyckoff_position: a
-end_atom_info:
-
-
-#space_group = I4/mmm
-#ichoice = 1
 #begin_atom_info:
-#    element: Ca, wyckoff_position: 2a
-#    element: Fe, wyckoff_position: 4d
-#    element: As, wyckoff_position: 4e
+#    element = Si ; wyckoff_position = a, b
 #end_atom_info:
+
+
+space_group = I4/mmm
+ichoice = 1
+begin_atom_info:
+    element = Ca ; wyckoff_position = 2a
+    element = Fe ; wyckoff_position = 4d
+    element = As ; wyckoff_position = 4e
+end_atom_info:

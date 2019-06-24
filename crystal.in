@@ -30,11 +30,22 @@ pp_type = PAW
 #
 spin_orbit = True
 
+#
+# parameter for Quantum Espresso
+#
+degauss = 0.2
+electron_maxstep = 500
+conv_thr = 1.0e-9
+mixing_beta = 0.6
+kpoints = 8, 8, 8
+press = 0.0
+cell_factor = 2.0
+
 
 space_group = Fd-3m
 ichoice = 1
 begin_atom_info:
-    element = Si ; wyckoff_position = a ; semi_core = 
+    element = Si ; wyckoff_position = a, b, c ; semi_core = 
 end_atom_info:
 
 max_coa_ratio = 2.0

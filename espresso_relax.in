@@ -8,11 +8,28 @@
  /
 
  &system
-   nat = 2, ntyp = 1, nbnd = 8,
+   ibrav = 2,
+   celldm(1) = 13.22929,
+   nat = 8, ntyp = 1, nbnd = 32,
+   occupations='smearing', degauss=0.2, smearing='mp',
    ecutwfc =  43.8015,   ecutrho = 175.2061, 
  /
 
+ &electrons
+   diagonalization = 'david',
+   electron_maxstep = 500,
+   mixing_mode = 'plain',
+   mixing_beta = 0.6,
+   conv_thr = 1.00000e-09,
+ /
+
  &ions
+ /
+
+ &cell
+   cell_dynamics = 'bfgs',
+   press = 0, 
+   cell_factor = 2
  /
 
 ATOMIC_SPECIES
@@ -21,4 +38,12 @@ ATOMIC_SPECIES
 ATOMIC_POSITIONS {crystal}
  Si   0.000000   0.000000   0.000000
  Si   0.250000   0.250000   0.250000
+ Si   0.500000   0.500000   0.500000
+ Si  -0.250000  -0.250000  -0.250000
+ Si   0.125000   0.125000   0.125000
+ Si   0.125000  -0.125000  -0.125000
+ Si  -0.125000   0.125000  -0.125000
+ Si  -0.125000  -0.125000   0.125000
 
+K_POINTS {automatic}
+ 8 8 8 0 0 0

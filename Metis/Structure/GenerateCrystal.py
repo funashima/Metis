@@ -46,9 +46,9 @@ class GenerateCrystal(TspaceToolbox):
         eps = 1.0e-8
         for atom in self.atom_info:
             atom_name = atom['element']
-            natom = len(atom['positions'])
+            natoms = atom['natoms']
             r = self.get_radius(atom_name)
-            volume += natom * self.calc_sphere_volume(r)
+            volume += natoms * self.calc_sphere_volume(r)
         if self.il in [0, 1]:
             volume *= 1
         elif self.il == 2:
@@ -81,12 +81,10 @@ class GenerateCrystal(TspaceToolbox):
             atom_name = atom['element']
             atom_name_list.append(atom_name)
             wyckoff_letters.append(atom['wyckoff_position'])
-               
 
         nka = len(atom_name_list)
         wyckoff = ParseWyckoff()
         for i in range(nka):
-            wyckoff_letter_list = []
             atomic_pos_list = []
             for wletter in wyckoff_letters[i]:
                 wyckoff_params = []
@@ -106,21 +104,20 @@ class GenerateCrystal(TspaceToolbox):
                 else:
                     z = None
                 wyckoff_params = {'letter': wletter, 'variables': [x, y, z]}
-                atom_site = GenerateAtomicPosition(ispg=self.ispg,
-                                                   ichoice=self.ichoice,
-                                                   wyckoff_params=wyckoff_params)
+                atom_site =\
+                    GenerateAtomicPosition(ispg=self.ispg,
+                                           ichoice=self.ichoice,
+                                           wyckoff_params=wyckoff_params)
                 atomic_pos = atom_site.atomic_position
                 atomic_pos_list.append(atomic_pos)
             self.atom_info[i]['positions'] = atomic_pos_list
         self.count_num_atoms()
 
-
     def count_num_atoms(self):
         for (j, atom) in enumerate(self.atom_info):
-            element = atom['element']
             n = 0
-            for i in range(len(atom['wyckoff_position'])):
-                n += len(atom['positions'][i])
+            for atom_pos in atom['positions']:
+                n += len(atom_pos)
             self.atom_info[j]['natoms'] = n
 
     #

@@ -43,6 +43,7 @@ class GenerateCrystal(TspaceToolbox):
         #      simple cubic lattice = 0.52
         #
         volume = 0.0
+        eps = 1.0e-8
         for atom in self.atom_info:
             atom_name = atom['element']
             natom = len(atom['positions'])
@@ -56,13 +57,17 @@ class GenerateCrystal(TspaceToolbox):
             volume *= 2
         elif self.il == -1:
             volume *= 3
+        if abs(volume) < eps:
+            print('Error: volume is too small !!')
+            print('  volume = {}'.format(volume))
+            exit()
         return volume / self.apf
 
     def set_lattice(self):
         const_volume = self.set_const_volume()
-        crystal_system = self.space_group.crystal_system
+        self.crystal_system = self.space_group.crystal_system
         lattice = GetRandomLatticeConstant(const_volume=const_volume,
-                                           crystal_system=crystal_system)
+                                           crystal_system=self.crystal_system)
         a, b, c = lattice.get_lattice_length(max_coa_ratio=self.max_coa_ratio)
         alpha, beta, gamma = lattice.get_lattice_angle()
         self.lattice_length = [a, b, c]

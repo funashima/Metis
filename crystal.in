@@ -1,24 +1,51 @@
 #
 # 
 #
-min_
 
-#space_group = Fd-3m
+#
+# pslibrary
+#
+pslib = /home/funashima/QE/pseudo/pslibrary
+
+
+#
+# exchange correlation
+#    dft_type = pz (LDA)
+#             = pw91(GGA)
+#             = pbe (GGA, default)
+#             = pbesol (GGA)
+
+dft_type = pbe
+
+#
+# pp_type: pseudo potential type
+#   pp_type = PAW
+#           = USPP (default)
+#  
+pp_type = PAW
+
+#
+# including spin-orbit interaction
+# (default: False)
+#
+spin_orbit = True
+
+
+space_group = Fd-3m
 ichoice = 1
+begin_atom_info:
+    element = Si ; wyckoff_position = a ; semi_core = 
+end_atom_info:
+
 max_coa_ratio = 2.0
 apf = 0.52
 max_try = 10
 
-#
+#space_group = I4/mmm
+#ichoice = 1
+
 #begin_atom_info:
-#    element = Si ; wyckoff_position = a, b
+#    element = Ca ; wyckoff_position = 2a ; semi_core = s, p
+#    element = Fe ; wyckoff_position = 4d ; semi_core = s, p
+#    element = As ; wyckoff_position = 4e ; semi_core = 
 #end_atom_info:
-
-
-space_group = I4/mmm
-ichoice = 1
-begin_atom_info:
-    element = Ca ; wyckoff_position = 2a
-    element = Fe ; wyckoff_position = 4d
-    element = As ; wyckoff_position = 4e
-end_atom_info:

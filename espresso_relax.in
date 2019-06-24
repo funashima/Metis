@@ -1,0 +1,24 @@
+ &control
+   calculation = 'vc_relax'
+   restart_mode = 'from_scratch'
+   pseudo_dir = './pseudo'
+   diskio = 'minimal'
+   tstress = .true.
+   tprnfor = .true.
+ /
+
+ &system
+   nat = 2, ntyp = 1, nbnd = 8,
+   ecutwfc =  43.8015,   ecutrho = 175.2061, 
+ /
+
+ &ions
+ /
+
+ATOMIC_SPECIES
+  Si   28.0855  Si.rel-pbe-n-kjpaw_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS {crystal}
+ Si   0.000000   0.000000   0.000000
+ Si   0.250000   0.250000   0.250000
+

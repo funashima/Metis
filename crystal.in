@@ -2,6 +2,9 @@
 # 
 #
 
+bindir = /home/funashima/QE/espresso/bin
+nnode = 1
+
 #
 # pslibrary
 #
@@ -43,16 +46,32 @@ cell_factor = 2.0
 
 
 max_coa_ratio = 2.0
+apf = 1.0
 #apf = 0.52
-apf = 0.78
-max_try = 10
+#
+#ecutwfc = 12.0
+#ecutrho =  123.0
+use_auto_cutoff = True
+delta_apf = 0.99
+thr_bond_ratio = 0.75
+max_try = 400
 
-#space_group = Fd-3m
-space_group = R-3m
+min_spg_index = 221
+max_spg_index = 230
+
+space_group = Fd-3m
 ichoice = 1
 begin_atom_info:
-    element = Si ; wyckoff_position = c ; semi_core = 
+    element = Si ; wyckoff_position = 4a ; semi_core = 
 end_atom_info:
+
+
+#space_group = R-3m
+#ichoice = 1
+#begin_atom_info:
+#    element = Bi ; wyckoff_position = 6c     ; semi_core = d
+#    element = Te ; wyckoff_position = 3a, 6c ; semi_core = d
+#end_atom_info:
 
 #space_group = I4/mmm
 #ichoice = 1

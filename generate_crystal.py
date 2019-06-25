@@ -13,4 +13,5 @@ obj = GenerateCrystal(ispg=input_data.space_group,
                       max_coa_ratio = input_data.max_coa_ratio,
                       apf=input_data.apf,
                       atom_info=input_data.atom_info)
-obj.show_info()
+obj.show_info(filename='crystal.log')
+#obj.show_info()

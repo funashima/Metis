@@ -5,6 +5,7 @@ from Metis.SpaceGroup.GenerateSpaceGroup import GenerateSpaceGroup
 from Metis.SpaceGroup.ParseWyckoff import ParseWyckoff
 from Metis.Structure.GetRandomLatticeConstant import GetRandomLatticeConstant
 from fractions import Fraction
+import os
 import random
 import sys
 import pymatgen as mg
@@ -14,6 +15,8 @@ class GenerateCrystal(TspaceToolbox):
     def __init__(self, ispg=None, ichoice=1,
                  max_coa_ratio=2.0,
                  apf=0.52,
+                 delta_apf=0.9,
+                 thr_bond_ratio=0.75,
                  max_try=100,
                  atom_info=None):
         self.space_group = GenerateSpaceGroup(ispg=ispg, ichoice=ichoice)
@@ -22,11 +25,34 @@ class GenerateCrystal(TspaceToolbox):
         self.il = self.space_group.il
         self.max_coa_ratio = max_coa_ratio
         self.apf = apf
+        self.delta_apf = delta_apf
         self.max_try = max_try
         self.atom_info = atom_info
-        self.get_atomic_positions()
-        self.generate_full_atomic_positions()
-        self.set_lattice()
+        self.thr_bond_ratio = thr_bond_ratio
+        self.main()
+
+    def main(self):
+        lattice_check = False
+        itry = 0  # total count for trial
+        max_jtry = 10  # max num of same apf
+        jtry = 0  # reduce apf
+        while not lattice_check:
+            itry += 1
+            sys.stdout.write('\r')
+            sys.stdout.write('  tring to generate crystal # = {:>3d}'.format(itry))
+            sys.stdout.write(' apf = {:5.3f}'.format(self.apf))
+            sys.stdout.flush()
+            jtry += 1
+            if itry > self.max_try:
+                break
+            self.get_atomic_positions()
+            self.generate_full_atomic_positions()
+            self.set_lattice()
+            lattice_check = self.check_reasonable_lattice()
+            if jtry == max_jtry:
+                jtry = 0
+                self.apf *= self.delta_apf
+        print()
 
     def calc_sphere_volume(self, r):
         return (4.0 * math.pi / 3.0) * (r**3)
@@ -115,11 +141,14 @@ class GenerateCrystal(TspaceToolbox):
         self.count_num_atoms()
 
     def count_num_atoms(self):
+        self.compound_name = ''
         for (j, atom) in enumerate(self.atom_info):
+            atom_name = atom['element']
             n = 0
             for atom_pos in atom['positions']:
                 n += len(atom_pos)
             self.atom_info[j]['natoms'] = n
+            self.compound_name += '{0}{1}'.format(atom_name, n)
 
     #
     #  test methods for basis
@@ -219,8 +248,6 @@ class GenerateCrystal(TspaceToolbox):
                                            format(float(trigonal[j])))
                             fout.write('\n')
                 fout.write('\n\n')
-
-
             fout.write('-- Atomic Position(including sublattice):\n')
             fout.write('sublattice points in this lattice:\n')
             j = 0
@@ -269,20 +296,34 @@ class GenerateCrystal(TspaceToolbox):
             fout.write('Hermann-Mauguin symbol  :{}\n'.
                        format(self.space_group.hmname))
             fout.write('\n')
-            fout.write('Group Elements\n')
-            self.space_group.display_group_elements()
-            fout.write('\n')
-            fout.write('Group Table\n')
-            self.space_group.display_group_table()
-            fout.write('\n')
 
         if filename is None:
             sub_show_space_group_info(sys.stdout, filename)
         else:
             with open(filename, 'w') as fout:
                 sub_show_space_group_info(fout, filename)
+        self.space_group.display_group_elements(filename=filename)
+        self.space_group.display_group_table(filename=filename)
+
+    def check_reasonable_lattice(self):
+        natom = len(self.full_atomic_position)
+        for i in range(1, natom):
+            atom_name0 = self.full_atomic_position[i-1]['element']
+            for j in range(i+1, natom+1):
+                atom_name1 = self.full_atomic_position[j-1]['element']
+                length = self.calc_length(i, j, aunit=False)
+                r_atoms = 0
+                for atom in [atom_name0, atom_name1]:
+                    r_atoms = self.get_radius(atom)
+                ratio = (length / r_atoms)
+                if ratio < self.thr_bond_ratio:
+                    return False
+        return True
 
     def show_info(self, filename=None):
+        if filename is not None:
+            if os.path.isfile(filename):
+                os.remove(filename)
         self.show_space_group_info(filename)
         self.show_basis(filename)
         self.show_atomic_position(filename)
@@ -323,7 +364,7 @@ class GenerateCrystal(TspaceToolbox):
         if filename is None:
             sub_show_neighbor_table(sys.stdout)
         else:
-            with open(filename, 'w') as fout:
+            with open(filename, 'a') as fout:
                 sub_show_neighbor_table(fout)
 
     def calc_length(self, i, j, aunit=False):

@@ -381,6 +381,7 @@ class GenerateSpaceGroup(TspaceToolbox):
 
     def display_group_table(self, filename=None):
         def sub_display_table(fout):
+            fout.write('Group Table\n')
             ngen = len(self.group_elements)
             for i in range(ngen):
                 for j in range(ngen):
@@ -389,6 +390,7 @@ class GenerateSpaceGroup(TspaceToolbox):
                     new_gen = self.multiply_generate_operators(gen2, gen1)
                     fout.write(' {:>2d}'.format(new_gen['rotation']))
                 fout.write('\n')
+            fout.write('\n')
 
         if filename is None:
             sub_display_table(sys.stdout)
@@ -399,14 +401,15 @@ class GenerateSpaceGroup(TspaceToolbox):
 
     def display_group_elements(self, filename=None):
         def sub_display_group_elements(fout):
+            fout.write('Group Elements\n')
             for (i, element) in enumerate(self.group_elements):
                 fout.write(' {:>2d}'.format(i+1))
                 tspcode = element['rotation']
                 fout.write('  {:>2d}'.format(tspcode))
                 fout.write('  {0:6s}'.format(element['operator_name']))
                 for x in self.tspcode2char(tspcode):
-                    print(' {:>2s}'.format(x.upper()), end='')
-                fout.write('  ', end='')
+                    fout.write(' {:>2s}'.format(x.upper()))
+                fout.write('  ')
                 for i in range(3):
                     fout.write(' {0}/{1}'.
                                format(element['translation'][2*i],
@@ -415,4 +418,10 @@ class GenerateSpaceGroup(TspaceToolbox):
                         fout.write('\n')
                     else:
                         fout.write(' ')
+            fout.write('\n')
+        if filename is None:
+            sub_display_group_elements(sys.stdout)
+        else:
+            with open(filename, 'a') as fout:
+                sub_display_group_elements(fout)
         return self

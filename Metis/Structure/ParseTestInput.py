@@ -12,11 +12,19 @@ class ParseTestInput(object):
             exit()
         self.main()
 
-    def main(self):
-        atom_info_region = False
+    def set_default_value(self):
+        self.space_group = None
         self.ichoice = 1
         self.max_coa_ratio = 2.0
         self.atom_info = []
+        self.apf = 1.0
+        self.delata_apf = 0.9
+        self.thr_bond_ratio = 0.75
+        self.max_try = 500
+
+    def main(self):
+        atom_info_region = False
+        self.set_default_value()
         for line in open(self.inputfile, 'r'):
             linebuf = line.strip()
             if '#' in linebuf:
@@ -52,15 +60,21 @@ class ParseTestInput(object):
                         atom_info_region = True
                         continue
                 if '=' in linebuf:
+                    if len(linebuf.split('=')) < 2:
+                        continue
                     key, value = [x.strip() for x in linebuf.split('=')[:2]]
                     key = key.lower()
                     if key == 'space_group':
                         self.space_group = value
-                    if key == 'ichoice':
+                    elif key == 'ichoice':
                         self.ichoice = int(value)
-                    if key == 'max_coa_ratio':
+                    elif key == 'max_coa_ratio':
                         self.max_coa_ratio = float(value)
-                    if key == 'apf':
+                    elif key == 'apf':
                         self.apf = float(value)
-                    if key == 'max_try':
+                    elif key == 'max_try':
                         self.max_try = int(value)
+                    elif key == 'delta_apf':
+                        self.delta_apf = float(value)
+                    elif key == 'thr_bond_ratio':
+                        self.thr_bond_ratio = float(value)

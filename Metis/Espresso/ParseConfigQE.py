@@ -48,6 +48,8 @@ class ParseConfigQE(object):
         key, value = self.get_key_and_value(linebuf)
         if key is None:
             return
+        if value == '':
+            return
         if key == 'pslib':
             self.check_pslib(value)
         elif key == 'dft_type':
@@ -73,6 +75,15 @@ class ParseConfigQE(object):
                 kp1 = self.kpoints[0]
                 kp3 = self.kpoints[1]
                 self.kpoints = [kp1, kp1, kp3]
+        elif key == 'ecutwfc':
+            self.ecutwfc = float(value)
+        elif key == 'ecutrho':
+            self.ecutrho = float(value)
+        elif key == 'use_auto_cutoff':
+            if re.search('(t|y)', value.lower()):
+                self.use_auto_cutoff = True
+            else:
+                self.use_auto_cutoff = False
 
 
         elif key == 'press':
@@ -109,6 +120,9 @@ class ParseConfigQE(object):
         self.kpoints = [6, 6, 6]
         self.press = 0.0
         self.cell_factor = 1.0
+        self.ecutwfc = None
+        self.ecutrho = None
+        self.use_auto_cutoff = False
 
     def main(self):
         self.set_init_value()

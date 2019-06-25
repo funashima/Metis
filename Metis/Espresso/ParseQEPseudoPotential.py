@@ -99,5 +99,5 @@ class ParseQEPseudoPotential(object):
         if filename is None:
             sub_show_info(sys.stdout)
         else:
-            with open(filename, 'w') as fout:
+            with open(filename, 'a') as fout:
                 sub_show_info(fout)

@@ -1,0 +1,32 @@
+
+** Basic info:/home/funashima/QE/pseudo/pslibrary/rel-pbe/PSEUDOPOTENTIALS/Bi.rel-pbe-dn-kjpaw_psl.1.0.0.UPF
+
+Element:Bi
+pseudo_type = PAW
+relativistic type:full
+spin-orbit ... yes
+paw type ... yes
+ultrasoft type ... yes
+including 1/r coloumb potential ... no
+core correction ... yes
+num of valence electrons = 15.0
+Total Pseudo Eenrgy = -914.26(Ry)
+cut off energy for wavefunction   =  45.3454 (Ry)
+cut off energy for charge density = 456.1601 (Ry)
+
+
+** Basic info:/home/funashima/QE/pseudo/pslibrary/rel-pbe/PSEUDOPOTENTIALS/Te.rel-pbe-dn-kjpaw_psl.1.0.0.UPF
+
+Element:Te
+pseudo_type = PAW
+relativistic type:full
+spin-orbit ... yes
+paw type ... yes
+ultrasoft type ... yes
+including 1/r coloumb potential ... no
+core correction ... yes
+num of valence electrons = 16.0
+Total Pseudo Eenrgy = -513.04(Ry)
+cut off energy for wavefunction   =  82.0068 (Ry)
+cut off energy for charge density = 328.0272 (Ry)
+

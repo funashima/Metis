@@ -3,7 +3,7 @@
 #
 
 bindir = /home/funashima/QE/espresso/bin
-nnode = 1
+nnode = 4
 
 #
 # pslibrary
@@ -59,25 +59,6 @@ max_try = 400
 min_spg_index = 221
 max_spg_index = 230
 
-space_group = Fd-3m
-ichoice = 1
 begin_atom_info:
-    element = Si ; wyckoff_position = 4a ; semi_core = 
+    element = Si ;  natoms = 2 ;semi_core = 
 end_atom_info:
-
-
-#space_group = R-3m
-#ichoice = 1
-#begin_atom_info:
-#    element = Bi ; wyckoff_position = 6c     ; semi_core = d
-#    element = Te ; wyckoff_position = 3a, 6c ; semi_core = d
-#end_atom_info:
-
-#space_group = I4/mmm
-#ichoice = 1
-#
-#begin_atom_info:
-#    element = Ca ; wyckoff_position = 2a ; semi_core = s, p
-#    element = Fe ; wyckoff_position = 4d ; semi_core = s, p
-#    element = As ; wyckoff_position = 4e ; semi_core = 
-#end_atom_info:

@@ -1,0 +1,53 @@
+#
+# configulation for metis 
+#
+#
+#
+#
+min_spg_index = 1
+max_spg_index = 230
+
+#
+# -- caution--
+# in pseudo potential, `f' electrons are treated as `semi-core' state.
+#
+
+begin_atoms:
+    atom = Si ; num = 8 ; semicore = s, p
+end_atoms:
+max_coa_ratio = 2.0
+
+#
+#
+#
+thr_bond_ratio = 0.75
+apf = 0.78
+delta_apf = 0.99
+
+max_try = 10
+
+
+# num of cpus for concurrent process
+ncpu = 4
+
+#
+# espresso pseudo potential 
+#
+pslib = /home/funashima/QE/pseudo/pslibrary
+pslib_version = 1.0.0
+
+#
+#  dft_type = pz (LDA)
+#             pbe    (GGA)
+#             pbesol (GGA)
+#             revpbe (GGA)
+#             pw91   (GGA)
+#
+#  pp_type = USPP (Ultrasoft PseudoPotential)
+#            PAW (Projected Augumented Wave)
+#
+#  spin_orbit = True / False
+#  
+dft_type = pbe
+pp_type = USPP
+spin_orbit = True

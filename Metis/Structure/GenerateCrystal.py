@@ -18,7 +18,8 @@ class GenerateCrystal(TspaceToolbox):
                  delta_apf=0.9,
                  thr_bond_ratio=0.75,
                  max_try=100,
-                 atom_info=None):
+                 atom_info=None,
+                 progress=True):
         self.space_group = GenerateSpaceGroup(ispg=ispg, ichoice=ichoice)
         self.ispg = self.space_group.ispg
         self.ichoice = ichoice
@@ -29,6 +30,7 @@ class GenerateCrystal(TspaceToolbox):
         self.max_try = max_try
         self.atom_info = atom_info
         self.thr_bond_ratio = thr_bond_ratio
+        self.progress = progress
         self.main()
 
     def main(self):
@@ -38,10 +40,11 @@ class GenerateCrystal(TspaceToolbox):
         jtry = 0  # reduce apf
         while not lattice_check:
             itry += 1
-            sys.stdout.write('\r')
-            sys.stdout.write('  tring to generate crystal # = {:>3d}'.format(itry))
-            sys.stdout.write(' apf = {:5.3f}'.format(self.apf))
-            sys.stdout.flush()
+            if self.progress:
+                sys.stdout.write('\r')
+                sys.stdout.write('  tring to generate crystal # = {:>3d}'.format(itry))
+                sys.stdout.write(' apf = {:5.3f}'.format(self.apf))
+                sys.stdout.flush()
             jtry += 1
             if itry > self.max_try:
                 break
@@ -52,7 +55,8 @@ class GenerateCrystal(TspaceToolbox):
             if jtry == max_jtry:
                 jtry = 0
                 self.apf *= self.delta_apf
-        print()
+        if self.progress:
+            print()
 
     def calc_sphere_volume(self, r):
         return (4.0 * math.pi / 3.0) * (r**3)

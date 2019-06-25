@@ -7,7 +7,7 @@ import re
 import shutil
 import pymatgen as mg
 from Metis.Structure.GenerateCrystal import GenerateCrystal
-from Metis.Structure.ParseTestInput import ParseTestInput
+from Metis.Structure.ParseConfigStructure import ParseConfigStructure
 from Metis.Espresso.SelectPseudoPotential import SelectPseudoPotential
 from Metis.Espresso.ParseQEPseudoPotential import ParseQEPseudoPotential
 from Metis.Espresso.ParseConfigQE import ParseConfigQE
@@ -16,7 +16,11 @@ from Metis.Espresso.GenerateJobScript import GenerateJobScript
 
 
 class GenerateEspressoIn(object):
-    def __init__(self, configfile, qe_inputfile='espresso_relax.in'):
+    def __init__(self, configfile,
+                 qe_inputfile='espresso_relax.in',
+                 ispg=None,
+                 sub_index=None,
+                 atom_info=None):
         if os.path.isfile(configfile):
             self.configfile = configfile
         else:
@@ -30,6 +34,9 @@ class GenerateEspressoIn(object):
         self.tmpdir = os.path.join('/work', os.environ['USER'])
 
 
+        self.ispg = ispg
+        self.sub_index = sub_index
+        self.atom_info = atom_info
         self.qe_inputfile = qe_inputfile
         self.main()
 
@@ -41,9 +48,9 @@ class GenerateEspressoIn(object):
         self.gen_script()
 
     def set_crystal_structure(self):
-        input_data = ParseTestInput(self.configfile)
-        self.crystal_structure = GenerateCrystal(ispg=input_data.space_group,
-                                                 ichoice=input_data.ichoice,
+        input_data = ParseConfigStructure(self.configfile)
+        self.crystal_structure = GenerateCrystal(ispg=self.ispg,
+                                                 ichoice=1,
                                                  max_coa_ratio=input_data.
                                                  max_coa_ratio,
                                                  apf=input_data.apf,
@@ -53,14 +60,14 @@ class GenerateEspressoIn(object):
                                                  max_try,
                                                  thr_bond_ratio=input_data.
                                                  thr_bond_ratio,
-                                                 atom_info=input_data.
-                                                 atom_info)
+                                                 atom_info=self.atom_info,
+                                                 progress=False)
         self.set_working_area()
 
     def set_working_area(self):
         compound_name = self.crystal_structure.compound_name
-        ispg = self.crystal_structure.ispg
-        prefix = '{}_{}'.format(compound_name, ispg)
+        ispg = self.ispg
+        prefix = '{0}_{1}_{2}'.format(compound_name, self.ispg, self.sub_index)
 
         #
         # set calculation directory
@@ -212,8 +219,8 @@ class GenerateEspressoIn(object):
         self.wfcdir = os.path.join(self.tmpdir,
                                    os.path.basename(self.wkdir))
 
-        print('-> Quantum Espresso inputfile: "{}" has been generated'.
-              format(self.qe_inputfile))
+        #print('-> Quantum Espresso inputfile: "{}" has been generated'.
+        #      format(self.qe_inputfile))
         lattice_length = self.crystal_structure.lattice_length
         if self.crystal_structure.il == -1:
             is_rhombohedral = True
@@ -354,7 +361,7 @@ class QEInWriteSystem(TspaceToolbox):
     def set_cubic(self):
         a = self.crystal_structure.lattice_length[0]
         self.celldm[0] = self.ang2bohr(a)
-        if self.il == 0:
+        if self.il == 1:
             self.ibrav = 1
         elif self.il == 2:
             self.ibrav = 2

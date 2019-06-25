@@ -8,10 +8,10 @@
  /
 
  &system
-   ibrav = 2,
-   celldm(1) = 13.22929,
-   nat = 8, ntyp = 1, nbnd = 32,
-   occupations='smearing', degauss=0.2, smearing='mp',
+   ibrav = 5,
+   celldm(1) =  3.96450,  celldm(4) =  0.20355,
+   nat = 2, ntyp = 1, nbnd = 8,
+   occupations='smearing', degauss=0.02, smearing='mp',
    ecutwfc =  43.8015,   ecutrho = 175.2061, 
  /
 
@@ -36,14 +36,8 @@ ATOMIC_SPECIES
   Si   28.0855  Si.rel-pbe-n-kjpaw_psl.1.0.0.UPF
 
 ATOMIC_POSITIONS {crystal}
- Si   0.000000   0.000000   0.000000
- Si   0.250000   0.250000   0.250000
- Si   0.500000   0.500000   0.500000
- Si  -0.250000  -0.250000  -0.250000
- Si   0.125000   0.125000   0.125000
- Si   0.125000  -0.125000  -0.125000
- Si  -0.125000   0.125000  -0.125000
- Si  -0.125000  -0.125000   0.125000
+ Si   0.049474   0.049474   0.049474
+ Si  -0.049474  -0.049474  -0.049474
 
 K_POINTS {automatic}
- 8 8 8 0 0 0
+ 6 6 6 0 0 0

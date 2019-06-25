@@ -14,7 +14,7 @@ class TspaceToolbox(object):
     def get_sub_lattices(self):
         half = Fraction('1/2')
         tr1 = Fraction('1/3')
-        tr2 = Fraction('1/3')
+        tr2 = Fraction('2/3')
         if self.il in [0, 1]:
             pattern = []
         elif self.il == 2:
@@ -145,6 +145,9 @@ class TspaceToolbox(object):
     def deg2rad(self, angle):
         return float(angle) * math.pi / 180.0
 
+    def rad2deg(self, angle):
+        return float(angle) * 180.0 / math.pi
+
     def deg2cosine(self, angle):
         rad_angle = self.deg2rad(angle)
         return math.cos(rad_angle)
@@ -262,13 +265,13 @@ class TspaceToolbox(object):
                 res[i] += mtx[i][j] * vec[j]
         return res
 
-    def hex2trig_lattice_param(self, a, c):
+    def hex2trig_lattice_params(self, a, c):
         a_trg = Fraction('1/3') * math.sqrt(3 * (a**2) + c**2)
         ca = (2 * c**2 - 3 * a**2) / (2 * (3 * a**2 + c**2))
-        alpha = math.self.rad2deg(math.acos(ca))
+        alpha = self.rad2deg(math.acos(ca))
         return [a_trg, alpha]
 
-    def trig2hex_lattice_param(self, a_trg, alpha):
+    def trig2hex_lattice_params(self, a_trg, alpha):
         ca = self.deg2cosine(alpha)
         a = a_trg * math.sqrt(2*(1 - ca))
         c = a_trg * math.sqrt(3*(1 + 2*ca))

@@ -33,28 +33,30 @@ spin_orbit = True
 #
 # parameter for Quantum Espresso
 #
-degauss = 0.2
+degauss = 0.02
 electron_maxstep = 500
 conv_thr = 1.0e-9
 mixing_beta = 0.6
-kpoints = 8, 8, 8
+kpoints = 6, 6, 6
 press = 0.0
 cell_factor = 2.0
 
 
-space_group = Fd-3m
+max_coa_ratio = 2.0
+#apf = 0.52
+apf = 0.78
+max_try = 10
+
+#space_group = Fd-3m
+space_group = R-3m
 ichoice = 1
 begin_atom_info:
-    element = Si ; wyckoff_position = a, b, c ; semi_core = 
+    element = Si ; wyckoff_position = c ; semi_core = 
 end_atom_info:
-
-max_coa_ratio = 2.0
-apf = 0.52
-max_try = 10
 
 #space_group = I4/mmm
 #ichoice = 1
-
+#
 #begin_atom_info:
 #    element = Ca ; wyckoff_position = 2a ; semi_core = s, p
 #    element = Fe ; wyckoff_position = 4d ; semi_core = s, p

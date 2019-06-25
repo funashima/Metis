@@ -66,6 +66,15 @@ class ParseConfigQE(object):
             self.mixing_beta = float(value)
         elif key == 'kpoints':
             self.kpoints = [int(x) for x in value.replace(',', ' ').split()]
+            if len(self.kpoints) == 1:
+                kp = self.kpoints[0]
+                self.kpoints = [kp, kp, kp]
+            elif len(self.kpoints) == 2:
+                kp1 = self.kpoints[0]
+                kp3 = self.kpoints[1]
+                self.kpoints = [kp1, kp1, kp3]
+
+
         elif key == 'press':
             self.press = float(value)
         elif key == 'cell_factor':

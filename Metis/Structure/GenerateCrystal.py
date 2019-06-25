@@ -168,7 +168,11 @@ class GenerateCrystal(TspaceToolbox):
 
     def show_atomic_position(self, filename=None):
         def sub_show_atomic_position(fout):
-            fout.write('-- Atomic Position(not including sublattice):\n')
+            if self.il > -1:
+                fout.write('-- Atomic Position(not including sublattice):\n')
+            else:
+                fout.write('-- Atomic Position(not including sublattice):\n')
+                fout.write('    (Hexagonal axis Coordinate)\n')
             iatom = 0
             for atom in self.atom_info:
                 element = atom['element']
@@ -179,11 +183,44 @@ class GenerateCrystal(TspaceToolbox):
                     for atomic_position in atom['positions'][i]:
                         iatom += 1
                         fout.write(' ({:>3d})'.format(iatom))
-                        for i in range(3):
+                        for j in range(3):
                             fout.write('  {:9.6f}'.
-                                       format(float(atomic_position[i])))
+                                       format(float(atomic_position[j])))
                         fout.write('\n')
             fout.write('\n')
+
+            #
+            # trigonal coordinate
+            #   by Hiroki Funashima, 25 June 2019 in Kobe
+            #
+            a, _, c = self.lattice_length
+            a_trg, alpha_trg = self.hex2trig_lattice_params(a, c)
+            fout.write('\n')
+            fout.write('Lattice constant in trigonal axis coordinate\n')
+            fout.write('  a_trg = {:8.6f} [ang]\n'.format(a_trg))
+            fout.write('  alpha_trg = {:8.6f} [deg]\n'.format(alpha_trg))
+            jatom = 0
+            if self.il == -1:
+                fout.write('\n')
+                fout.write('-- Atomic Position(primitive unit cell):\n')
+                fout.write('    (trigonal axis Coordinate)\n')
+                for atom in self.atom_info:
+                    element = atom['element']
+                    for (i, wyckoff_position) in \
+                            enumerate(atom['wyckoff_position']):
+                        fout.write('Atom:{}  wyckoff_position:{}\n'.
+                                   format(element, wyckoff_position))
+                        for atomic_position in atom['positions'][i]:
+                            jatom += 1
+                            fout.write(' ({:>3d})'.format(jatom))
+                            trigonal = self.hex2trig(atomic_position)
+                            for j in range(3):
+                                fout.write('  {:9.6f}'.
+                                           format(float(trigonal[j])))
+                            fout.write('\n')
+                fout.write('\n\n')
+
+
             fout.write('-- Atomic Position(including sublattice):\n')
             fout.write('sublattice points in this lattice:\n')
             j = 0

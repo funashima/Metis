@@ -125,6 +125,11 @@ class GenerateEspressoIn(object):
               .format(self.crystal_structure.crystal_system))
         print('IL = {}'.format(self.crystal_structure.il))
         print('generate:{}'.format(self.qe_inputfile))
+        lattice_length = self.crystal_structure.lattice_length
+        if self.crystal_structure.il == -1:
+            is_rhombohedral = True
+        else:
+            is_rhombohedral = False
         QEInWriteControl(filename=self.qe_inputfile)
         QEInWriteSystem(filename=self.qe_inputfile,
                         ntypes=self.nelements,
@@ -145,7 +150,9 @@ class GenerateEspressoIn(object):
         QEInWriteOthers(filename=self.qe_inputfile,
                         pseudo_potentials=self.ppots,
                         atom_info=self.crystal_structure.atom_info,
-                        kpoints=kpoints)
+                        kpoints=kpoints,
+                        lattice_length=lattice_length,
+                        is_rhombohedral=is_rhombohedral)
 
 
 class QEInWriteControl(object):
@@ -266,7 +273,7 @@ class QEInWriteSystem(TspaceToolbox):
         self.celldm[0] = self.ang2bohr(a)
         self.celldm[1] = b/a
         self.celldm[2] = c/a
-        self.celldm[3] = self.ang2cosine(gamma)
+        self.celldm[3] = self.deg2cosine(gamma)
         if self.il == 1:
             self.ibrav = 12
         elif self.il == 4:
@@ -282,9 +289,9 @@ class QEInWriteSystem(TspaceToolbox):
         self.celldm[0] = self.ang2bohr(a)
         self.celldm[1] = b/a
         self.celldm[2] = c/a
-        self.celldm[3] = self.ang2cosine(alpha)
-        self.celldm[4] = self.ang2cosine(beta)
-        self.celldm[5] = self.ang2cosine(gamma)
+        self.celldm[3] = self.deg2cosine(alpha)
+        self.celldm[4] = self.deg2cosine(beta)
+        self.celldm[5] = self.deg2cosine(gamma)
         self.ibrav = 14
 
     def set_hexagonal(self):
@@ -297,9 +304,10 @@ class QEInWriteSystem(TspaceToolbox):
     def set_rhombohedral(self):
         a = self.crystal_structure.lattice_length[0]
         c = self.crystal_structure.lattice_length[2]
-        self.celldm[0] = self.ang2bohr(a)
-        self.celldm[2] = c/a
-        self.ibrav = 4
+        a_trg, alpha_trg = self.hex2trig_lattice_params(a, c)
+        self.celldm[0] = self.ang2bohr(a_trg)
+        self.celldm[3] = self.deg2cosine(alpha_trg)
+        self.ibrav = 5
 
 class QEInWriteElectrons(object):
     def __init__(self, filename='espresso_relax.in',
@@ -352,14 +360,17 @@ class QEInWriteCell(object):
             fout.write(' /\n\n')
 
 
-class QEInWriteOthers(object):
+class QEInWriteOthers(TspaceToolbox):
     def __init__(self, filename='espresso_relax.in',
                  pseudo_potentials=None, atom_info=None,
-                 kpoints=[6, 6, 6]):
+                 kpoints=[6, 6, 6], lattice_length=None,
+                 is_rhombohedral=False):
         self.filename = filename
         self.ppots = pseudo_potentials
         self.atom_info = atom_info
         self.kpoints = kpoints
+        self.lattice_length = lattice_length
+        self.is_rhombohedral = is_rhombohedral
         self.main()
 
     def main(self):
@@ -377,7 +388,11 @@ class QEInWriteOthers(object):
             for atom in self.atom_info:
                 element = atom['element']
                 for i in range(len(atom['wyckoff_position'])):
-                    for pos in atom['positions'][i]:
+                    for r in atom['positions'][i]:
+                        if self.is_rhombohedral:
+                            pos = self.hex2trig(r)
+                        else:
+                            pos = r
                         fout.write(' {:>2s}'.format(element))
                         for j in range(3):
                             fout.write('  {:9.6f}'.

@@ -1,0 +1,61 @@
+ &control
+   calculation = 'vc-relax'
+   restart_mode = 'from_scratch'
+   pseudo_dir = './pseudo/'
+   outdir = './out/',
+   wfcdir = '/work/funashima/ref',
+   disk_io = 'minimal'
+   tstress = .true.
+   tprnfor = .true.
+ /
+ &system
+    ibrav= 0
+    celldm(1)= 15.000
+    nat= 16 , ntyp= 1 , nbnd=64,
+    occupations='smearing', degauss=0.02, smearing='mp',
+    ecutwfc =  60.0000,   ecutrho = 600.0000,
+    lspinorb = .true.,
+    noncolin = .true.,
+ /
+ &electrons
+    diagonalization='david'
+    electron_maxstep=500 ,
+    mixing_mode = 'plain'
+    conv_thr =  1.0d-9,
+    mixing_beta = 0.7
+ /
+ &ions
+ /
+ &cell
+    cell_dynamics='bfgs',
+    press=0.0,
+    cell_factor=5.0,
+ /
+CELL_PARAMETERS
+   0.6518187925  0.0478611939  -0.0214773723
+   0.0478611939  1.4870926594  0.1867486189
+   -0.0214773723  0.1867486189  1.0445631423
+
+ATOMIC_SPECIES
+  Si   28.0855  Si.rel-pbe-n-kjpaw_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS {crystal}
+Si  0.215452  0.846504  0.773308
+Si  0.473797  0.973004  0.649113
+Si  0.126443  0.896866  0.292470
+Si  0.824521  0.464503  0.567375
+Si  0.777243  0.017301  0.384710
+Si  0.609426  0.331596  0.631054
+Si  0.305977  0.383512  0.952584
+Si  0.618513  0.749782  0.484125
+Si  0.658490  0.723504  0.060020
+Si  0.429134  0.741196  0.269618
+Si  0.477654  0.270305  0.703576
+Si  0.157799  0.306511  0.091308
+Si  0.832488  0.284393  0.931841
+Si  0.916224  0.835863  0.290869
+Si  0.982388  0.168674  0.907098
+Si  0.282165  0.135684  0.181452
+
+K_POINTS {automatic}
+ 8 8 8 0 0 0

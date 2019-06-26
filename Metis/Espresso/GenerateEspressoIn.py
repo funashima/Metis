@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 #
-#
+
 import os
 import re
 import shutil
@@ -13,6 +13,7 @@ from Metis.Espresso.ParseQEPseudoPotential import ParseQEPseudoPotential
 from Metis.Espresso.ParseConfigQE import ParseConfigQE
 from Metis.Base.TspaceToolbox import TspaceToolbox
 from Metis.Espresso.GenerateJobScript import GenerateJobScript
+import subprocess
 
 
 class GenerateEspressoIn(object):
@@ -20,7 +21,8 @@ class GenerateEspressoIn(object):
                  qe_inputfile='espresso_relax.in',
                  ispg=None,
                  sub_index=None,
-                 atom_info=None):
+                 atom_info=None,
+                 submit_job=False):
         if os.path.isfile(configfile):
             self.configfile = configfile
         else:
@@ -33,12 +35,13 @@ class GenerateEspressoIn(object):
         #
         self.tmpdir = os.path.join('/work', os.environ['USER'])
 
-
         self.ispg = ispg
         self.sub_index = sub_index
         self.atom_info = atom_info
         self.qe_inputfile = qe_inputfile
         self.main()
+        if submit_job:
+            self.submit_job()
 
     def main(self):
         self.set_crystal_structure()
@@ -66,16 +69,15 @@ class GenerateEspressoIn(object):
 
     def set_working_area(self):
         compound_name = self.crystal_structure.compound_name
-        ispg = self.ispg
         prefix = '{0}_{1}_{2}'.format(compound_name, self.ispg, self.sub_index)
 
         #
         # set calculation directory
         #
         self.wkdir = prefix
-        if not os.path.isdir(self.wkdir):
-            print('work dir:{} has been generated.'.format(self.wkdir))
-            os.mkdir(self.wkdir)
+        if os.path.isdir(self.wkdir):
+            shutil.rmtree(self.wkdir)
+        os.mkdir(self.wkdir)
 
         #
         # set pseudo potential dir
@@ -92,6 +94,15 @@ class GenerateEspressoIn(object):
         if os.path.isdir(output_dir):
             shutil.rmtree(output_dir)
         os.mkdir(output_dir)
+
+        #
+        # set temporary dir
+        #
+        self.wfcdir = os.path.join(self.tmpdir,
+                                   os.path.basename(self.wkdir))
+        if os.path.isdir(self.wfcdir):
+            shutil.rmtree(self.wfcdir)
+        os.mkdir(self.wfcdir)
 
         #
         # set name about quantum espresso inputfile
@@ -127,6 +138,10 @@ class GenerateEspressoIn(object):
                           wkdir=self.wfcdir,
                           calc_dir=self.wkdir,
                           inputfile=os.path.basename(self.qe_inputfile))
+
+    def submit_job(self):
+        command = 'cd {0} ; qsub job.py'.format(self.wkdir)
+        subprocess.call(command, shell=True)
 
     def get_pseudo_potential_files(self):
         configure = ParseConfigQE(self.configfile)
@@ -216,11 +231,9 @@ class GenerateEspressoIn(object):
         kpoints = configure.kpoints
         press = configure.press
         cell_factor = configure.cell_factor
-        self.wfcdir = os.path.join(self.tmpdir,
-                                   os.path.basename(self.wkdir))
+        etot_conv_thr = configure.etot_conv_thr
+        forc_conv_thr = configure.forc_conv_thr
 
-        #print('-> Quantum Espresso inputfile: "{}" has been generated'.
-        #      format(self.qe_inputfile))
         lattice_length = self.crystal_structure.lattice_length
         if self.crystal_structure.il == -1:
             is_rhombohedral = True
@@ -251,7 +264,9 @@ class GenerateEspressoIn(object):
                 exit()
 
         QEInWriteControl(filename=self.qe_inputfile,
-                         wfcdir=self.wfcdir)
+                         wfcdir=self.wfcdir,
+                         etot_conv_thr=etot_conv_thr,
+                         forc_conv_thr=forc_conv_thr)
         QEInWriteSystem(filename=self.qe_inputfile,
                         ntypes=self.nelements,
                         natoms=self.total_atoms,
@@ -278,23 +293,30 @@ class GenerateEspressoIn(object):
 
 
 class QEInWriteControl(object):
-    def __init__(self, filename='espresso_relax.in', wfcdir=None):
+    def __init__(self, filename='espresso_relax.in',
+                 wfcdir=None, etot_conv_thr=1.0e-4, forc_conv_thr=1.0e-3):
         self.filename = filename
         self.wfcdir = wfcdir
+        self.etot_conv_thr = etot_conv_thr
+        self.forc_conv_thr = forc_conv_thr
         self.main()
 
     def main(self):
         indent = '   '
         with open(self.filename, 'w') as fout:
             fout.write(' &control\n')
-            fout.write("{0}calculation = 'vc-relax'\n".format(indent))
-            fout.write("{0}restart_mode = 'from_scratch'\n".format(indent))
-            fout.write("{0}pseudo_dir = './pseudo/'\n".format(indent))
+            fout.write("{0}calculation = 'vc-relax',\n".format(indent))
+            fout.write("{0}restart_mode = 'from_scratch',\n".format(indent))
+            fout.write("{0}pseudo_dir = './pseudo/',\n".format(indent))
             fout.write("{0}outdir = './out/',\n".format(indent))
             fout.write("{0}wfcdir = '{1}',\n".format(indent, self.wfcdir))
-            fout.write("{0}disk_io = 'minimal'\n".format(indent))
-            fout.write("{0}tstress = .true.\n".format(indent))
-            fout.write("{0}tprnfor = .true.\n".format(indent))
+            fout.write("{0}disk_io = 'minimal',\n".format(indent))
+            fout.write("{0}etot_conv_thr = {1:5.3e},\n".
+                       format(indent, self.etot_conv_thr))
+            fout.write("{0}forc_conv_thr = {1:5.3e},\n".
+                       format(indent, self.forc_conv_thr))
+            fout.write("{0}tstress = .true.,\n".format(indent))
+            fout.write("{0}tprnfor = .true.,\n".format(indent))
             fout.write(' /\n\n')
 
 
@@ -313,7 +335,7 @@ class QEInWriteSystem(TspaceToolbox):
         self.ecutrho = ecutrho
         self.degauss = degauss
         self.crystal_structure = crystal_structure
-        self.is_spin_orbit=is_spin_orbit
+        self.is_spin_orbit = is_spin_orbit
         self.get_ibrav()
         self.main()
 
@@ -472,6 +494,7 @@ class QEInWriteIons(object):
     def main(self):
         with open(self.filename, 'a') as fout:
             fout.write(' &ions\n')
+            fout.write("   ion_dynamics = 'bfgs',\n")
             fout.write(' /\n\n')
 
 
@@ -511,7 +534,7 @@ class QEInWriteOthers(TspaceToolbox):
             for ppot in self.ppots:
                 element_symbol = ppot.split('.')[0]
                 mass = mg.Element(element_symbol).atomic_mass
-                fout.write('  {0:>2s}'.format(element_symbol))
+                fout.write(' {0:>2s} '.format(element_symbol))
                 fout.write('  {0:8.4f}'.format(mass))
                 fout.write('  {}\n'.format(ppot))
             fout.write('\n')

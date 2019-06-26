@@ -36,6 +36,8 @@ class SpaceGroup(object):
         self.spg = SpacegroupAnalyzer(self.structure,
                                       symprec=self.symprec,
                                       angle_tolerance=self.angle_trelance)
+        self.hmname = self.spg.get_space_group_symbol()
+        self.ispg = self.spg.get_space_group_number()
 
     def show_info(self):
         print('----- symmetrized structure(conventional unit cell) -----')
@@ -48,9 +50,8 @@ class SpaceGroup(object):
         # name of space group
         #
         print('--- infomation of space group ---')
-        print('  HM symbol: {} '.format(self.spg.get_space_group_symbol()))
-        print('  Space Group number = #{}'.
-              format(self.spg.get_space_group_number()))
+        print('  HM symbol: {} '.format(self.hmname))
+        print('  Space Group number = #{}'.format(self.ispg))
         print('  point group : {}'.format(self.spg.get_point_group_symbol()))
         print()
         print()

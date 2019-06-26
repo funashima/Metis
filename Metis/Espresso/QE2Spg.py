@@ -26,4 +26,6 @@ class QE2Spg(object):
             QEin2Spg(self.filename, configfile)
         elif self.filetype == 'optimize':
             QEout2Spg(self.filename, configfile)
-        SpaceGroup(configfile).show_info()
+        elif self.filename is None:
+            return None
+        self.space_group = SpaceGroup(configfile)

@@ -11,4 +11,5 @@ if __name__ == '__main__':
     else:
         print('usage QE2Spg.py [pw.x_file]')
         exit()
-    QE2Spg(filename)
+    spg = QE2Spg(filename).space_group
+    spg.show_info()

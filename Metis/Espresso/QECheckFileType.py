@@ -36,5 +36,4 @@ class QECheckFileType(object):
             if '&system' in linebuf:
                 self.filetype = 'inputfile'
                 return
-        print('unknown pw.x filetype')
-        exit()
+        return None

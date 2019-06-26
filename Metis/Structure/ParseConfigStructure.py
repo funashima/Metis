@@ -23,6 +23,7 @@ class ParseConfigStructure(object):
         self.thr_bond_ratio = 0.75
         self.max_try = 500
         self.nnode = 1
+        self.submit_job = False
 
     def main(self):
         atom_info_region = False
@@ -84,3 +85,6 @@ class ParseConfigStructure(object):
                         self.thr_bond_ratio = float(value)
                     elif key == 'nnode':
                         self.nnode = int(value)
+                    elif key == 'submit_job':
+                        if re.search('(t|y)', value.lower()):
+                            self.submit_job = True

@@ -1,0 +1,119 @@
+#!/usr/bin/env python3
+from Metis.Espresso.QE2Spg import QE2Spg
+from Metis.SpaceGroup.ParseGenerator import ParseGenerator
+import os
+import re
+
+eps = 1.0e-8
+
+def get_enthalpy(filename):
+    for line in open(filename, 'r'):
+        linebuf = line.strip()
+        if 'Final' in linebuf and 'enthalpy' in linebuf:
+            if re.search('^!', linebuf):
+                continue
+            if '=' in linebuf:
+                enthalpy = float(linebuf.split('=')[1].split()[0])
+    return enthalpy
+
+
+def get_config(filename):
+    min_spg_index, max_spg_index, element, natoms = [None] * 4
+    for line in open(filename, 'r'):
+        linebuf = line.strip()
+        if '#' in linebuf:
+            linebuf = linebuf.split('#')[0].strip()
+        if linebuf == '':
+            continue
+        if '=' in linebuf:
+            if ';' in linebuf:
+                for data in linebuf.split(';'):
+                    key, value = [x.strip() for x in data.split('=')]
+                    if key == 'natoms':
+                        natoms = int(value)
+                    elif key == 'element':
+                        element = value
+            else:
+                key, value = [x.strip() for x in linebuf.split('=')]
+                if value == '':
+                    continue
+                if key == 'min_spg_index':
+                    min_spg_index = int(value)
+                elif key == 'max_spg_index':
+                    max_spg_index = int(value)
+    return [min_spg_index, max_spg_index, element, natoms]
+
+
+emin = None
+spg = None
+spg_type = None
+min_spg_index, max_spg_index, element, natoms = get_config('crystal.in')
+print('element = {0} ; natoms = {1}'.format(element, natoms))
+directory_list = []
+max_sub_index = natoms * 8
+
+for ispg in range(min_spg_index, max_spg_index+1):
+    for sub_index in range(1, max_sub_index):
+        dirname = '{0}{1}_{2}_{3}'.format(element, natoms, ispg, sub_index)
+        if os.path.isdir(dirname):
+            directory_list.append(dirname)
+
+print()
+print('total {} configurations'.format(len(directory_list)))
+print()
+
+generator = ParseGenerator()
+spg_dict = {}
+for dirname in directory_list:
+    filename = dirname + '/espresso_relax.in'
+    ispg = dirname.split('_')[1]
+    hmname = generator.get_hmname(ispg)
+    if not os.path.isfile(filename):
+        continue
+    in_spg = QE2Spg(filename).space_group.hmname
+    filename = dirname + '/espresso_relax.out'
+    if not os.path.isfile(filename):
+        continue
+    space_group = QE2Spg(filename).space_group.hmname
+    enthalpy = get_enthalpy(filename)
+    if emin is None or emin > enthalpy:
+        emin = enthalpy
+        spg = space_group
+        spg_type = dirname
+    if space_group in spg_dict:
+        check = []
+        for j in range(len(spg_dict[space_group])):
+            if abs(spg_dict[space_group][j] - enthalpy) < eps:
+                check.append(True)
+
+        if not all(check):
+            spg_dict[space_group].append(enthalpy)
+    else:
+        spg_dict[space_group] = [enthalpy]
+
+    print(' DIR:{0} ({1:6s}) '.format(dirname, hmname), end='')
+    print('spg(in):{:>6s} -> '.format(in_spg), end='')
+    print('spg(out):{:>6s} ;  '.format(space_group), end='')
+    print(' enthalpy H = {:12.7f} Ry'.format(enthalpy))
+
+if emin is not None:
+    print()
+    print('---- summary ---')
+    print('space_group:{0} ({1})'.format(spg, spg_type))
+    print('min of enthalpy  = {}'.format(emin))
+
+    print()
+    print('classify to each space group:')
+    configs = 0
+    for space_group, earray in spg_dict.items():
+        print(' space_group:{:8s}  '.format(space_group), end='')
+        print('delta H = ', end='')
+        for enthalpy in earray:
+            configs +=1
+            print(' {:12.7f}'.format(enthalpy - emin), end='')
+        print(' Ry')
+    print()
+    print('actually {} configurations'.format(configs))
+
+if os.path.isfile('espresso_relax.crystal_structure.in'):
+    os.remove('espresso_relax.crystal_structure.in')

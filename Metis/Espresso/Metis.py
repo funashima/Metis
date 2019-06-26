@@ -9,6 +9,7 @@ class Metis(object):
         self.configfile = configfile
         self.configure = ParseConfigStructure(configfile)
         self.nnode = self.configure.nnode
+        self.submit_job = self.configure.submit_job
         self.main()
 
     def get_wyckoff_list(self):
@@ -67,12 +68,12 @@ class Metis(object):
                            qe_inputfile='espresso_relax.in',
                            ispg=ispg,
                            sub_index=sub_index,
-                           atom_info=atom_info)
+                           atom_info=atom_info,
+                           submit_job=self.submit_job)
 
 
     def main(self):
         ncpu = self.nnode
-        print('cpu = {}'.format(ncpu))
         self.expand_wyckoff_list()
         future_list = []
         for target in self.search_pattern_lists:

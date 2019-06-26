@@ -66,15 +66,15 @@ class GenerateJobScript(object):
         self.write_main()
 
     def write_header(self):
-        nnode = self.configure.nnode
+        self.nnode = self.configure.nnode
         with open(self.scriptfile, 'w') as fout:
             fout.write('#!/usr/bin/python\n')
             fout.write('#\n')
             fout.write('# -- job name --\n')
             fout.write('#\n')
-            fout.write('#$ -N {}\n'.format(self.wkdir))
+            fout.write('#$ -N {}\n'.format(os.path.basename(self.wkdir)))
             fout.write('#\n')
-            fout.write('#$ -pe fillup {}\n'.format(nnode))
+            fout.write('#$ -pe fillup {}\n'.format(self.nnode))
             fout.write('#\n')
             fout.write('#$ -V\n')
             fout.write('#$ -S /usr/bin/python\n')
@@ -104,6 +104,9 @@ class GenerateJobScript(object):
             fout.write('{}shutil.rmtree(wkdir)\n'.format(indent))
             fout.write('os.mkdir(wkdir)\n'.format(indent))
             fout.write('\n')
+            #com1 = 'command = "mpiexec -np {} '.format(self.nnode)
+            #com2 = '{0}/pw.x < {1}".\\\n'
+            #fout.write(com1 + com2)
             fout.write('command = "{0}/pw.x < {1}".\\\n')
             fout.write('    format(bindir, inputfile)\n')
             fout.write('proc = subprocess.call(command, shell=True)\n')

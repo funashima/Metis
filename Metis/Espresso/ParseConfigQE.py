@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# 
+#
 #
 import os
 import re
@@ -84,12 +84,14 @@ class ParseConfigQE(object):
                 self.use_auto_cutoff = True
             else:
                 self.use_auto_cutoff = False
-
-
         elif key == 'press':
             self.press = float(value)
         elif key == 'cell_factor':
             self.cell_factor = float(value)
+        elif key == 'etot_conv_thr':
+            self.etot_conv_thr = float(value)
+        elif key == 'forc_conv_thr':
+            self.forc_conv_thr = float(value)
 
     def set_atom_info(self, linebuf):
         info = {'element': None,
@@ -123,6 +125,8 @@ class ParseConfigQE(object):
         self.ecutwfc = None
         self.ecutrho = None
         self.use_auto_cutoff = False
+        self.etot_conv_thr = 1.0e-4
+        self.forc_conv_thr = 1.0e-3
 
     def main(self):
         self.set_init_value()

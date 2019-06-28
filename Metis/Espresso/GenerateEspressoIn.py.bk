@@ -13,8 +13,6 @@ from Metis.Espresso.ParseQEPseudoPotential import ParseQEPseudoPotential
 from Metis.Espresso.ParseConfigQE import ParseConfigQE
 from Metis.Base.TspaceToolbox import TspaceToolbox
 from Metis.Espresso.GenerateJobScript import GenerateJobScript
-from Metis.Espresso.CheckRedundancy import CheckRedundancy
-from Metis.SpaceGroup.ParseGenerator import ParseGenerator
 import subprocess
 
 
@@ -42,29 +40,6 @@ class GenerateEspressoIn(object):
         self.atom_info = atom_info
         self.qe_inputfile = qe_inputfile
         self.main()
-
-        #  DEBUG
-        self.eliminate_redundancy = False
-        if self.eliminate_redundancy:
-            compound_name = self.crystal_structure.compound_name
-            redundancy = CheckRedundancy()
-            redundancy.ispg = ispg
-            redundancy.sub_index = sub_index
-            redundancy.compound_name = compound_name
-            consistency, true_ispg = redundancy.check()
-            spg_obj = ParseGenerator()
-            hmname_try = spg_obj.get_hmname(self.ispg)
-            hmname_full = spg_obj.get_hmname(true_ispg)
-            if not consistency:
-                print(' Redundancy: For {0:6s}, you assume the symmetry({1:10s}), '.
-                      format(self.wkdir, hmname_try), end='')
-                print('but i found higher symmetry({0:10s})'.
-                      format(hmname_full), end='')
-                print('this calculation will be skipped.')
-                if os.path.isdir(self.wkdir):
-                    shutil.rmtree(self.wkdir)
-                return
-
         if submit_job:
             self.submit_job()
 
@@ -91,7 +66,6 @@ class GenerateEspressoIn(object):
                                                  atom_info=self.atom_info,
                                                  progress=False)
         self.set_working_area()
-        self.eliminate_redundancy = input_data.eliminate_redundancy
 
     def set_working_area(self):
         compound_name = self.crystal_structure.compound_name

@@ -1,0 +1,136 @@
+---- Space Group infomation ----
+Crystal system :cubic
+Bravais Lattice:face centered cubic lattice
+Point Group:Td
+
+Index of Space group    :#219 (1)
+Schoenflies symbol      :Td5
+Hermann-Mauguin symbol  :F-43c
+
+Group Elements
+  1   1  E       X  Y  Z   0/1  0/1  0/1
+  2   2  C2X     X -Y -Z   0/1  0/1  0/1
+  3   3  C2Y    -X  Y -Z   0/1  0/1  0/1
+  4   4  C2Z    -X -Y  Z   0/1  0/1  0/1
+  5   5  C31+    Z  X  Y   0/1  0/1  0/1
+  6   6  C32+   -Z  X -Y   0/1  0/1  0/1
+  7   7  C33+   -Z -X  Y   0/1  0/1  0/1
+  8   8  C34+    Z -X -Y   0/1  0/1  0/1
+  9   9  C31-    Y  Z  X   0/1  0/1  0/1
+ 10  10  C32-    Y -Z -X   0/1  0/1  0/1
+ 11  11  C33-   -Y  Z -X   0/1  0/1  0/1
+ 12  12  C34-   -Y -Z  X   0/1  0/1  0/1
+ 13  37  IC2A   -Y -X  Z   0/1  0/1  1/2
+ 14  38  IC2B    Y  X  Z   0/1  0/1  1/2
+ 15  39  IC2C   -Z  Y -X   0/1  0/1  1/2
+ 16  40  IC2D    X -Z -Y   0/1  0/1  1/2
+ 17  41  IC2E    Z  Y  X   0/1  0/1  1/2
+ 18  42  IC2F    X  Z  Y   0/1  0/1  1/2
+ 19  43  IC4X+  -X  Z -Y   0/1  0/1  1/2
+ 20  44  IC4Y+  -Z -Y  X   0/1  0/1  1/2
+ 21  45  IC4Z+   Y -X -Z   0/1  0/1  1/2
+ 22  46  IC4X-  -X -Z  Y   0/1  0/1  1/2
+ 23  47  IC4Y-   Z -Y -X   0/1  0/1  1/2
+ 24  48  IC4Z-  -Y  X -Z   0/1  0/1  1/2
+
+Group Table
+  1  2  3  4  5  6  7  8  9 10 11 12 37 38 39 40 41 42 43 44 45 46 47 48
+  2  1  4  3  8  7  6  5 10  9 12 11 48 45 44 42 47 40 46 39 38 43 41 37
+  3  4  1  2  6  5  8  7 11 12  9 10 45 48 41 46 39 43 42 47 37 40 44 38
+  4  3  2  1  7  8  5  6 12 11 10  9 38 37 47 43 44 46 40 41 48 42 39 45
+  5  6  7  8  9 12 10 11  1  3  4  2 47 41 46 48 42 38 37 40 39 45 43 44
+  6  5  8  7 11 10 12  9  3  1  2  4 44 39 40 38 43 48 45 46 41 37 42 47
+  7  8  5  6 12  9 11 10  4  2  1  3 39 44 42 45 46 37 38 43 47 48 40 41
+  8  7  6  5 10 11  9 12  2  4  3  1 41 47 43 37 40 45 48 42 44 38 46 39
+  9 12 10 11  1  2  3  4  5  7  8  6 43 42 45 44 38 41 47 48 46 39 37 40
+ 10 11  9 12  2  1  4  3  8  6  5  7 46 40 38 39 45 47 41 37 43 44 48 42
+ 11 10 12  9  3  4  1  2  6  8  7  5 42 43 37 47 48 39 44 38 40 41 45 46
+ 12  9 11 10  4  3  2  1  7  5  6  8 40 46 48 41 37 44 39 45 42 47 38 43
+ 37 45 48 38 46 43 42 40 44 47 39 41  1  4 11  8 12  7  6  9  2  5 10  3
+ 38 48 45 37 42 40 46 43 41 39 47 44  4  1 10  6  9  5  8 12  3  7 11  2
+ 39 47 41 44 48 38 37 45 43 40 42 46  7  6  1 10  3 11  9  4  8 12  2  5
+ 40 42 43 46 47 39 44 41 45 38 48 37 12 10  6  1  8  2  3  7  9  4  5 11
+ 41 44 39 47 38 48 45 37 42 46 43 40  8  5  3 12  1  9 11  2  7 10  4  6
+ 42 40 46 43 41 44 39 47 38 45 37 48 11  9  7  2  5  1  4  6 10  3  8 12
+ 43 46 40 42 39 47 41 44 48 37 45 38  9 11  8  4  6  3  2  5 12  1  7 10
+ 44 41 47 39 37 45 48 38 46 42 40 43  6  7  2  9  4 12 10  3  5 11  1  8
+ 45 37 38 48 40 42 43 46 47 44 41 39  3  2  9  7 10  8  5 11  4  6 12  1
+ 46 43 42 40 44 41 47 39 37 48 38 45 10 12  5  3  7  4  1  8 11  2  6  9
+ 47 39 44 41 45 37 38 48 40 43 46 42  5  8  4 11  2 10 12  1  6  9  3  7
+ 48 38 37 45 43 46 40 42 39 41 44 47  2  3 12  5 11  6  7 10  1  8  9  4
+
+Basis set:
+ t[1] =   3.098050  0.000000  0.000000
+ t[2] =   0.000000  3.098050  0.000000
+ t[3] =   0.000000  0.000000  3.098050
+
+--- self test for lattice constant ---
+ reconstruct a, b, c, alpha, beta and gammma
+  a = 3.098050 [ang] (err=0.000e+00)
+  b = 3.098050 [ang] (err=0.000e+00)
+  c = 3.098050 [ang] (err=0.000e+00)
+  c/a =  1.00000
+
+  alpha = 90.00000 [deg] (err=0.000e+00)
+  beta  = 90.00000 [deg] (err=0.000e+00)
+  gamma = 90.00000 [deg] (err=0.000e+00)
+
+  volume =  29.734825 [ang^3]
+
+-- Atomic Position(not including sublattice):
+element:Si  wyckoff_position:8b
+ (  1)   0.250000   0.250000   0.250000
+ (  2)  -0.250000  -0.250000  -0.250000
+
+
+-- Atomic Position(including sublattice):
+sublattice points in this lattice:
+  (1)   0.00000   0.50000   0.50000
+  (2)   0.50000   0.00000   0.50000
+  (3)   0.50000   0.50000   0.00000
+atomic coordinate:
+ (  1) element:Si   0.250000   0.250000   0.250000
+ (  2) element:Si   0.250000  -0.250000  -0.250000
+ (  3) element:Si  -0.250000   0.250000  -0.250000
+ (  4) element:Si  -0.250000  -0.250000   0.250000
+ (  5) element:Si  -0.250000  -0.250000  -0.250000
+ (  6) element:Si  -0.250000   0.250000   0.250000
+ (  7) element:Si   0.250000  -0.250000   0.250000
+ (  8) element:Si   0.250000   0.250000  -0.250000
+
+---- Neighbor Table ----
+From atom( 1):Si
+  to atom( 2): Si length =  2.19065 ang (= 0.70711); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.09065 ang, 199.15%)
+  to atom( 3): Si length =  2.19065 ang (= 0.70711); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.09065 ang, 199.15%)
+  to atom( 4): Si length =  2.19065 ang (= 0.70711); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.09065 ang, 199.15%)
+  to atom( 5): Si length =  2.68299 ang (= 0.86603); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.58299 ang, 243.91%)
+  to atom( 6): Si length =  1.54903 ang (= 0.50000); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 0.44903 ang, 140.82%)
+  to atom( 7): Si length =  1.54903 ang (= 0.50000); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 0.44903 ang, 140.82%)
+  to atom( 8): Si length =  1.54903 ang (= 0.50000); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 0.44903 ang, 140.82%)
+From atom( 2):Si
+  to atom( 3): Si length =  2.19065 ang (= 0.70711); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.09065 ang, 199.15%)
+  to atom( 4): Si length =  2.19065 ang (= 0.70711); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.09065 ang, 199.15%)
+  to atom( 5): Si length =  1.54903 ang (= 0.50000); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 0.44903 ang, 140.82%)
+  to atom( 6): Si length =  2.68299 ang (= 0.86603); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.58299 ang, 243.91%)
+  to atom( 7): Si length =  1.54903 ang (= 0.50000); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 0.44903 ang, 140.82%)
+  to atom( 8): Si length =  1.54903 ang (= 0.50000); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 0.44903 ang, 140.82%)
+From atom( 3):Si
+  to atom( 4): Si length =  2.19065 ang (= 0.70711); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.09065 ang, 199.15%)
+  to atom( 5): Si length =  1.54903 ang (= 0.50000); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 0.44903 ang, 140.82%)
+  to atom( 6): Si length =  1.54903 ang (= 0.50000); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 0.44903 ang, 140.82%)
+  to atom( 7): Si length =  2.68299 ang (= 0.86603); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.58299 ang, 243.91%)
+  to atom( 8): Si length =  1.54903 ang (= 0.50000); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 0.44903 ang, 140.82%)
+From atom( 4):Si
+  to atom( 5): Si length =  1.54903 ang (= 0.50000); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 0.44903 ang, 140.82%)
+  to atom( 6): Si length =  1.54903 ang (= 0.50000); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 0.44903 ang, 140.82%)
+  to atom( 7): Si length =  1.54903 ang (= 0.50000); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 0.44903 ang, 140.82%)
+  to atom( 8): Si length =  2.68299 ang (= 0.86603); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.58299 ang, 243.91%)
+From atom( 5):Si
+  to atom( 6): Si length =  2.19065 ang (= 0.70711); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.09065 ang, 199.15%)
+  to atom( 7): Si length =  2.19065 ang (= 0.70711); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.09065 ang, 199.15%)
+  to atom( 8): Si length =  2.19065 ang (= 0.70711); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.09065 ang, 199.15%)
+From atom( 6):Si
+  to atom( 7): Si length =  2.19065 ang (= 0.70711); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.09065 ang, 199.15%)
+  to atom( 8): Si length =  2.19065 ang (= 0.70711); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.09065 ang, 199.15%)
+From atom( 7):Si
+  to atom( 8): Si length =  2.19065 ang (= 0.70711); sum of 2 atomic radii = 1.10000 ang  state ... OK ( 1.09065 ang, 199.15%)

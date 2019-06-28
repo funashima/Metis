@@ -83,7 +83,7 @@ class QEin2Spg(QEFileParseBase):
             self.cell_angle_alpha = math.acos(self.celldm4) * 180.0 / math.pi
             self.cell_angle_beta = self.cell_angle_alpha
             self.cell_angle_gamma = self.cell_angle_alpha
-        elif self.ibrav == 6 and self.ibrav == 7:  # tetragonal
+        elif self.ibrav == 6 or self.ibrav == 7:  # tetragonal
             self.cell_length_b = self.cell_length_a
             self.cell_length_c = self.cell_length_a * self.celldm3
             self.cell_angle_alpha = 90.0
@@ -95,13 +95,13 @@ class QEin2Spg(QEFileParseBase):
             self.cell_angle_alpha = 90.0
             self.cell_angle_beta = 90.0
             self.cell_angle_gamma = 90.0
-        elif self.ibrav == 12 and self.ibrav == 13:  # monoclinic
+        elif self.ibrav == 12 or self.ibrav == 13:  # monoclinic
             self.cell_length_b = self.cell_length_a * self.celldm2
             self.cell_length_c = self.cell_length_a * self.celldm3
             self.cell_angle_alpha = 90.0
             self.cell_angle_beta = 90.0
             self.cell_angle_gamma = math.acos(self.celldm4) * 180.0 / math.pi
-        elif self.ibrav == -12 and self.ibrav == -13:  # monoclinic
+        elif self.ibrav == -12 or self.ibrav == -13:  # monoclinic
             self.cell_length_b = self.cell_length_a * self.celldm2
             self.cell_length_c = self.cell_length_a * self.celldm3
             self.cell_angle_alpha = 90.0

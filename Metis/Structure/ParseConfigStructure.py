@@ -24,6 +24,7 @@ class ParseConfigStructure(object):
         self.max_try = 500
         self.nnode = 1
         self.submit_job = False
+        self.eliminate_redundancy = True
 
     def main(self):
         atom_info_region = False
@@ -88,3 +89,8 @@ class ParseConfigStructure(object):
                     elif key == 'submit_job':
                         if re.search('(t|y)', value.lower()):
                             self.submit_job = True
+                    elif key == 'eliminate_redundancy':
+                        if re.search('(t|y)', value.lower()):
+                            self.eliminate_redundancy = True
+                        elif re.search('(f|n)', value.lower()):
+                            self.eliminate_redundancy = False

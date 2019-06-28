@@ -7,6 +7,7 @@
 from Metis.Base.ParseConfig import ParseConfig
 import pymatgen as mg
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
+import re
 
 
 class SpaceGroup(object):
@@ -39,6 +40,51 @@ class SpaceGroup(object):
         self.hmname = self.spg.get_space_group_symbol()
         self.ispg = self.spg.get_space_group_number()
 
+    def generate_primitive_lattice(self):
+        my_data = str(self.spg.find_primitive())
+        data_region = False
+        atomic_positions = []
+        for line in my_data.split('\n'):
+            linebuf = line.strip()
+            if re.search('^abc\s+:', linebuf):
+                lattice_length = [float(x) for x in linebuf.split(':')[1].split()]
+            if re.search('^angles:', linebuf):
+                lattice_angle = [float(x) for x in linebuf.split(':')[1].split()]
+            if re.search('^#', linebuf) and 'SP' in linebuf:
+                data_region = True
+                continue
+            if data_region:
+                if re.search('^---', linebuf):
+                    continue
+                element = linebuf.split()[1]
+                pos = [float(x) for x in linebuf.split()[2:]]
+                info = {'element':element, 'position':pos}
+                atomic_positions.append(info)
+                lattice_type = self.hmname[0]
+        compound_name = self.get_compound_name(atomic_positions)
+        return {'ispg': self.ispg, 'hmname': self.hmname,
+                'lattice_length': lattice_length,
+                'lattice_angle': lattice_angle,
+                'lattice_type': lattice_type,
+                'atomic_positions': atomic_positions,
+                'compound_name': compound_name}
+
+    def get_compound_name(self, atomic_positions):
+        compound = ''
+        pre_element = None
+        for atom in atomic_positions:
+            element = atom['element']
+            if pre_element != element:
+                if pre_element is not None:
+                    compound += str(natoms)
+                compound += element
+                natoms = 1
+                pre_element = element
+            else:
+                natoms += 1
+        compound += str(natoms)
+        return compound
+
     def show_info(self):
         print('----- symmetrized structure(conventional unit cell) -----')
         print(self.spg.get_symmetrized_structure())
@@ -58,6 +104,8 @@ class SpaceGroup(object):
         print('--- crystal system ---')
         print('  crystal system:{}'.format(self.spg.get_crystal_system()))
         print('  lattice type:{}'.format(self.spg.get_lattice_type()))
+        print()
+
 
         #
         # total data set

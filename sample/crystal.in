@@ -4,7 +4,7 @@
 
 bindir = /home/funashima/QE/qe-6.4.1/bin
 nnode = 1
-submit_job = True
+submit_job = False
 
 #
 # pslibrary
@@ -59,18 +59,17 @@ delta_apf = 0.99
 thr_bond_ratio = 0.5
 max_try = 1000
 
-
 #
-# space group
+#
 #
 eliminate_redundancy = True
-
-min_spg_index = 10
-#max_spg_index = 195
-max_spg_index = 230
-#min_spg_index = 227
-#max_spg_index = 227
+min_spg_index = 219
+max_spg_index = 219
 
 begin_atom_info:
-    element = Si ;  natoms = 2 ; semi_core = 
+    element = Si ;  natoms = 2 ;semi_core = 
+end_atom_info:
+
+begin_atom_info:
+    element = Si ;  natoms = 2 ;semi_core = 
 end_atom_info:

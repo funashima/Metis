@@ -1,0 +1,16 @@
+
+** Basic info:/home/funashima/QE/pseudo/pslibrary/pz/PSEUDOPOTENTIALS/Si.pz-n-rrkjus_psl.1.0.0.UPF
+
+Element:Si
+pseudo_type = USPP
+relativistic type:scalar
+spin-orbit ... no
+paw type ... no
+ultrasoft type ... yes
+including 1/r coloumb potential ... no
+core correction ... yes
+num of valence electrons = 4.0
+Total Pseudo Eenrgy = -10.95(Ry)
+cut off energy for wavefunction   =  43.9967 (Ry)
+cut off energy for charge density = 175.9870 (Ry)
+

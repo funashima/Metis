@@ -56,8 +56,10 @@ class GenerateEspressoIn(object):
             hmname_try = spg_obj.get_hmname(self.ispg)
             hmname_full = spg_obj.get_hmname(true_ispg)
             if not consistency:
-                print(' Redundancy: For {0:6s}, you assume the symmetry({1:10s}), '.
-                      format(self.wkdir, hmname_try), end='')
+                print(' Redundancy: For {0:6s},'.
+                      format(self.wkdir), end='')
+                print(' you assume the symmetry({0:10s}), '.
+                      format(hmname_try), end='')
                 print('but i found higher symmetry({0:10s})'.
                       format(hmname_full), end='')
                 print('this calculation will be skipped.')
@@ -282,12 +284,7 @@ class GenerateEspressoIn(object):
             if self.use_auto_cutoff:
                 self.ecutrho = self.rcutoff[1][1]
             else:
-                print('===== Error(ecutrho) =====')
-                print(' ecutwho is not defined.')
-                print(' Suggested minimum cutoff ', end='')
-                print('for charge density: {:8.5f} (Ry)'.
-                      format(self.rcutoff[1][1]))
-                exit()
+                self.ecutrho = self.ecutwfc * 12.0
 
         QEInWriteControl(filename=self.qe_inputfile,
                          wfcdir=self.wfcdir,

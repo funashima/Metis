@@ -41,7 +41,8 @@ class ParseTestInput(object):
                 for data in linebuf.split(';'):
                     if '=' in data:
                         if len(data.split('=')) > 1:
-                            key, value = [x.strip() for x in data.split('=')[:2]]
+                            key, value = \
+                                 [x.strip() for x in data.split('=')[:2]]
                             key = key.lower()
                             if key == 'element':
                                 element = value
@@ -50,7 +51,9 @@ class ParseTestInput(object):
                             if key == 'semi_core':
                                 semi_core = value.replace(',', ' ').split()
                 if (element is not None) and (wypos is not None):
-                    info = {'element': element, 'wyckoff_position': wypos, 'semi_core': semi_core}
+                    info = {'element': element,
+                            'wyckoff_position': wypos,
+                            'semi_core': semi_core}
                     self.atom_info.append(info)
                 else:
                     print('WARNING: syntax is incorrect :{}'.format(linebuf))

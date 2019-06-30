@@ -29,7 +29,6 @@ class GenerateEspressoInSingle(object):
         #
         self.tmpdir = os.path.join('/work', os.environ['USER'])
 
-
         self.qe_inputfile = qe_inputfile
         self.main()
 
@@ -306,7 +305,7 @@ class QEInWriteSystem(TspaceToolbox):
         self.ecutrho = ecutrho
         self.degauss = degauss
         self.crystal_structure = crystal_structure
-        self.is_spin_orbit=is_spin_orbit
+        self.is_spin_orbit = is_spin_orbit
         self.get_ibrav()
         self.main()
 

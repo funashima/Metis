@@ -22,10 +22,7 @@ class ParseConfig(object):
         return linebuf
 
     def get_key_and_value(self, linebuf):
-        try:
-            key, value = [x.strip() for x in linebuf.split('=')]
-        except:
-            print(linebuf)
+        key, value = [x.strip() for x in linebuf.split('=')]
         key = key.lower()
         return [key, value]
 
@@ -96,6 +93,8 @@ class GenerateJobScript(object):
     def write_main(self):
         bindir = self.configure.bindir
         indent = '    '
+        # now not implement yet.
+        self.use_mpi = False
         with open(self.scriptfile, 'a') as fout:
             fout.write("wkdir = '{}'\n".format(self.wkdir))
             fout.write("bindir = '{}'\n".format(bindir))
@@ -104,12 +103,14 @@ class GenerateJobScript(object):
             fout.write('{}shutil.rmtree(wkdir)\n'.format(indent))
             fout.write('os.mkdir(wkdir)\n'.format(indent))
             fout.write('\n')
-            #com1 = 'command = "mpiexec -np {} '.format(self.nnode)
-            #com2 = '{0}/pw.x < {1}".\\\n'
-            #fout.write(com1 + com2)
-            fout.write('command = "{0}/pw.x < {1}".\\\n')
-            fout.write('    format(bindir, inputfile)\n')
+            if self.use_mpi:
+                com1 = 'command = "mpiexec -np {} '.format(self.nnode)
+                com2 = '{0}/pw.x < {1}".\\\n'
+                fout.write(com1 + com2)
+            else:
+                fout.write('command = "{0}/pw.x < {1}".\\\n')
+                fout.write('    format(bindir, inputfile)\n')
             fout.write('proc = subprocess.call(command, shell=True)\n')
-            fout.write('if proc < 1:\n')
+            fout.write('if os.path.isdir(wkdir):\n')
             fout.write('{}shutil.rmtree(wkdir)\n'.format(indent))
         return self

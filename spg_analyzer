@@ -14,4 +14,3 @@ if __name__ == '__main__':
     else:
         configfile = 'crystal.in'
     SpaceGroup(configfile).show_info()
-    #SpaceGroup(configfile).generate_cif()

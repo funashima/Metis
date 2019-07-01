@@ -2,6 +2,7 @@
 from Metis.Base.TspaceToolbox import TspaceToolbox
 from Metis.Espresso.QE2Spg import QE2Spg
 from Metis.SpaceGroup.SpaceGroup import SpaceGroup
+from Metis.SpaceGroup.GenerateWyckoffPositionsList import GenerateWyckoffPositionsList
 import os
 from fractions import Fraction
 
@@ -77,4 +78,11 @@ class GenerateSmallerUnitCell(TspaceToolbox):
         #
         #  identified reduced cell 
         #
+
+        #
+        # experimental!!
+        #
+        wyckoff = GenerateWyckoffPositionsList(min_spg_index = self.spg,
+                                               max_spg_index = self.spg,
+                                               natoms= self.spg.natoms)
 

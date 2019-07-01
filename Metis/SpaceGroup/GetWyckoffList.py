@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+#
+# interface for GenerateWyckoffPositionList
+#   for Metis written by Hiroki Funashima, 2019 in Kobe
+#
+
 from Metis.Structure.ParseConfigStructure import ParseConfigStructure
 from Metis.SpaceGroup.GenerateWyckoffPositionsList \
         import GenerateWyckoffPositionsList

@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 #
+# generation of wyckoff position list 
+#    written by Hiroki Funashima in Kobe, 2019
+#
 # this version is only 1 elements case...
 #
 from Metis.SpaceGroup.SearchSpaceGroup import SearchSpaceGroup

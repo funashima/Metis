@@ -143,14 +143,6 @@ class CheckEnthalpy(object):
             if enthalpy is not None:
                 space_group = QE2Spg(filename).space_group.hmname
                 enthalpy = ParseQEOutfile(filename, natoms).enthalpy
-                #
-                # CASE: enthalpy_new < enthalpy_old
-                #
-                if enthalpy is None:
-                    for line in open(filename, 'r'):
-                        if 'enthalpy old' in line.strip():
-                            print(line.strip())
-                            enthalpy = float(line.strip().split('=')[1].split()[0])
             if enthalpy is not None:
                 if self.emin is None or self.emin > enthalpy:
                     self.emin = enthalpy

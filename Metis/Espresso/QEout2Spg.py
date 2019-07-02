@@ -32,37 +32,40 @@ class QEout2Spg(QEFileParseBase):
         self.cell_length_c /= a_normalize
 
     def parse(self):
+        #
+        # data_region = [cell_param, atomic_position]
+        #
         data_region = False
+        data_type = None
         for line in open(self.datafile, 'r'):
             linebuf = self._get_linebuf(line)
-            if linebuf == '':
-                continue
             if data_region:
-                if re.search('^density', linebuf):
-                    continue
-                if re.search('^new unit-cell', linebuf):
-                    continue
-                if re.search('end final coordinates', linebuf.lower()):
-                    data_region = False
-                    continue
-                if re.search('CELL_PARAMETER', linebuf):
-                    data_type = 'cell_parameter'
-                    self.alat = float(linebuf.replace(')', '').split('=')[-1])
-                    continue
-                elif re.search('ATOMIC_POSITIONS', linebuf):
+                if re.search('ATOMIC_POSITIONS', linebuf):
                     data_type = 'atomic_positions'
                     continue
                 if data_type == 'cell_parameter':
+                    if linebuf == '':
+                        continue
                     cell_params = [float(x) for x in linebuf.split()]
                     self.cell_parameter.append(cell_params)
                 elif data_type == 'atomic_positions':
+                    if linebuf == '':
+                        data_region = False
+                        continue
+                    if re.search('^end\s+final\s+coordinates', linebuf.lower()):
+                        continue
                     atom_site_symbol, position = self._parse_apos(linebuf)
                     info = {'site_type': atom_site_symbol,
                             'coordinate': position}
                     self.atom_site.append(info)
             else:
-                if re.search('begin final coordinates', linebuf.lower()):
+                if re.search('CELL_PARAMETER', linebuf):
                     data_region = True
-                    self.cell_parameter = []
-                    self.atom_site = []
+                    self.init_params()
+                    data_type = 'cell_parameter'
+                    self.alat = float(linebuf.replace(')', '').split('=')[-1])
                     continue
+
+    def init_params(self):
+        self.cell_parameter = []
+        self.atom_site = []

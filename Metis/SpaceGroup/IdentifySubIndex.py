@@ -11,8 +11,8 @@ class IdentifySubIndex(object):
         self.get_sub_index()
 
     def length_check(self, reagant, target_list):
-        ex_reagant = len(self.decomp_wylist(reagant))
-        ex_target_list = len(self.decomp_wylist(target_list))
+        ex_reagant = len(self.decomp_wylist(reagant, nlat=1))
+        ex_target_list = len(self.decomp_wylist(target_list, nlat=1))
         if ex_reagant % self.natoms != 0:
             print('====== Error(IdentifySubIndex) ======')
             print('regant:{} is inccorect.'.format(reagant))
@@ -40,7 +40,10 @@ class IdentifySubIndex(object):
         for x in target_list:
             n = list(x)
             letter = n.pop()
-            n = int(''.join(n))
+            if len(list(x)) == 1:
+                n = 1
+            else:
+                n = int(''.join(n))
             for i in range(n * nlat):
                 new_list.append(letter)
         return sorted(new_list)
@@ -55,7 +58,10 @@ class IdentifySubIndex(object):
 
         wylist1 = self.decomp_wylist(target_list, nlat=nlat)
         for (i, reagant) in enumerate(wyckoff_dic):
-            wylist2 = self.decomp_wylist(reagant, nlat=nlat)
+            # wyckoff table is always written in conventional format
+            # so nlat = 1
+            #
+            wylist2 = self.decomp_wylist(reagant, nlat=1)
             if wylist1 == wylist2:
                 return i
         return None

@@ -73,7 +73,13 @@ class TspaceToolbox(object):
                 ary[i] = [0, 1]
             else:
                 ary[i] = [int(y) for y in x]
-        return [flatten for inner in ary for flatten in inner]
+        #
+        # return [flatten for inner in ary for flatten in inner]
+        #
+        # ref: effective python
+        #   chapter 1 section 8
+        #
+        return [x for row in matrix for x in raw]
 
     def to_matrix_representation(self, code):
         tsp_code = code.strip().lower()

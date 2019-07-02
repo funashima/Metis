@@ -2,7 +2,10 @@
 from Metis.Base.TspaceToolbox import TspaceToolbox
 from Metis.Espresso.QE2Spg import QE2Spg
 from Metis.SpaceGroup.SpaceGroup import SpaceGroup
-from Metis.SpaceGroup.GenerateWyckoffPositionsList import GenerateWyckoffPositionsList
+#from Metis.SpaceGroup.GenerateWyckoffPositionsList \
+#        import GenerateWyckoffPositionsList
+from Metis.SpaceGroup.IdentifySubIndex \
+        import IdentifySubIndex
 import os
 from fractions import Fraction
 
@@ -36,6 +39,9 @@ class GenerateSmallerUnitCell(TspaceToolbox):
                                  lattice_angle,
                                  atomic_positions,
                                  filename='prim_crystal.in'):
+        #
+        # generate crystal data (temporary file)
+        #
         with open(filename, 'w') as fout:
             fout.write('#\n')
             fout.write('# lattice constant\n')
@@ -71,10 +77,15 @@ class GenerateSmallerUnitCell(TspaceToolbox):
                     else:
                         fout.write('\n')
             fout.write('end_atomlist:\n')
+        #
+        # transform primitive cell to conventional cell
+        #
         self.spg = SpaceGroup(filename).get_conventional_cell()
         if os.path.isfile(filename):
             os.remove(filename)
         self.spg.show_info()
+        print('** natoms = {}'.format(self.spg.primitive_cell_info['natoms']))
+        
         #
         #  identified reduced cell 
         #
@@ -82,7 +93,14 @@ class GenerateSmallerUnitCell(TspaceToolbox):
         #
         # experimental!!
         #
-        wyckoff = GenerateWyckoffPositionsList(min_spg_index = self.spg,
-                                               max_spg_index = self.spg,
-                                               natoms= self.spg.natoms)
-
+        natoms = self.spg.primitive_cell_info['natoms']
+        # only 1 element ....
+        for iatom in range(1):
+            atom_info = self.spg.primitive_cell_info['atom_info'][iatom]
+            target_list = atom_info['wyckoff_letter']
+            element = atom_info['element']
+            sub_index = IdentifySubIndex(natoms=natoms,
+                                        ispg=self.spg.ispg,
+                                        target_list=target_list).sub_index
+            self.dirname = '{0}{1}_{2}_{3}'.format(element, natoms, self.spg.ispg, sub_index+1)
+        print('DIRNAME = {}'.format(self.dirname))

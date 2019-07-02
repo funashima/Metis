@@ -172,7 +172,7 @@ class SpaceGroup(object):
                 atom_info[-1]['wyckoff_letter'].append(wyckoff_letter)
 
         self.primitive_cell_info = {'ispg': self.ispg,
-                                    'natom': natoms,
+                                    'natoms': natoms,
                                     'atom_info': atom_info}
 
         #

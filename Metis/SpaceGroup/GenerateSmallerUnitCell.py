@@ -83,8 +83,6 @@ class GenerateSmallerUnitCell(TspaceToolbox):
         self.spg = SpaceGroup(filename).get_conventional_cell()
         if os.path.isfile(filename):
             os.remove(filename)
-        self.spg.show_info()
-        print('** natoms = {}'.format(self.spg.primitive_cell_info['natoms']))
         
         #
         #  identified reduced cell 
@@ -95,6 +93,13 @@ class GenerateSmallerUnitCell(TspaceToolbox):
         #
         natoms = self.spg.primitive_cell_info['natoms']
         # only 1 element ....
+        self.atom_info = []
+        for atom in self.spg.primitive_cell_info['atom_info']:
+            info = {'element': atom['element'],
+                    'natoms': len(atom['wyckoff_letter']),
+                    'wyckoff_position': sorted(set(atom['wyckoff_letter']))}
+            self.atom_info.append(info)
+
         for iatom in range(1):
             atom_info = self.spg.primitive_cell_info['atom_info'][iatom]
             target_list = atom_info['wyckoff_letter']
@@ -102,5 +107,7 @@ class GenerateSmallerUnitCell(TspaceToolbox):
             sub_index = IdentifySubIndex(natoms=natoms,
                                         ispg=self.spg.ispg,
                                         target_list=target_list).sub_index
+            self.ispg = self.spg.ispg
+            self.sub_index = sub_index+1
             self.dirname = '{0}{1}_{2}_{3}'.format(element, natoms, self.spg.ispg, sub_index+1)
-        print('DIRNAME = {}'.format(self.dirname))
+            self.compound_name = '{0}{1}'.format(element, natoms)

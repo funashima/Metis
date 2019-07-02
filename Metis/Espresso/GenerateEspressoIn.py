@@ -41,28 +41,55 @@ class GenerateEspressoIn(object):
         self.sub_index = sub_index
         self.atom_info = atom_info
         self.qe_inputfile = qe_inputfile
+        self.mother_dir = os.environ['PWD']
         self.main()
 
-        #  DEBUG
-        self.eliminate_redundancy = False
         if self.eliminate_redundancy:
             compound_name = self.crystal_structure.compound_name
             redundancy = CheckRedundancy()
-            redundancy.ispg = ispg
-            redundancy.sub_index = sub_index
-            redundancy.compound_name = compound_name
-            consistency, true_ispg = redundancy.check()
+            consistency, prim_cell = redundancy.check(compound_name,
+                                                      self.ispg,
+                                                      self.sub_index)
             spg_obj = ParseGenerator()
             hmname_try = spg_obj.get_hmname(self.ispg)
-            hmname_full = spg_obj.get_hmname(true_ispg)
             if not consistency:
+                hmname_true = spg_obj.get_hmname(prim_cell.ispg)
                 print(' Redundancy: For {0:6s},'.
                       format(self.wkdir), end='')
-                print(' you assume the symmetry({0:10s}), '.
-                      format(hmname_try), end='')
-                print('but i found higher symmetry({0:10s})'.
-                      format(hmname_full), end='')
-                print('this calculation will be skipped.')
+                if hmname_try == hmname_true:
+                    print(' cell is over size', end='')
+                    print(' change from {0}'.format(compound_name), end='')
+                    print(' to {}.'.format(prim_cell.compound_name), end='')
+                else:
+                    print(' you assume the symmetry:{0}, '.
+                          format(hmname_try), end='')
+                    print('but i found higher symmetry:{0}.'.
+                          format(hmname_true), end='')
+                for (i, atom) in enumerate(prim_cell.atom_info):
+                    if atom['element'] != self.atom_info[i]['element']:
+                        print('=== Error(GenerateEspressoIn) ===')
+                        print('logic error for prim_cell.atom_info')
+                        exit()
+                    prim_cell.atom_info[i]['semi_core'] =\
+                        self.atom_info[i]['semi_core']
+
+                if compound_name == prim_cell.compound_name:
+                    print(' This calculation will be skipped.')
+                else:
+                    if os.path.isdir(prim_cell.dirname):
+                        print(' This calculation will be skipped.')
+                    else:
+                        print(' Alternative calculation ', end='')
+                        print('will be performed in {}.'.
+                              format(prim_cell.dirname))
+                        os.mkdir(prim_cell.dirname)
+                        qe_inputfile = os.path.basename(self.qe_inputfile)
+                        GenerateEspressoIn(configfile=self.configfile,
+                                           ispg=prim_cell.ispg,
+                                           qe_inputfile=qe_inputfile,
+                                           sub_index=prim_cell.sub_index,
+                                           atom_info=prim_cell.atom_info,
+                                           submit_job=submit_job)
                 if os.path.isdir(self.wkdir):
                     shutil.rmtree(self.wkdir)
                 return

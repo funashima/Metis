@@ -79,7 +79,7 @@ class TspaceToolbox(object):
         # ref: effective python
         #   chapter 1 section 8
         #
-        return [x for row in matrix for x in raw]
+        return [x for row in ary for x in row]
 
     def to_matrix_representation(self, code):
         tsp_code = code.strip().lower()

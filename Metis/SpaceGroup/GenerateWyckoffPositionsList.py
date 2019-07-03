@@ -6,6 +6,7 @@
 # this version is only 1 elements case...
 #
 from Metis.SpaceGroup.SearchSpaceGroup import SearchSpaceGroup
+from Metis.SpaceGroup.ParseGenerator import ParseGenerator
 from tqdm import tqdm
 
 
@@ -14,11 +15,12 @@ class GenerateWyckoffPositionsList(object):
                  max_spg_index=None,
                  natoms=1,
                  use_progress_bar=False):
-        self.min_spg_index = min_spg_index
+        spg = ParseGenerator()
+        self.min_spg_index = spg.get_ispg(min_spg_index)
         if max_spg_index is None:
-            self.max_spg_index = min_spg_index
+            self.max_spg_index = spg.get_ispg(min_spg_index)
         else:
-            self.max_spg_index = max_spg_index
+            self.max_spg_index = spg.get_isog(max_spg_index)
         self.natoms = natoms
         self.use_tqdm = use_progress_bar
         self.get_wyckoff_list()
@@ -36,6 +38,11 @@ class GenerateWyckoffPositionsList(object):
             spg_list = space_group_list
 
         for ispg in spg_list:
+            #
+            # debug on 3 July 2019
+            #
+            if 143 <= ispg <= 167:
+                continue
             spg_obj.set_space_group(ispg)
             pos = []
             for wyckoff_patterns in spg_obj.set_atomic_position(self.natoms):
@@ -48,9 +55,6 @@ class GenerateWyckoffPositionsList(object):
             info = {'spg_index': ispg, 'wyckoff_positions': pos}
             self.wyckoff_list.append(info)
         return self
-
-    def identify_sub_index(self, ispg, wyckoffs):
-        pass
 
     def show_info(self):
         total_pattern = 0

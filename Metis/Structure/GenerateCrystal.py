@@ -443,7 +443,7 @@ class GenerateAtomicPosition(TspaceToolbox):
                                                    x=x, y=y, z=z,
                                                    wyckoff_letter=letter)
         for i in range(3):
-            if '/' in pos[i]:
+            if '/' in pos[i] and '.' not in pos[i]:
                 pos[i] = Fraction(pos[i])
             else:
                 pos[i] = eval(pos[i])

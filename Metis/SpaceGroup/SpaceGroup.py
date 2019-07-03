@@ -214,8 +214,8 @@ class SpaceGroup(object):
         self.spg = SpacegroupAnalyzer(self.structure,
                                       symprec=self.symprec,
                                       angle_tolerance=self.angle_trelance)
-        self.hmname = self.spg.get_space_group_symbol()
         self.ispg = self.spg.get_space_group_number()
+        self.hmname = self.spg.get_space_group_symbol()
         return self
 
     def symmetrized(self):

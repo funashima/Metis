@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+import matplotlib.pyplot as plt
+from matplotlib import rcParams
+import numpy as np
+import seaborn as sns
 from Metis.Espresso.QE2Spg import QE2Spg
 from Metis.SpaceGroup.ParseGenerator import ParseGenerator
 import os
@@ -126,7 +130,17 @@ class CheckEnthalpy(object):
         print('total {} configurations'.format(len(self.directory_list)))
         print()
 
-    def show_enthalpy(self, eps=1.0e-8):
+    def check_converged(self, filename='espresso_relax.out'):
+        if not os.path.isfile(filename):
+            print('file: {} is not found'.format(filename))
+            exit()
+        for line in open(filename, 'r'):
+            linebuf = line.strip()
+            if 'final enthalpy' in linebuf.lower():
+                return True
+        return False
+
+    def show_enthalpy(self, eps=1.0e-3):
         self.emin = None
         for (natoms, dirname) in self.directory_list:
             filename = dirname + '/espresso_relax.in'
@@ -136,28 +150,30 @@ class CheckEnthalpy(object):
             filename = dirname + '/espresso_relax.out'
             if not os.path.isfile(filename):
                 continue
-            enthalpy = 0
-            for line in open(filename, 'r'):
-                if 'stopping' in line.strip():
-                    enthalpy = None
-            if enthalpy is not None:
+            if self.check_converged(filename):
                 space_group = QE2Spg(filename).space_group.hmname
                 enthalpy = ParseQEOutfile(filename, natoms).enthalpy
-            if enthalpy is not None:
-                if self.emin is None or self.emin > enthalpy:
-                    self.emin = enthalpy
-                    self.emin_spg = space_group
-                    self.emin_spg_type = dirname
-                if space_group in self.spg_dict:
-                    check = []
-                    for j in range(len(self.spg_dict[space_group])):
-                        if abs(self.spg_dict[space_group][j] - enthalpy) < eps:
-                            check.append(True)
+                if enthalpy is not None:
+                    if self.emin is None or self.emin > enthalpy:
+                        self.emin = enthalpy
+                        self.emin_spg = space_group
+                        self.emin_spg_type = dirname
+                    if space_group in self.spg_dict:
+                        check = []
+                        for earray in self.spg_dict[space_group]:
+                            h, _  = earray
+                            if abs(h - enthalpy) < eps:
+                                check.append(True)
+                            else:
+                                check.append(False)
 
-                    if not all(check):
-                        self.spg_dict[space_group].append(enthalpy)
-                else:
-                    self.spg_dict[space_group] = [enthalpy]
+                        if not any(check):
+                            self.spg_dict[space_group].append([enthalpy, natoms])
+                    else:
+                        self.spg_dict[space_group] = [[enthalpy, natoms]]
+            else:
+                space_group = 'n/a'
+                enthalpy = None
 
             print(' DIR:{0:10s} '.format(dirname), end='')
             print('spg(in):{:>6s} -> '.format(in_spg), end='')
@@ -170,6 +186,9 @@ class CheckEnthalpy(object):
                 continue
 
     def show_summary(self):
+        spg_list = []
+        enthalpy_list = []
+        natoms_list = []
         if self.emin is not None:
             print()
             print('---- summary ---')
@@ -185,9 +204,29 @@ class CheckEnthalpy(object):
             for space_group, earray in self.spg_dict.items():
                 print(' space_group:{:8s}  '.format(space_group), end='')
                 print('delta H = ', end='')
-                for enthalpy in earray:
+                for enthalpy, natoms in earray:
+                    spg_list.append(space_group)
+                    enthalpy_list.append(enthalpy - self.emin)
+                    natoms_list.append(int(natoms))
                     configs += 1
-                    print(' {:7.4e}'.format(enthalpy - self.emin), end='')
+                    print(' {0:7.4e} '.format(enthalpy - self.emin), end='')
                 print(' Ry per atom')
             print()
             print('actually {} configurations'.format(configs))
+
+            #
+            # draw graph
+            #
+            rcParams['font.family'] = 'sans-serif'
+            rcParams['font.sans-serif'] = ['Chicago', 'Futura']
+            print(rcParams['font.sans-serif'])
+            sns.set()
+            fig, ax = plt.subplots()
+            plt.scatter(np.array(natoms_list), np.array(enthalpy_list), marker='o')
+            for i in range(configs):
+                ax.annotate(spg_list[i], xy=(natoms_list[i], enthalpy_list[i]))
+            ax.set_xlabel('num of atoms in primitive unit cell', size=12)
+            ax.set_ylabel('$\Delta H$, enthalpy per atom (Ry)', size=12)
+            plt.tight_layout()
+            plt.style.use('ggplot')
+            plt.show()

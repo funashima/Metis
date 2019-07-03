@@ -49,10 +49,14 @@ class QEout2Spg(QEFileParseBase):
                     cell_params = [float(x) for x in linebuf.split()]
                     self.cell_parameter.append(cell_params)
                 elif data_type == 'atomic_positions':
+                    #  end of atomic position for general case
                     if linebuf == '':
                         data_region = False
                         continue
-                    if re.search('^end\s+final\s+coordinates', linebuf.lower()):
+                    #  end of atomic position for successful optimized case
+                    if re.search('^end\s+final\s+coordinates',
+                                 linebuf.lower()):
+                        data_region = False
                         continue
                     atom_site_symbol, position = self._parse_apos(linebuf)
                     info = {'site_type': atom_site_symbol,

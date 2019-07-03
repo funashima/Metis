@@ -24,7 +24,8 @@ class GenerateEspressoIn(object):
                  ispg=None,
                  sub_index=None,
                  atom_info=None,
-                 submit_job=False):
+                 submit_job=False,
+                 logfile=None):
         if os.path.isfile(configfile):
             self.configfile = configfile
         else:
@@ -41,7 +42,7 @@ class GenerateEspressoIn(object):
         self.sub_index = sub_index
         self.atom_info = atom_info
         self.qe_inputfile = qe_inputfile
-        self.mother_dir = os.environ['PWD']
+        self.logfile = logfile
         self.main()
 
         if self.eliminate_redundancy:
@@ -54,45 +55,111 @@ class GenerateEspressoIn(object):
             hmname_try = spg_obj.get_hmname(self.ispg)
             if not consistency:
                 hmname_true = spg_obj.get_hmname(prim_cell.ispg)
-                print(' Redundancy: For {0:6s},'.
-                      format(self.wkdir), end='')
                 if hmname_try == hmname_true:
-                    print(' cell is over size', end='')
-                    print(' change from {0}'.format(compound_name), end='')
-                    print(' to {}.'.format(prim_cell.compound_name), end='')
-                else:
-                    print(' you assume the symmetry:{0}, '.
-                          format(hmname_try), end='')
-                    print('but i found higher symmetry:{0}.'.
-                          format(hmname_true), end='')
-                for (i, atom) in enumerate(prim_cell.atom_info):
-                    if atom['element'] != self.atom_info[i]['element']:
-                        print('=== Error(GenerateEspressoIn) ===')
-                        print('logic error for prim_cell.atom_info')
-                        exit()
-                    prim_cell.atom_info[i]['semi_core'] =\
-                        self.atom_info[i]['semi_core']
-
-                if compound_name == prim_cell.compound_name:
-                    print(' This calculation will be skipped.')
-                else:
-                    if os.path.isdir(prim_cell.dirname):
-                        print(' This calculation will be skipped.')
+                    fout = open(self.logfile, 'a')
+                    if compound_name == prim_cell.compound_name:
+                        consistency = True
+                        print(' Acceptation: redundancy check is passed ',
+                              end='')
+                        print('for DIR:{}.'.
+                              format(self.wkdir), end='')
+                        print(' This calculation will be performed.')
+                        fout.write(' Acceptation: redundancy check is passed ')
+                        fout.write('for DIR:{}.'.
+                                   format(self.wkdir))
+                        fout.write(' This calculation will be performed.\n')
+                        fout.close()
                     else:
+                        print(' Redundancy : For {0:6s},'.
+                              format(self.wkdir), end='')
+                        fout.write(' Redundancy : For {0:6s},'.
+                                   format(self.wkdir))
+                        print(' cell is over size', end='')
+                        fout.write(' cell is over size')
                         print(' Alternative calculation ', end='')
                         print('will be performed in {}.'.
                               format(prim_cell.dirname))
-                        os.mkdir(prim_cell.dirname)
-                        qe_inputfile = os.path.basename(self.qe_inputfile)
+                        fout.write(' Alternative calculation ')
+                        fout.write('will be performed in {}.\n'.
+                                   format(prim_cell.dirname))
+                        fout.close()
+                        for (i, atom) in enumerate(prim_cell.atom_info):
+                            if atom['element'] != self.atom_info[i]['element']:
+                                print('=== Error(GenerateEspressoIn) ===')
+                                print('logic error for prim_cell.atom_info')
+                                exit()
+                            prim_cell.atom_info[i]['semi_core'] =\
+                                self.atom_info[i]['semi_core']
                         GenerateEspressoIn(configfile=self.configfile,
                                            ispg=prim_cell.ispg,
                                            qe_inputfile=qe_inputfile,
                                            sub_index=prim_cell.sub_index,
                                            atom_info=prim_cell.atom_info,
-                                           submit_job=submit_job)
-                if os.path.isdir(self.wkdir):
-                    shutil.rmtree(self.wkdir)
-                return
+                                           submit_job=submit_job,
+                                           logfile=self.logfile)
+                else:  # space group is different case
+                    fout = open(self.logfile, 'a')
+                    print(' Redundancy : For {0:6s},'.
+                          format(self.wkdir), end='')
+                    fout.write(' Redundancy : For {0:6s},'.
+                               format(self.wkdir))
+                    print(' you assumed the symmetry:{0}, '.
+                          format(hmname_try), end='')
+                    print('but metis found higher symmetry:{0}.'.
+                          format(hmname_true), end='')
+                    fout.write(' you assumed the symmetry:{0}, '.
+                               format(hmname_try))
+                    fout.write('but metis found higher symmetry:{0}.'.
+                               format(hmname_true))
+                    for (i, atom) in enumerate(prim_cell.atom_info):
+                        if atom['element'] != self.atom_info[i]['element']:
+                            print('=== Error(GenerateEspressoIn) ===')
+                            print('logic error for prim_cell.atom_info')
+                            exit()
+                        prim_cell.atom_info[i]['semi_core'] =\
+                            self.atom_info[i]['semi_core']
+
+                    if compound_name == prim_cell.compound_name:
+                        print(' This calculation will be skipped.')
+                        fout.write(' This calculation will be skipped.\n')
+                        fout.close()
+                    else:
+                        if os.path.isdir(prim_cell.dirname):
+                            print(' This calculation will be skipped.')
+                            fout.write(' This calculation will be skipped.\n')
+                            fout.close()
+                        else:
+                            print(' Alternative calculation ', end='')
+                            print('will be performed in {}.'.
+                                  format(prim_cell.dirname))
+                            fout.write(' Alternative calculation ')
+                            fout.write('will be performed in {}.\n'.
+                                       format(prim_cell.dirname))
+                            fout.close()
+                            os.mkdir(prim_cell.dirname)
+                            qe_inputfile = os.path.basename(self.qe_inputfile)
+                            GenerateEspressoIn(configfile=self.configfile,
+                                               ispg=prim_cell.ispg,
+                                              qe_inputfile=qe_inputfile,
+                                              sub_index=prim_cell.sub_index,
+                                              atom_info=prim_cell.atom_info,
+                                              submit_job=submit_job,
+                                              logfile=self.logfile)
+                if not consistency:
+                    if os.path.isdir(self.wkdir):
+                        shutil.rmtree(self.wkdir)
+                    return
+            else:
+                fout = open(self.logfile, 'a')
+                print(' Acceptation: redundancy check is passed ', end='')
+                print('for DIR:{}.'.
+                      format(self.wkdir), end='')
+                print(' This calculation will be performed.')
+                fout.write(' Acceptation: redundancy check is passed ')
+                fout.write('for DIR:{}.'.
+                           format(self.wkdir))
+                fout.write(' This calculation will be performed.\n')
+                fout.close()
 
         if submit_job:
             self.submit_job()

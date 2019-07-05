@@ -20,13 +20,17 @@ class GenerateMultipleWyckoffPositionList(object):
         return self.generator.wyckoff_freedom[atomic_site[-1]]
 
     def get_wyckoff_list(self, natoms):
-        return GenerateWyckoffPositionsList(min_spg_index=self.ispg,
-                                            natoms=natoms).\
-               wyckoff_list[0]['wyckoff_positions']
+        wyckoff_list = GenerateWyckoffPositionsList(min_spg_index=self.ispg, natoms=natoms).wyckoff_list
+        if len(wyckoff_list) > 0:
+            return GenerateWyckoffPositionsList(min_spg_index=self.ispg,
+                                              natoms=natoms).\
+                       wyckoff_list[0]['wyckoff_positions']
+        else:
+            return [[]]
 
     def get_ex_wyckoff_list(self):
         if len(self.natom_list) == 1:
-            return self.get_wyckoff_list(self.natom_list[0])
+            return  [[x] for x in self.get_wyckoff_list(self.natom_list[0])]
         wyckoff_list = []
         for i in range(1, len(self.natom_list)):
             if i == 1:

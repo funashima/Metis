@@ -63,7 +63,7 @@ class QEout2Spg(QEFileParseBase):
                             'coordinate': position}
                     self.atom_site.append(info)
             else:
-                if re.search('CELL_PARAMETER', linebuf):
+                if re.search('^CELL_PARAMETER', linebuf):
                     data_region = True
                     self.init_params()
                     data_type = 'cell_parameter'

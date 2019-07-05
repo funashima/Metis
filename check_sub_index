@@ -1,0 +1,95 @@
+#!/usr/bin/env python3
+from Metis.SpaceGroup.GenerateMultipleWyckoffPositionList \
+                import GenerateMultipleWyckoffPositionList
+from Metis.SpaceGroup.GenerateSpaceGroup import GenerateSpaceGroup
+import os
+
+
+class ParseConfig(object):
+    def __init__(self, configfile):
+        if os.path.isfile(configfile):
+            self.configfile = configfile
+        else:
+            print('file:{} is not found.'.format(configfile))
+            exit()
+        self.parse()
+
+    def _get_linebuf(self, line):
+        linebuf = line.strip()
+        if '#' in linebuf:
+            linebuf.split('#')[0].strip()
+        return linebuf
+
+    def set_default_value(self):
+        self.min_spg_index = 1
+        self.max_spg_index = 230
+        return self
+
+    def _get_key_and_value(self, linebuf):
+        key, value = [x.strip() for x in linebuf.split('=')[:2]]
+        key = key.lower()
+        return [key, value]
+
+    def _set_instance_values(self, linebuf):
+        key, value = self._get_key_and_value(linebuf)
+        if key == 'min_spg_index':
+            self.min_spg_index = int(value)
+        elif key == 'max_spg_index':
+            self.max_spg_index = int(value)
+        elif key == 'natoms':
+            self.natom_list = [int(x) for x in value.replace(',', ' ').split()]
+        return self
+
+    def parse(self):
+        self.set_default_value()
+        for line in open(self.configfile, 'r'):
+            linebuf = self._get_linebuf(line)
+            if linebuf == '':
+                continue
+            if '=' in linebuf:
+                self._set_instance_values(linebuf)
+
+
+if __name__ == '__main__':
+    config_obj = ParseConfig('space_group.in')
+    min_spg_index = config_obj.min_spg_index
+    max_spg_index = config_obj.max_spg_index
+    total_configulation = 0
+    if min_spg_index != max_spg_index:
+        print('minimum index for space group = {}'.format(min_spg_index))
+        print('maximum index for space group = {}'.format(max_spg_index))
+        print()
+    for spg in range(min_spg_index, max_spg_index+1):
+        wyckoff_list = GenerateMultipleWyckoffPositionList(ispg=spg,
+                                                           natom_list=\
+                                                           config_obj.natom_list).\
+            wyckoff_list
+        if not wyckoff_list or not wyckoff_list[0][0]: 
+            continue
+        print('space group = #{} '.format(spg), end='')
+        space_group_info = GenerateSpaceGroup(spg)
+        hmname = space_group_info.hmname
+        schname = space_group_info.schname
+        bravais_lat = space_group_info.get_bravais_lattice_name()
+        print('({0}, {1})'.format(hmname, schname))
+        print(' lattice:{}'.format(bravais_lat))
+        for (i, wyckoff_pattern) in enumerate(wyckoff_list):
+            total_configulation += 1
+            print(' ({:>3d})'.format(i+1), end='')
+            for (j, total_wypos) in enumerate(wyckoff_pattern):
+                print(' atom{}:'.format(j+1), end='')
+                npos = len(total_wypos)
+                for (k, wyckoff) in enumerate(total_wypos):
+                    print(' {}'.format(wyckoff), end='')
+                    if k < npos - 1:
+                        print(' + ', end='')
+                    else:
+                        print('   ', end='')
+            print()
+        print()
+    print('----------')
+    print('total {} configulation'.format(total_configulation), end='')
+    if total_configulation > 1:
+        print('s')
+    else:
+        print()

@@ -17,10 +17,11 @@ class GenerateWyckoffPositionsList(object):
                  use_progress_bar=False):
         spg = ParseGenerator()
         self.min_spg_index = spg.get_ispg(min_spg_index)
+
         if max_spg_index is None:
             self.max_spg_index = spg.get_ispg(min_spg_index)
         else:
-            self.max_spg_index = spg.get_isog(max_spg_index)
+            self.max_spg_index = spg.get_ispg(max_spg_index)
         self.natoms = natoms
         self.use_tqdm = use_progress_bar
         self.get_wyckoff_list()

@@ -1,0 +1,6 @@
+#
+# sample input
+#
+min_spg_index = 12
+max_spg_index = 230
+natoms = 5, 7

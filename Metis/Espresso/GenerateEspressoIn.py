@@ -140,11 +140,11 @@ class GenerateEspressoIn(object):
                             qe_inputfile = os.path.basename(self.qe_inputfile)
                             GenerateEspressoIn(configfile=self.configfile,
                                                ispg=prim_cell.ispg,
-                                              qe_inputfile=qe_inputfile,
-                                              sub_index=prim_cell.sub_index,
-                                              atom_info=prim_cell.atom_info,
-                                              submit_job=submit_job,
-                                              logfile=self.logfile)
+                                               qe_inputfile=qe_inputfile,
+                                               sub_index=prim_cell.sub_index,
+                                               atom_info=prim_cell.atom_info,
+                                               submit_job=submit_job,
+                                               logfile=self.logfile)
                 if not consistency:
                     if os.path.isdir(self.wkdir):
                         shutil.rmtree(self.wkdir)

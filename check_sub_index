@@ -55,6 +55,10 @@ if __name__ == '__main__':
     min_spg_index = config_obj.min_spg_index
     max_spg_index = config_obj.max_spg_index
     total_configulation = 0
+    if len(config_obj.natom_list) > 1:
+        use_progress_bar = True
+    else:
+        use_progress_bar = False
     if min_spg_index != max_spg_index:
         print('minimum index for space group = {}'.format(min_spg_index))
         print('maximum index for space group = {}'.format(max_spg_index))
@@ -62,7 +66,9 @@ if __name__ == '__main__':
     for spg in range(min_spg_index, max_spg_index+1):
         wyckoff_list = GenerateMultipleWyckoffPositionList(ispg=spg,
                                                            natom_list=\
-                                                           config_obj.natom_list).\
+                                                           config_obj.natom_list,
+                                                           use_progress_bar=
+                                                           use_progress_bar).\
             wyckoff_list
         if not wyckoff_list or not wyckoff_list[0][0]: 
             continue

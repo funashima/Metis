@@ -10,6 +10,11 @@ from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 import re
 
 
+class NotIdentifiedSpaceGroupError(Exception):
+    ''' Exception Class, pymatgen cannot identify space group '''
+    pass
+
+
 class SpaceGroup(object):
     def __init__(self, configfile, symprec=0.01,  angle_trelance=6):
         self.config_obj = ParseConfig(configfile)
@@ -210,12 +215,16 @@ class SpaceGroup(object):
         a, b, c = lattice_length
         alpha, beta, gamma = lattice_angle
         lattice = mg.Lattice.from_parameters(a, b, c, alpha, beta, gamma)
-        self.structure = mg.Structure(lattice, self.atoms, atomic_positions)
-        self.spg = SpacegroupAnalyzer(self.structure,
-                                      symprec=self.symprec,
-                                      angle_tolerance=self.angle_trelance)
-        self.ispg = self.spg.get_space_group_number()
-        self.hmname = self.spg.get_space_group_symbol()
+        try:
+            self.structure = mg.Structure(lattice, self.atoms, atomic_positions)
+            self.spg = SpacegroupAnalyzer(self.structure,
+                                          symprec=self.symprec,
+                                          angle_tolerance=self.angle_trelance)
+            self.ispg = self.spg.get_space_group_number()
+            self.hmname = self.spg.get_space_group_symbol()
+        except TypeError:
+            raise NotIdentifiedSpaceGroupError
+
         return self
 
     def symmetrized(self):

@@ -127,7 +127,7 @@ class QEin2Spg(QEFileParseBase):
             self.il = 'F'
         if self.ibrav in [3, -3, 7, 11]:
             self.il = 'I'
-        if self.ibrav in [9]:
+        if self.ibrav in [9, 13]:
             self.il = 'C'
         return self
 

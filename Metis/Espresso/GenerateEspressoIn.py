@@ -54,17 +54,21 @@ class GenerateEspressoIn(object):
             spg_obj = ParseGenerator()
             hmname_try = spg_obj.get_hmname(self.ispg)
             if not consistency:
-                hmname_true = spg_obj.get_hmname(prim_cell.ispg)
+                if prim_cell.ispg is None:
+                    hmname_true = hmname_try
+                else:
+                    hmname_true = spg_obj.get_hmname(prim_cell.ispg)
                 if hmname_try == hmname_true:
                     fout = open(self.logfile, 'a')
                     if compound_name == prim_cell.compound_name:
                         consistency = True
-                        print(' Acceptation: redundancy check is passed ',
+                        print(' Acceptation: redundancy check was passed ',
                               end='')
                         print('for DIR:{}.'.
                               format(self.wkdir), end='')
                         print(' This calculation will be performed.')
-                        fout.write(' Acceptation: redundancy check is passed ')
+                        fout.write(' Acceptation: ')
+                        fout.write('redundancy check was passed ')
                         fout.write('for DIR:{}.'.
                                    format(self.wkdir))
                         fout.write(' This calculation will be performed.\n')
@@ -136,7 +140,7 @@ class GenerateEspressoIn(object):
                             fout.write('will be performed in {}.\n'.
                                        format(prim_cell.dirname))
                             fout.close()
-                            os.mkdir(prim_cell.dirname)
+                            os.makedirs(prim_cell.dirname)
                             qe_inputfile = os.path.basename(self.qe_inputfile)
                             GenerateEspressoIn(configfile=self.configfile,
                                                ispg=prim_cell.ispg,
@@ -151,11 +155,11 @@ class GenerateEspressoIn(object):
                     return
             else:
                 fout = open(self.logfile, 'a')
-                print(' Acceptation: redundancy check is passed ', end='')
+                print(' Acceptation: redundancy check was passed ', end='')
                 print('for DIR:{}.'.
                       format(self.wkdir), end='')
                 print(' This calculation will be performed.')
-                fout.write(' Acceptation: redundancy check is passed ')
+                fout.write(' Acceptation: redundancy check was passed ')
                 fout.write('for DIR:{}.'.
                            format(self.wkdir))
                 fout.write(' This calculation will be performed.\n')
@@ -199,7 +203,7 @@ class GenerateEspressoIn(object):
         self.wkdir = prefix
         if os.path.isdir(self.wkdir):
             shutil.rmtree(self.wkdir)
-        os.mkdir(self.wkdir)
+        os.makedirs(self.wkdir)
 
         #
         # set pseudo potential dir
@@ -207,7 +211,7 @@ class GenerateEspressoIn(object):
         self.pseudo_dir = os.path.join(self.wkdir, 'pseudo')
         if os.path.isdir(self.pseudo_dir):
             shutil.rmtree(self.pseudo_dir)
-        os.mkdir(self.pseudo_dir)
+        os.makedirs(self.pseudo_dir)
 
         #
         # set output dir
@@ -215,7 +219,7 @@ class GenerateEspressoIn(object):
         output_dir = os.path.join(self.wkdir, 'out')
         if os.path.isdir(output_dir):
             shutil.rmtree(output_dir)
-        os.mkdir(output_dir)
+        os.makedirs(output_dir)
 
         #
         # set temporary dir
@@ -224,7 +228,7 @@ class GenerateEspressoIn(object):
                                    os.path.basename(self.wkdir))
         if os.path.isdir(self.wfcdir):
             shutil.rmtree(self.wfcdir)
-        os.mkdir(self.wfcdir)
+        os.makedirs(self.wfcdir)
 
         #
         # set name about quantum espresso inputfile

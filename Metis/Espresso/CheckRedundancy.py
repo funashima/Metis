@@ -29,3 +29,8 @@ class CheckRedundancy(object):
             subprocess.call('pwd', shell=True)
             exit()
         self.prim_cell = GenerateSmallerUnitCell(inputfile)
+        if not self.prim_cell.identified_spg:
+            #
+            # in this case, spglib cannot identify space group for smaller prim cell
+            #
+            self.prim_cell.dirname = self.prefix

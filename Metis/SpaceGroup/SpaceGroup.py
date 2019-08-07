@@ -42,10 +42,25 @@ class SpaceGroup(object):
         self.spg = SpacegroupAnalyzer(self.structure,
                                       symprec=self.symprec,
                                       angle_tolerance=self.angle_trelance)
-        self.hmname = self.spg.get_space_group_symbol()
-        self.ispg = self.spg.get_space_group_number()
+        try:
+            self.hmname = self.spg.get_space_group_symbol()
+            self.ispg = self.spg.get_space_group_number()
+        except TypeError:
+            print()
+            print(' **** INTERNAL LIBRARY WARNING ****')
+            print('   pymatgen and spglib cannot identify space group for smaller primitive cell.')
+            print('   we expect this bug will be fixed near future. metis uses original primitive cell.')
+            self.spg = None
+            self.hmname = None
+            self.ispg = None
 
     def generate_primitive_lattice(self):
+        #
+        # in this case, spglib cannot identify space group
+        #
+        if self.spg is None:
+            return
+
         my_data = str(self.spg.find_primitive())
         data_region = False
         atomic_positions = []
@@ -216,15 +231,21 @@ class SpaceGroup(object):
         alpha, beta, gamma = lattice_angle
         lattice = mg.Lattice.from_parameters(a, b, c, alpha, beta, gamma)
         try:
-            self.structure = mg.Structure(lattice, self.atoms, atomic_positions)
+            self.structure = mg.Structure(lattice, self.atoms,
+                                          atomic_positions)
             self.spg = SpacegroupAnalyzer(self.structure,
                                           symprec=self.symprec,
                                           angle_tolerance=self.angle_trelance)
             self.ispg = self.spg.get_space_group_number()
             self.hmname = self.spg.get_space_group_symbol()
         except TypeError:
-            raise NotIdentifiedSpaceGroupError
-
+            print()
+            print(' **** INTERNAL LIBRARY WARNING ****')
+            print('   pymatgen and spglib cannot identify space group for smaller primitive cell.')
+            print('   we expect this bug will be fixed near future. metis uses original primitive cell.')
+            self.spg = None
+            self.ispg = None
+            self.hmname = None
         return self
 
     def symmetrized(self):

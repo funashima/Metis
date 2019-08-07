@@ -123,12 +123,20 @@ class QEin2Spg(QEFileParseBase):
     def set_il(self):
         if self.ibrav in [0, 1, 4, 5, 6, 8, 12, -12, 14]:
             self.il = 'P'
-        if self.ibrav == 2:
+            return self
+        if self.ibrav in [2, 10]:
             self.il = 'F'
+            return self
         if self.ibrav in [3, -3, 7, 11]:
             self.il = 'I'
+            return self
         if self.ibrav in [9, 13]:
             self.il = 'C'
+            return self
+        else:
+            print('***** unknown ibrav *****')
+            print('ibrav = {}'.format(self.ibrav))
+            exit()
         return self
 
     def get_lattice_params(self):

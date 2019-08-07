@@ -219,7 +219,6 @@ class CheckEnthalpy(object):
             #
             rcParams['font.family'] = 'sans-serif'
             rcParams['font.sans-serif'] = ['Chicago', 'Futura']
-            print(rcParams['font.sans-serif'])
             sns.set()
             fig, ax = plt.subplots()
             plt.scatter(np.array(natoms_list), np.array(enthalpy_list), marker='o')

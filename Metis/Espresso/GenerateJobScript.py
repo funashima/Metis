@@ -101,7 +101,7 @@ class GenerateJobScript(object):
             fout.write("inputfile = '{}'\n".format(self.inputfile))
             fout.write('if os.path.isdir(wkdir):\n')
             fout.write('{}shutil.rmtree(wkdir)\n'.format(indent))
-            fout.write('os.mkdir(wkdir)\n'.format(indent))
+            fout.write('os.makedirs(wkdir)\n'.format(indent))
             fout.write('\n')
             if self.use_mpi:
                 com1 = 'command = "mpiexec -np {} '.format(self.nnode)

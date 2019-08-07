@@ -34,7 +34,7 @@ class Metis(GetWyckoffList):
         max_spg_index = self.configure.max_spg_index
         search_pattern_lists =\
             self.setup_wyckoff_list(min_spg_index=min_spg_index,
-                                    max_spg_index=max_spg_index,)
+                                    max_spg_index=max_spg_index)
 
         with open(self.main_log, 'a') as fout:
             fout.write('Initially, metis found {} configurations'.

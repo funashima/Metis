@@ -4,7 +4,7 @@
 
 bindir = /home/funashima/QE/qe-6.4.1/bin
 nnode = 1
-#submit_job = True
+submit_job = True
 submit_job = False
 
 #

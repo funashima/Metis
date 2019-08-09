@@ -37,4 +37,4 @@ class QECheckFileType(object):
             if '&system' in linebuf:
                 self.filetype = 'inputfile'
                 return
-        return 
+        return

@@ -6,6 +6,7 @@ from Metis.SpaceGroup.GenerateWyckoffPositionsList \
 # this version is only for 1atoms
 #
 
+
 class IdentifySubIndex(object):
     def __init__(self, natoms=None, ispg=None, target_list=None):
         self.natoms = natoms

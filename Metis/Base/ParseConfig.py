@@ -81,4 +81,3 @@ class ParseConfig(TspaceToolbox):
                         self.lattice_length = self._get_value_array(value)
                     elif key == 'lattice_angle':
                         self.lattice_angle = self._get_value_array(value)
-

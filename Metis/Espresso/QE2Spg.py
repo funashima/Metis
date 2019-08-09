@@ -29,4 +29,3 @@ class QE2Spg(object):
         elif self.filename is None:
             return None
         self.space_group = SpaceGroup(configfile)
-

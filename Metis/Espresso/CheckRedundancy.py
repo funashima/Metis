@@ -31,6 +31,7 @@ class CheckRedundancy(object):
         self.prim_cell = GenerateSmallerUnitCell(inputfile)
         if not self.prim_cell.identified_spg:
             #
-            # in this case, spglib cannot identify space group for smaller prim cell
+            # in this case, spglib cannot identify space group
+            #  for smaller prim cell
             #
             self.prim_cell.dirname = self.prefix

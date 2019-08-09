@@ -48,8 +48,10 @@ class SpaceGroup(object):
         except TypeError:
             print()
             print(' **** INTERNAL LIBRARY WARNING ****')
-            print('   pymatgen and spglib cannot identify space group for smaller primitive cell.')
-            print('   we expect this bug will be fixed near future. metis uses original primitive cell.')
+            print('   pymatgen and spglib cannot identify space group', end='')
+            print(' for smaller primitive cell.')
+            print('   we expect this bug will be fixed near future.', end='')
+            print('metis uses original primitive cell.')
             self.spg = None
             self.hmname = None
             self.ispg = None
@@ -241,8 +243,10 @@ class SpaceGroup(object):
         except TypeError:
             print()
             print(' **** INTERNAL LIBRARY WARNING ****')
-            print('   pymatgen and spglib cannot identify space group for smaller primitive cell.')
-            print('   we expect this bug will be fixed near future. metis uses original primitive cell.')
+            print('   pymatgen and spglib cannot identify space group', end='')
+            print(' for smaller primitive cell.')
+            print('   we expect this bug will be fixed near future.', end='')
+            print(' metis uses original primitive cell.')
             self.spg = None
             self.ispg = None
             self.hmname = None

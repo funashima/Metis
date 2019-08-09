@@ -161,14 +161,15 @@ class CheckEnthalpy(object):
                     if space_group in self.spg_dict:
                         check = []
                         for earray in self.spg_dict[space_group]:
-                            h, _  = earray
+                            h, _ = earray
                             if abs(h - enthalpy) < eps:
                                 check.append(True)
                             else:
                                 check.append(False)
 
                         if not any(check):
-                            self.spg_dict[space_group].append([enthalpy, natoms])
+                            self.spg_dict[space_group].\
+                                    append([enthalpy, natoms])
                     else:
                         self.spg_dict[space_group] = [[enthalpy, natoms]]
             else:
@@ -221,7 +222,9 @@ class CheckEnthalpy(object):
             rcParams['font.sans-serif'] = ['Chicago', 'Futura']
             sns.set()
             fig, ax = plt.subplots()
-            plt.scatter(np.array(natoms_list), np.array(enthalpy_list), marker='o')
+            plt.scatter(np.array(natoms_list),
+                        np.array(enthalpy_list),
+                        marker='o')
             for i in range(configs):
                 ax.annotate(spg_list[i], xy=(natoms_list[i], enthalpy_list[i]))
             ax.set_xlabel('num of atoms in primitive unit cell', size=12)

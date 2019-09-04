@@ -177,6 +177,8 @@ class CheckEnthalpy(object):
                 enthalpy = None
 
             print(' DIR:{0:10s} '.format(dirname), end='')
+            if in_spg is None:
+                in_spg = 'n/a'
             print('spg(in):{:>6s} -> '.format(in_spg), end='')
             print('spg(out):{:>6s} ;  '.format(space_group), end='')
             if enthalpy is not None:

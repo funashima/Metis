@@ -11,6 +11,7 @@ class ParseConfigStructure(object):
             print('file:{} is not found.'.format(inputfile))
             exit()
         self.main()
+        self.get_chemical_composit_ratio()
 
     def set_default_value(self):
         self.min_spg_index = 8
@@ -25,6 +26,11 @@ class ParseConfigStructure(object):
         self.nnode = 1
         self.submit_job = False
         self.eliminate_redundancy = True
+
+    def get_chemical_composit_ratio(self):
+        self.chem_comp_ratio = ''
+        for info in self.atom_info:
+            self.chem_comp_ratio += info['element'] + str(info['natoms'])
 
     def main(self):
         atom_info_region = False

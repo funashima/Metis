@@ -12,8 +12,11 @@ class Metis(GetWyckoffList):
         self.configfile = configfile
         self.nnode = self.configure.nnode
         self.submit_job = self.configure.submit_job
-        self.main_log = 'metis.log'
+        self.get_main_log()
         self.main()
+
+    def get_main_log(self):
+        self.main_log = 'metis_' + self.configure.chem_comp_ratio + '.log'
 
     def generate_crystal(self, pattern):
         ispg = pattern['ispg']

@@ -42,8 +42,8 @@ class GenerateWyckoffPositionsList(object):
             #
             # debug on 3 July 2019
             #
-            if 143 <= ispg <= 167:
-                continue
+            #if 143 <= ispg <= 167:
+            #    continue
             spg_obj.set_space_group(ispg)
             pos = []
             for wyckoff_patterns in spg_obj.set_atomic_position(self.natoms):

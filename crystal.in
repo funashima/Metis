@@ -38,7 +38,7 @@ pp_type = USPP
 # parameter for Quantum Espresso
 #
 degauss = 0.02
-electron_maxstep = 1000
+electron_maxstep = 150
 etot_conv_thr = 1.0e-5
 forc_conv_thr = 1.0e-4
 conv_thr = 1.0e-9
@@ -52,8 +52,8 @@ max_coa_ratio = 2.0
 apf = 1.5
 #apf = 0.52
 #
-ecutwfc = 200.0
-ecutrho = 2400.0
+ecutwfc = 100.0
+ecutrho = 1200.0
 #use_auto_cutoff = True
 delta_apf = 0.99
 thr_bond_ratio = 0.5

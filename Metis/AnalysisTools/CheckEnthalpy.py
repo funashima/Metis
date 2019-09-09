@@ -207,7 +207,7 @@ class CheckEnthalpy(object):
             for space_group, earray in self.spg_dict.items():
                 print(' space_group:{:8s}  '.format(space_group), end='')
                 print('delta H = ', end='')
-                for enthalpy, natoms in earray:
+                for enthalpy, natoms in sorted(earray):
                     spg_list.append(space_group)
                     enthalpy_list.append(enthalpy - self.emin)
                     natoms_list.append(int(natoms))
@@ -223,7 +223,7 @@ class CheckEnthalpy(object):
             rcParams['font.family'] = 'sans-serif'
             rcParams['font.sans-serif'] = ['Chicago', 'Futura']
             sns.set()
-            fig, ax = plt.subplots()
+            fig, ax = plt.subplots(figsize=(10, 10))
             plt.scatter(np.array(natoms_list),
                         np.array(enthalpy_list),
                         marker='o')
@@ -231,6 +231,8 @@ class CheckEnthalpy(object):
                 ax.annotate(spg_list[i], xy=(natoms_list[i], enthalpy_list[i]))
             ax.set_xlabel('num of atoms in primitive unit cell', size=12)
             ax.set_ylabel('$\Delta H$, enthalpy per atom (Ry)', size=12)
+            ax.set_xticks([0, 1, 2, 3, 4])
             plt.tight_layout()
             plt.style.use('ggplot')
+            plt.savefig('graph.png')
             plt.show()

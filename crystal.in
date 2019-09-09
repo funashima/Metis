@@ -75,5 +75,5 @@ max_spg_index = 230
 #max_spg_index = 227
 
 begin_atom_info:
-    element = Si ;  natoms = 4 ; semi_core = 
+    element = Si ;  natoms = 3 ; semi_core = 
 end_atom_info:

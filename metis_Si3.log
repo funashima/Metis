@@ -1,0 +1,1143 @@
+==== * ==== * ==== * ==== Welcome to Metis ==== * ==== * ==== * ====
+ crystal structure search system
+ based on knowledge about  space group and crystal symmetry
+
+           Date:2019/09/05 10:15:47
+       Hostname:ts3d-1
+
+minimum index of space group = 10
+maximum index of space group = 230
+
+Initially, metis found 1118 configurations crystal structure.
+
+ metis generates crystal structure and  check the redundancy.
+
+
+ Redundancy : For Si3_10_1, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_2, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_3, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_4, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_5, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_6, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_7, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_8, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_9, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_10, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_11, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_12, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_13, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_14, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_15, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_16, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_17, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_18, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_19, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_20, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_21, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_22, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_23, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_24, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_25, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_26, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_27, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_28, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_29, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_30, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_31, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_32, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_33, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_34, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_35, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_36, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_37, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_38, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_39, you assumed the symmetry:P2/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_10_40, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_41, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_42, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_43, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_44, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_45, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_46, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_47, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_48, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_49, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_50, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_51, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_52, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_53, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_54, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_55, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_56, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_57, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_58, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_59, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_60, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_61, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_62, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_63, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_64, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_65, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_66, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_67, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_68, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_69, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_70, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_71, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_72, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_73, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_74, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_75, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_76, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_77, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_78, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_79, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_80, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_81, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_82, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_83, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_84, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_85, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_86, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_10_87, you assumed the symmetry:P2/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_10_88, you assumed the symmetry:P2/m, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_10_89. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_90. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_91. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_92. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_93. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_94. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_95. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_96. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_97. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_98. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_99. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_100. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_101. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_102. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_103. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_10_104. This calculation will be performed.
+ Redundancy : For Si3_12_1, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_2, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_3, you assumed the symmetry:C2/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_12_4, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_5, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_6, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_7, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_8, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_9, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_10, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_11, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_12, you assumed the symmetry:C2/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_12_13, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. Alternative calculation will be performed in Si1_65_1.
+ Acceptation: redundancy check was passed for DIR:Si1_65_1. This calculation will be performed.
+ Redundancy : For Si3_12_14, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_15, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_16, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_17, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_18, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_19, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_20, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_21, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_22, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_23, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_12_24, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_1, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_2, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_3, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_4, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_5, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_6, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_7, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_8, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_9, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_10, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_11, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_12, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_13, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_14, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_15, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_16, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_17, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_18, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_19, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_20, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_21, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_22, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_23, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_24, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_25, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_26, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_27, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_28, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_29, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_30, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_31, you assumed the symmetry:P222, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_16_32, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_33, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_34, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_35, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_36, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_37, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_38, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_39, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_40, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_41, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_42, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_43, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_44, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_45, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_46, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_47, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_48, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_49, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_50, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_51, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_52, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_53, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_54, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_55, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_56, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_57, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_58, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_59, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_60, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_61, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_62, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_63, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_64, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_65, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_66, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_67, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_68, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_69, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_70, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_71, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_72, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_73, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_74, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_75, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_76, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_77, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_78, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_79, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_80, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_81, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_82, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_83, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_84, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_85, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_86, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_87, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_88, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_89, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_90, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_91, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_92, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_93, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_94, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_95, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_96, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_97, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_98, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_99, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_100, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_101, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_102, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_103, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_104, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_105, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_106, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_107, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_108, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_109, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_110, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_111, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_112, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_113, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_114, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_115, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_116, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_117, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_118, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_119, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_120, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_121, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_122, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_123, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_124, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_125, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_126, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_127, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_128, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_129, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_130, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_131, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_132, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_133, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_134, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_135, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_136, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_137, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_138, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_139, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_140, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_141, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_142, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_143, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_144, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_145, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_146, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_147, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_148, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_149, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_150, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_151, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_16_152, you assumed the symmetry:P222, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_1, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_2, you assumed the symmetry:C222, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_21_3, you assumed the symmetry:C222, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_21_4, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_5, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_6, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_7, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_8, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_9, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_10, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_11, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_12, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_13, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_14, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_15, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_16, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_17, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_18, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_19, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_20, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_21, you assumed the symmetry:C222, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_21_22, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_23, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_24, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_25, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_26, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_27, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_21_28, you assumed the symmetry:C222, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_21_29. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_21_30. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_21_31. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_21_32. This calculation will be performed.
+ Redundancy : For Si3_22_1, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Redundancy : For Si3_22_2, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Redundancy : For Si3_22_3, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Redundancy : For Si3_22_4, you assumed the symmetry:F222, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_22_5, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Redundancy : For Si3_22_6, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_22_7. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_22_8. This calculation will be performed.
+ Redundancy : For Si3_22_9, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Redundancy : For Si3_22_10, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_22_11. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_22_12. This calculation will be performed.
+ Redundancy : For Si3_22_13, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Redundancy : For Si3_22_14, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_22_15. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_22_16. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_22_17. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_22_18. This calculation will be performed.
+ Redundancy : For Si3_22_19, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Redundancy : For Si3_22_20, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_22_21. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_22_22. This calculation will be performed.
+ Redundancy : For Si3_22_23, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Redundancy : For Si3_22_24, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_22_25. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_22_26. This calculation will be performed.
+ Redundancy : For Si3_22_27, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Redundancy : For Si3_22_28, you assumed the symmetry:F222, but metis found higher symmetry:Fmmm. This calculation will be skipped.
+ Redundancy : For Si3_23_1, you assumed the symmetry:I222, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_23_2, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_3, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_4, you assumed the symmetry:I222, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_23_5, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_6, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_7, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_8, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_9, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_10, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_11, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_12, you assumed the symmetry:I222, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_23_13, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_14, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_15, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_16, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_17, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_18, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_19, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_20, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_21, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_22, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_23, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_24, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_25, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_26, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_27, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Redundancy : For Si3_23_28, you assumed the symmetry:I222, but metis found higher symmetry:Immm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_25_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_4. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_5. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_6. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_7. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_8. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_9. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_10. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_11. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_12. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_13. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_14. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_15. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_16. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_17. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_18. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_19. This calculation will be performed.
+ Redundancy : For Si3_25_20, you assumed the symmetry:Pmm2, but metis found higher symmetry:Pmmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_25_21. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_22. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_23. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_24. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_25. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_26. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_27. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_28. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_29. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_30. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_31. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_32. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_33. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_34. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_35. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_25_36. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_35_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_35_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_35_3. This calculation will be performed.
+ Redundancy : For Si3_35_4, you assumed the symmetry:Cmm2, but metis found higher symmetry:P4mm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_35_5. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_35_6. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_35_7. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_35_8. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_35_9. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_35_10. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_38_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_38_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_38_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_38_4. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_38_5. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_38_6. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_38_7. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_38_8. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_38_9. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_38_10. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_42_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_42_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_42_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_42_4. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_44_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_44_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_44_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_44_4. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_44_5. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_44_6. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_44_7. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_44_8. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_4. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_5. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_6. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_7. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_8. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_9. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_10. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_11. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_12. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_13. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_14. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_15. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_16. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_17. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_18. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_19. This calculation will be performed.
+ Redundancy : For Si3_47_20, you assumed the symmetry:Pmmm, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_47_21. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_22. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_23. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_24. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_25. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_26. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_27. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_28. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_29. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_30. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_31. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_32. This calculation will be performed.
+ Redundancy : For Si3_47_33, you assumed the symmetry:Pmmm, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_47_34. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_35. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_36. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_37. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_38. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_39. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_40. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_41. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_42. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_43. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_44. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_45. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_46. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_47. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_48. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_49. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_50. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_51. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_52. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_53. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_54. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_55. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_56. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_57. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_58. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_59. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_60. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_61. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_62. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_63. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_64. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_65. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_66. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_67. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_68. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_69. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_70. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_71. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_72. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_73. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_74. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_75. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_76. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_77. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_78. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_79. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_80. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_81. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_82. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_83. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_84. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_85. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_86. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_87. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_88. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_89. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_90. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_91. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_92. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_93. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_94. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_95. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_96. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_97. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_98. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_99. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_100. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_101. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_102. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_103. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_104. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_105. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_106. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_107. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_108. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_109. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_110. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_111. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_112. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_113. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_114. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_115. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_116. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_117. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_118. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_119. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_120. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_121. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_122. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_123. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_124. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_125. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_126. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_127. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_128. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_129. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_130. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_131. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_132. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_133. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_134. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_135. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_136. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_137. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_138. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_139. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_140. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_141. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_142. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_143. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_144. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_145. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_146. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_147. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_148. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_149. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_150. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_151. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_47_152. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_2. This calculation will be performed.
+ Redundancy : For Si3_65_3, you assumed the symmetry:Cmmm, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_65_4. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_5. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_6. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_7. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_8. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_9. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_10. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_11. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_12. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_13. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_14. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_15. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_16. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_17. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_18. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_19. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_20. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_21. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_22. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_23. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_24. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_25. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_26. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_27. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_28. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_29. This calculation will be performed.
+ Redundancy : For Si3_65_30, you assumed the symmetry:Cmmm, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_65_31. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_32. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_33. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_34. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_35. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_65_36. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_4. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_5. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_6. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_7. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_8. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_9. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_10. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_11. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_12. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_13. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_69_14. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_4. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_5. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_6. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_7. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_8. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_9. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_10. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_11. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_12. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_13. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_14. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_15. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_16. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_17. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_18. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_19. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_20. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_21. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_22. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_23. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_24. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_25. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_26. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_27. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_71_28. This calculation will be performed.
+ Redundancy : For Si3_75_1, you assumed the symmetry:P4, but metis found higher symmetry:P4mm. This calculation will be skipped.
+ Redundancy : For Si3_75_2, you assumed the symmetry:P4, but metis found higher symmetry:P4mm. This calculation will be skipped.
+ Redundancy : For Si3_75_3, you assumed the symmetry:P4, but metis found higher symmetry:P4mm. This calculation will be skipped.
+ Redundancy : For Si3_75_4, you assumed the symmetry:P4, but metis found higher symmetry:P4mm. This calculation will be skipped.
+ Redundancy : For Si3_75_5, you assumed the symmetry:P4, but metis found higher symmetry:P4mm. This calculation will be skipped.
+ Redundancy : For Si3_75_6, you assumed the symmetry:P4, but metis found higher symmetry:P4mm. This calculation will be skipped.
+ Redundancy : For Si3_79_1, you assumed the symmetry:I4, but metis found higher symmetry:I4mm. This calculation will be skipped.
+ Redundancy : For Si3_79_2, you assumed the symmetry:I4, but metis found higher symmetry:I4mm. This calculation will be skipped.
+ Redundancy : For Si3_81_1, you assumed the symmetry:P-4, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_81_2, you assumed the symmetry:P-4, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_81_3, you assumed the symmetry:P-4, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_81_4, you assumed the symmetry:P-4, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_81_5, you assumed the symmetry:P-4, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_81_6, you assumed the symmetry:P-4, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_81_7, you assumed the symmetry:P-4, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_81_8, you assumed the symmetry:P-4, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_81_9, you assumed the symmetry:P-4, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_81_10, you assumed the symmetry:P-4, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_81_11, you assumed the symmetry:P-4, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_81_12, you assumed the symmetry:P-4, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_81_13, you assumed the symmetry:P-4, but metis found higher symmetry:P-4m2. This calculation will be skipped.
+ Redundancy : For Si3_81_14, you assumed the symmetry:P-4, but metis found higher symmetry:P-4m2. This calculation will be skipped.
+ Redundancy : For Si3_81_15, you assumed the symmetry:P-4, but metis found higher symmetry:P-4m2. This calculation will be skipped.
+ Redundancy : For Si3_81_16, you assumed the symmetry:P-4, but metis found higher symmetry:P-4m2. This calculation will be skipped.
+ Redundancy : For Si3_82_1, you assumed the symmetry:I-4, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_82_2, you assumed the symmetry:I-4, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_82_3, you assumed the symmetry:I-4, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_82_4, you assumed the symmetry:I-4, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_82_5, you assumed the symmetry:I-4, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_82_6, you assumed the symmetry:I-4, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_82_7, you assumed the symmetry:I-4, but metis found higher symmetry:I-4m2. This calculation will be skipped.
+ Redundancy : For Si3_82_8, you assumed the symmetry:I-4, but metis found higher symmetry:I-4m2. This calculation will be skipped.
+ Redundancy : For Si3_82_9, you assumed the symmetry:I-4, but metis found higher symmetry:I-4m2. This calculation will be skipped.
+ Redundancy : For Si3_82_10, you assumed the symmetry:I-4, but metis found higher symmetry:I-4m2. This calculation will be skipped.
+ Redundancy : For Si3_82_11, you assumed the symmetry:I-4, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_82_12, you assumed the symmetry:I-4, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_1, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_2, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_3, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_4, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_5, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_6, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_7, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_8, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_9, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_10, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_11, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_12, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_13, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_14, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_15, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_16, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_17, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_18, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_19, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_83_20, you assumed the symmetry:P4/m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_87_1, you assumed the symmetry:I4/m, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_87_2, you assumed the symmetry:I4/m, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_87_3, you assumed the symmetry:I4/m, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_87_4, you assumed the symmetry:I4/m, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_87_5, you assumed the symmetry:I4/m, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_87_6, you assumed the symmetry:I4/m, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_1, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_2, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_3, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_4, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_5, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_6, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_7, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_8, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_9, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_10, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_11, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_12, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_13, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_14, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_15, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_16, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_17, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_18, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_19, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_89_20, you assumed the symmetry:P422, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_97_1, you assumed the symmetry:I422, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_97_2, you assumed the symmetry:I422, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_97_3, you assumed the symmetry:I422, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_97_4, you assumed the symmetry:I422, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_97_5, you assumed the symmetry:I422, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_97_6, you assumed the symmetry:I422, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_99_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_99_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_99_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_99_4. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_99_5. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_99_6. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_107_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_107_2. This calculation will be performed.
+ Redundancy : For Si3_111_1, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_2, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_3, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_4, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_5, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_6, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_7, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_8, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_9, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_10, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_11, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_12, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_13, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_14, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_15, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_16, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_17, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_18, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_19, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_111_20, you assumed the symmetry:P-42m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_115_1, you assumed the symmetry:P-4m2, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_115_2, you assumed the symmetry:P-4m2, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_115_3, you assumed the symmetry:P-4m2, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_115_4, you assumed the symmetry:P-4m2, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_115_5, you assumed the symmetry:P-4m2, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_115_6, you assumed the symmetry:P-4m2, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_115_7, you assumed the symmetry:P-4m2, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_115_8, you assumed the symmetry:P-4m2, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_115_9, you assumed the symmetry:P-4m2, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_115_10, you assumed the symmetry:P-4m2, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_115_11, you assumed the symmetry:P-4m2, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_115_12, you assumed the symmetry:P-4m2, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_115_13. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_115_14. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_115_15. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_115_16. This calculation will be performed.
+ Redundancy : For Si3_119_1, you assumed the symmetry:I-4m2, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_119_2, you assumed the symmetry:I-4m2, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_119_3, you assumed the symmetry:I-4m2, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_119_4, you assumed the symmetry:I-4m2, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_119_5, you assumed the symmetry:I-4m2, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_119_6, you assumed the symmetry:I-4m2, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_119_7. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_119_8. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_119_9. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_119_10. This calculation will be performed.
+ Redundancy : For Si3_119_11, you assumed the symmetry:I-4m2, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_119_12, you assumed the symmetry:I-4m2, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_121_1, you assumed the symmetry:I-42m, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_121_2, you assumed the symmetry:I-42m, but metis found higher symmetry:Im-3m. This calculation will be skipped.
+ Redundancy : For Si3_121_3, you assumed the symmetry:I-42m, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_121_4, you assumed the symmetry:I-42m, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_121_5, you assumed the symmetry:I-42m, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_121_6, you assumed the symmetry:I-42m, but metis found higher symmetry:I4/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_123_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_4. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_5. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_6. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_7. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_8. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_9. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_10. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_11. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_12. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_13. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_14. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_15. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_16. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_17. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_18. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_19. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_123_20. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_139_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_139_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_139_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_139_4. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_139_5. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_139_6. This calculation will be performed.
+ Redundancy : For Si3_143_1, you assumed the symmetry:P3, but metis found higher symmetry:Cm. This calculation will be skipped.
+ Redundancy : For Si3_143_2, you assumed the symmetry:P3, but metis found higher symmetry:Cm. This calculation will be skipped.
+ Redundancy : For Si3_143_3, you assumed the symmetry:P3, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_143_4, you assumed the symmetry:P3, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_143_5, you assumed the symmetry:P3, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_143_6, you assumed the symmetry:P3, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_143_7, you assumed the symmetry:P3, but metis found higher symmetry:Cm. This calculation will be skipped.
+ Redundancy : For Si3_143_8, you assumed the symmetry:P3, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_143_9, you assumed the symmetry:P3, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_143_10, you assumed the symmetry:P3, but metis found higher symmetry:P4mm. This calculation will be skipped.
+ Redundancy : For Si3_143_11, you assumed the symmetry:P3, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_144_1, you assumed the symmetry:P3_1, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_145_1, you assumed the symmetry:P3_2, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_146_1, you assumed the symmetry:R3, but metis found higher symmetry:R3m. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_146_2. This calculation will be performed.
+ Redundancy : For Si3_147_1, you assumed the symmetry:P-3, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_147_2, you assumed the symmetry:P-3, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_147_3, you assumed the symmetry:P-3, but metis found higher symmetry:P-1. This calculation will be skipped.
+ Redundancy : For Si3_147_4, you assumed the symmetry:P-3, but metis found higher symmetry:P-1. This calculation will be skipped.
+ Redundancy : For Si3_147_5, you assumed the symmetry:P-3, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_147_6, you assumed the symmetry:P-3, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_148_1, you assumed the symmetry:R-3, but metis found higher symmetry:R-3m. This calculation will be skipped.
+ Redundancy : For Si3_148_2, you assumed the symmetry:R-3, but metis found higher symmetry:R-3m. This calculation will be skipped.
+ Redundancy : For Si3_148_3, you assumed the symmetry:R-3, but metis found higher symmetry:R-3m. This calculation will be skipped.
+ Redundancy : For Si3_148_4, you assumed the symmetry:R-3, but metis found higher symmetry:R-3m. This calculation will be skipped.
+ Redundancy : For Si3_149_1, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_2, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_3, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_4, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_5, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_6, you assumed the symmetry:P312, but metis found higher symmetry:C2/m. Alternative calculation will be performed in Si1_12_1.
+ Redundancy : For Si1_12_1, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_149_7, you assumed the symmetry:P312, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_149_8, you assumed the symmetry:P312, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_149_9, you assumed the symmetry:P312, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_149_10, you assumed the symmetry:P312, but metis found higher symmetry:Amm2. This calculation will be skipped.
+ Redundancy : For Si3_149_11, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_12, you assumed the symmetry:P312, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_149_13, you assumed the symmetry:P312, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_149_14, you assumed the symmetry:P312, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_149_15, you assumed the symmetry:P312, but metis found higher symmetry:Fmmm. Alternative calculation will be performed in Si1_69_1.
+ Acceptation: redundancy check was passed for DIR:Si1_69_1. This calculation will be performed.
+ Redundancy : For Si3_149_16, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_17, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_18, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_19, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_20, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_21, you assumed the symmetry:P312, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_149_22, you assumed the symmetry:P312, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_149_23, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_24, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_25, you assumed the symmetry:P312, but metis found higher symmetry:Amm2. This calculation will be skipped.
+ Redundancy : For Si3_149_26, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_27, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_28, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_29, you assumed the symmetry:P312, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_149_30, you assumed the symmetry:P312, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_149_31, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_32, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_33, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_34, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_35, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_36, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_37, you assumed the symmetry:P312, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_149_38, you assumed the symmetry:P312, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_149_39, you assumed the symmetry:P312, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_149_40, you assumed the symmetry:P312, but metis found higher symmetry:Amm2. This calculation will be skipped.
+ Redundancy : For Si3_150_1, you assumed the symmetry:P321, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_150_2, you assumed the symmetry:P321, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_150_3, you assumed the symmetry:P321, but metis found higher symmetry:P-1. This calculation will be skipped.
+ Redundancy : For Si3_150_4, you assumed the symmetry:P321, but metis found higher symmetry:P-1. This calculation will be skipped.
+ Redundancy : For Si3_150_5, you assumed the symmetry:P321, but metis found higher symmetry:Cm. This calculation will be skipped.
+ Redundancy : For Si3_150_6, you assumed the symmetry:P321, but metis found higher symmetry:Cm. This calculation will be skipped.
+ Redundancy : For Si3_151_1, you assumed the symmetry:P3_112, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_151_2, you assumed the symmetry:P3_112, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_152_1, you assumed the symmetry:P3_121, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_152_2, you assumed the symmetry:P3_121, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_153_1, you assumed the symmetry:P3_212, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_153_2, you assumed the symmetry:P3_212, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_154_1, you assumed the symmetry:P3_221, but metis found higher symmetry:Amm2. This calculation will be skipped.
+ Redundancy : For Si3_154_2, you assumed the symmetry:P3_221, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_155_1, you assumed the symmetry:R32, but metis found higher symmetry:R-3m. This calculation will be skipped.
+ Redundancy : For Si3_155_2, you assumed the symmetry:R32, but metis found higher symmetry:R-3m. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_155_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_155_4. This calculation will be performed.
+ Redundancy : For Si3_156_1, you assumed the symmetry:P3m1, but metis found higher symmetry:Cm. This calculation will be skipped.
+ Redundancy : For Si3_156_2, you assumed the symmetry:P3m1, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_156_3, you assumed the symmetry:P3m1, but metis found higher symmetry:P1. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_156_4. This calculation will be performed.
+ Redundancy : For Si3_156_5, you assumed the symmetry:P3m1, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_156_6, you assumed the symmetry:P3m1, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_156_7, you assumed the symmetry:P3m1, but metis found higher symmetry:Cm. This calculation will be skipped.
+ Redundancy : For Si3_156_8, you assumed the symmetry:P3m1, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_156_9, you assumed the symmetry:P3m1, but metis found higher symmetry:P1. This calculation will be skipped.
+ Redundancy : For Si3_156_10, you assumed the symmetry:P3m1, but metis found higher symmetry:Cm. This calculation will be skipped.
+ Redundancy : For Si3_156_11, you assumed the symmetry:P3m1, but metis found higher symmetry:C2. This calculation will be skipped.
+ Redundancy : For Si3_157_1, you assumed the symmetry:P31m, but metis found higher symmetry:Cm. This calculation will be skipped.
+ Redundancy : For Si3_157_2, you assumed the symmetry:P31m, but metis found higher symmetry:Cm. This calculation will be skipped.
+ Redundancy : For Si3_157_3, you assumed the symmetry:P31m, but metis found higher symmetry:Cm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_160_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_160_2. This calculation will be performed.
+ Redundancy : For Si3_162_1, you assumed the symmetry:P-31m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_162_2, you assumed the symmetry:P-31m, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_162_3, you assumed the symmetry:P-31m, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_162_4, you assumed the symmetry:P-31m, but metis found higher symmetry:C2/m. Alternative calculation will be performed in Si1_12_3.
+ Redundancy : For Si1_12_3, you assumed the symmetry:C2/m, but metis found higher symmetry:Cmmm. This calculation will be skipped.
+ Redundancy : For Si3_162_5, you assumed the symmetry:P-31m, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_162_6, you assumed the symmetry:P-31m, but metis found higher symmetry:P4/mmm. This calculation will be skipped.
+ Redundancy : For Si3_162_7, you assumed the symmetry:P-31m, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_162_8, you assumed the symmetry:P-31m, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_164_1, you assumed the symmetry:P-3m1, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_164_2, you assumed the symmetry:P-3m1, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_164_3, you assumed the symmetry:P-3m1, but metis found higher symmetry:P-1. This calculation will be skipped.
+ Redundancy : For Si3_164_4, you assumed the symmetry:P-3m1, but metis found higher symmetry:P-1. This calculation will be skipped.
+ Redundancy : For Si3_164_5, you assumed the symmetry:P-3m1, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Redundancy : For Si3_164_6, you assumed the symmetry:P-3m1, but metis found higher symmetry:C2/m. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_166_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_166_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_166_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_166_4. This calculation will be performed.
+ Redundancy : For Si3_168_1, you assumed the symmetry:P6, but metis found higher symmetry:P6mm. This calculation will be skipped.
+ Redundancy : For Si3_168_2, you assumed the symmetry:P6, but metis found higher symmetry:P6mm. This calculation will be skipped.
+ Redundancy : For Si3_168_3, you assumed the symmetry:P6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_171_1, you assumed the symmetry:P6_2, but metis found higher symmetry:P6/mmm. Alternative calculation will be performed in Si1_191_2.
+ Acceptation: redundancy check was passed for DIR:Si1_191_2. This calculation will be performed.
+ Redundancy : For Si3_171_2, you assumed the symmetry:P6_2, but metis found higher symmetry:P6_222. This calculation will be skipped.
+ Redundancy : For Si3_172_1, you assumed the symmetry:P6_4, but metis found higher symmetry:P6/mmm. Alternative calculation will be performed in Si1_191_1.
+ Acceptation: redundancy check was passed for DIR:Si1_191_1. This calculation will be performed.
+ Redundancy : For Si3_172_2, you assumed the symmetry:P6_4, but metis found higher symmetry:P6_422. This calculation will be skipped.
+ Redundancy : For Si3_174_1, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_2, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_3, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_4, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_5, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_6, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_174_7, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_174_8, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_174_9, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_174_10, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_11, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_12, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_174_13, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_174_14, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_174_15, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_174_16, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_17, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_18, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_19, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_20, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_21, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_174_22, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_174_23, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_24, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_25, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_26, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_27, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_28, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_29, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_174_30, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_174_31, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_32, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_33, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_34, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_35, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_36, you assumed the symmetry:P-6, but metis found higher symmetry:P-6m2. This calculation will be skipped.
+ Redundancy : For Si3_174_37, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_174_38, you assumed the symmetry:P-6, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_174_39. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_174_40. This calculation will be performed.
+ Redundancy : For Si3_175_1, you assumed the symmetry:P6/m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_175_2, you assumed the symmetry:P6/m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_175_3, you assumed the symmetry:P6/m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_175_4, you assumed the symmetry:P6/m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_175_5, you assumed the symmetry:P6/m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_175_6, you assumed the symmetry:P6/m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_175_7, you assumed the symmetry:P6/m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_175_8, you assumed the symmetry:P6/m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_177_1, you assumed the symmetry:P622, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_177_2, you assumed the symmetry:P622, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_177_3, you assumed the symmetry:P622, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_177_4, you assumed the symmetry:P622, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_177_5, you assumed the symmetry:P622, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_177_6, you assumed the symmetry:P622, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_177_7, you assumed the symmetry:P622, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_177_8, you assumed the symmetry:P622, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_180_1, you assumed the symmetry:P6_222, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_180_2, you assumed the symmetry:P6_222, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_180_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_180_4. This calculation will be performed.
+ Redundancy : For Si3_181_1, you assumed the symmetry:P6_422, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_181_2, you assumed the symmetry:P6_422, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_181_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_181_4. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_183_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_183_2. This calculation will be performed.
+ Redundancy : For Si3_183_3, you assumed the symmetry:P6mm, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_187_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_3. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_4. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_5. This calculation will be performed.
+ Redundancy : For Si3_187_6, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_187_7, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_187_8, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_187_9, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_187_10. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_11. This calculation will be performed.
+ Redundancy : For Si3_187_12, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_187_13, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_187_14, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_187_15, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_187_16. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_17. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_18. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_19. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_20. This calculation will be performed.
+ Redundancy : For Si3_187_21, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_187_22, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_187_23. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_24. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_25. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_26. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_27. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_28. This calculation will be performed.
+ Redundancy : For Si3_187_29, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_187_30, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_187_31. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_32. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_33. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_34. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_35. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_36. This calculation will be performed.
+ Redundancy : For Si3_187_37, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_187_38, you assumed the symmetry:P-6m2, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_187_39. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_187_40. This calculation will be performed.
+ Redundancy : For Si3_189_1, you assumed the symmetry:P-62m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_189_2, you assumed the symmetry:P-62m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_189_3, you assumed the symmetry:P-62m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_189_4, you assumed the symmetry:P-62m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_189_5, you assumed the symmetry:P-62m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Redundancy : For Si3_189_6, you assumed the symmetry:P-62m, but metis found higher symmetry:P6/mmm. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_189_7. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_189_8. This calculation will be performed.
+ Redundancy : For Si3_191_1, cell is over size Alternative calculation will be performed in Si1_191_1.
+ Acceptation: redundancy check was passed for DIR:Si1_191_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_191_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_191_3. This calculation will be performed.
+ Redundancy : For Si3_191_4, cell is over size Alternative calculation will be performed in Si1_191_2.
+ Acceptation: redundancy check was passed for DIR:Si1_191_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_191_5. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_191_6. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_191_7. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_191_8. This calculation will be performed.
+ Redundancy : For Si3_195_1, you assumed the symmetry:P23, but metis found higher symmetry:Pm-3m. This calculation will be skipped.
+ Redundancy : For Si3_195_2, you assumed the symmetry:P23, but metis found higher symmetry:Pm-3m. This calculation will be skipped.
+ Redundancy : For Si3_196_1, you assumed the symmetry:F23, but metis found higher symmetry:Fm-3m. This calculation will be skipped.
+ Redundancy : For Si3_196_2, you assumed the symmetry:F23, but metis found higher symmetry:Fm-3m. This calculation will be skipped.
+ Redundancy : For Si3_196_3, you assumed the symmetry:F23, but metis found higher symmetry:Fm-3m. This calculation will be skipped.
+ Redundancy : For Si3_196_4, you assumed the symmetry:F23, but metis found higher symmetry:Fm-3m. This calculation will be skipped.
+ Redundancy : For Si3_197_1, you assumed the symmetry:I23, but metis found higher symmetry:Im-3m. This calculation will be skipped.
+ Redundancy : For Si3_200_1, you assumed the symmetry:Pm-3, but metis found higher symmetry:Pm-3m. This calculation will be skipped.
+ Redundancy : For Si3_200_2, you assumed the symmetry:Pm-3, but metis found higher symmetry:Pm-3m. This calculation will be skipped.
+ Redundancy : For Si3_202_1, you assumed the symmetry:Fm-3, but metis found higher symmetry:Fm-3m. This calculation will be skipped.
+ Redundancy : For Si3_202_2, you assumed the symmetry:Fm-3, but metis found higher symmetry:Fm-3m. This calculation will be skipped.
+ Redundancy : For Si3_204_1, you assumed the symmetry:Im-3, but metis found higher symmetry:Im-3m. This calculation will be skipped.
+ Redundancy : For Si3_207_1, you assumed the symmetry:P432, but metis found higher symmetry:Pm-3m. This calculation will be skipped.
+ Redundancy : For Si3_207_2, you assumed the symmetry:P432, but metis found higher symmetry:Pm-3m. This calculation will be skipped.
+ Redundancy : For Si3_209_1, you assumed the symmetry:F432, but metis found higher symmetry:Fm-3m. This calculation will be skipped.
+ Redundancy : For Si3_209_2, you assumed the symmetry:F432, but metis found higher symmetry:Fm-3m. This calculation will be skipped.
+ Redundancy : For Si3_211_1, you assumed the symmetry:I432, but metis found higher symmetry:Im-3m. This calculation will be skipped.
+ Redundancy : For Si3_215_1, you assumed the symmetry:P-43m, but metis found higher symmetry:Pm-3m. This calculation will be skipped.
+ Redundancy : For Si3_215_2, you assumed the symmetry:P-43m, but metis found higher symmetry:Pm-3m. This calculation will be skipped.
+ Redundancy : For Si3_216_1, you assumed the symmetry:F-43m, but metis found higher symmetry:Fm-3m. This calculation will be skipped.
+ Redundancy : For Si3_216_2, you assumed the symmetry:F-43m, but metis found higher symmetry:Fm-3m. This calculation will be skipped.
+ Redundancy : For Si3_216_3, you assumed the symmetry:F-43m, but metis found higher symmetry:Fm-3m. This calculation will be skipped.
+ Redundancy : For Si3_216_4, you assumed the symmetry:F-43m, but metis found higher symmetry:Fm-3m. This calculation will be skipped.
+ Redundancy : For Si3_217_1, you assumed the symmetry:I-43m, but metis found higher symmetry:Im-3m. This calculation will be skipped.
+ Acceptation: redundancy check was passed for DIR:Si3_221_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_221_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_225_1. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_225_2. This calculation will be performed.
+ Acceptation: redundancy check was passed for DIR:Si3_229_1. This calculation will be performed.
+
+Finally, metis found 429 configurations to search crystal structure.

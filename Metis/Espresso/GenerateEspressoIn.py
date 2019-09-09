@@ -53,6 +53,13 @@ class GenerateEspressoIn(object):
                                                       self.sub_index)
             spg_obj = ParseGenerator()
             hmname_try = spg_obj.get_hmname(self.ispg)
+            #
+            # for bug for trigonal by H.F on 5 Sep. 2019
+            #
+            if 143 <= ispg <= 164:
+                redundancy = False
+                consistency = True
+            # end of bug kaihi
             if not consistency:
                 if prim_cell.ispg is None:
                     hmname_true = hmname_try

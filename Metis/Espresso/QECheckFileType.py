@@ -26,6 +26,7 @@ class QECheckFileType(object):
         return linebuf
 
     def main(self):
+        self.filetype = 'optimize'
         for line in open(self.filename, 'r'):
             linebuf = self._get_linebuf(line)
             if 'begin' in linebuf:
@@ -36,5 +37,4 @@ class QECheckFileType(object):
             if '&system' in linebuf:
                 self.filetype = 'inputfile'
                 return
-        print('unknown pw.x filetype')
-        exit()
+        return

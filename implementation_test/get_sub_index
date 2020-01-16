@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+from Metis.SpaceGroup.GenerateWyckoffPositionsList \
+        import GenerateWyckoffPositionsList
+import os
+
+
+class ParseConfig(object):
+    def __init__(self, configfile):
+        if os.path.isfile(configfile):
+            self.configfile = configfile
+        else:
+            print('file:{} is not found.'.format(configfile))
+            exit()
+        self.parse()
+
+    def _get_linebuf(self, line):
+        linebuf = line.strip()
+        if '#' in linebuf:
+            linebuf.split('#')[0].strip()
+        return linebuf
+
+    def set_default_value(self):
+        self.min_spg_index = 1
+        self.max_spg_index = 230
+        return self
+
+    def _get_key_and_value(self, linebuf):
+        key, value = [x.strip() for x in linebuf.split('=')[:2]]
+        key = key.lower()
+        return [key, value]
+
+    def _set_instance_values(self, linebuf):
+        key, value = self._get_key_and_value(linebuf)
+        if key == 'min_spg_index':
+            self.min_spg_index = int(value)
+        elif key == 'max_spg_index':
+            self.max_spg_index = int(value)
+        elif key == 'natoms':
+            self.natoms = int(value)
+        return self
+
+    def parse(self):
+        self.set_default_value()
+        for line in open(self.configfile, 'r'):
+            linebuf = self._get_linebuf(line)
+            if linebuf == '':
+                continue
+            if '=' in linebuf:
+                self._set_instance_values(linebuf)
+
+
+if __name__ == '__main__':
+    config_obj = ParseConfig('sub_index.in')
+    min_spg_index = config_obj.min_spg_index
+    max_spg_index = config_obj.max_spg_index
+    if min_spg_index != max_spg_index:
+        print('minimum index for space group = {}'.format(min_spg_index))
+        print('maximum index for space group = {}'.format(max_spg_index))
+        print()
+
+    GenerateWyckoffPositionsList(min_spg_index=min_spg_index,
+                                 max_spg_index=max_spg_index,
+                                 natoms=config_obj.natoms,
+                                 use_progress_bar=True).show_info()

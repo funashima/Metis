@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+import argparse
+
+from Metis.Espresso.QE2Spg import QE2Spg
+from Metis.Base.ParseConfig import ParseConfig
+from Metis.Espresso.GenCif import GenCif
+import sys
+import os
+
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(
+                 prog='qe_analyze',
+                 usage='analyze space group for Quantum Espresso file',
+                 description='description',
+                 epilog='end',
+                 add_help=True)
+    parser.add_argument('filename',
+                        nargs='?',
+                        action='store',
+                        default=None,
+                        help='espresso file')
+    parser.add_argument('--input', '-i',
+                        action='store_true',
+                        default=False,
+                        help='implicit inputfile as espresso_relax.in')
+    parser.add_argument('--output', '-o',
+                        action='store_true',
+                        default=False,
+                        help='implicit outputfile as espresso_relax.out')
+    parser.add_argument('--with-intermediate', '-m',
+                        action='store_true',
+                        default=False,
+                        help='remain intermediate file')
+    parser.add_argument('--with-cif', '-c',
+                        action='store_true',
+                        default=False,
+                        help='generate cif file')
+                        
+    args = parser.parse_args()
+    if args.filename is None:
+        if args.input:
+            filename = 'espresso_relax.in'
+        elif args.output:
+            filename = 'espresso_relax.in'
+        else:
+            print('usage QE2Spg.py [pw.x_file]')
+            exit()
+    else:
+        filename = args.filename
+    spg = QE2Spg(filename).space_group
+    spg.show_info()
+
+    prefix = os.path.basename(filename).split('.')[0]
+    tmpfile = prefix + '.crystal_structure.in'
+    if args.with_cif:
+        GenCif(tmpfile)
+    if not args.with_intermediate:
+        if os.path.isfile(tmpfile):
+            os.remove(tmpfile)

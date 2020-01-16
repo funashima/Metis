@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+from Metis.AnalysisTools.CheckEnthalpy import CheckEnthalpy
+
+if __name__ == '__main__':
+    configfile = 'crystal.in'
+    CheckEnthalpy(configfile)
+

@@ -1,0 +1,286 @@
+
+     Program PWSCF v.6.4.1 starts on 26Jun2019 at 11:27: 0 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     1 processors
+
+     MPI processes distributed on     1 nodes
+     Waiting for input...
+     Reading input from standard input
+     Message from routine read_cards :
+     DEPRECATED: no units specified in CELL_PARAMETERS card
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  3
+               file Si.rel-pbe-n-kjpaw_psl.1.0.0.UPF: wavefunction(s)  3S 3P 3P renormalized
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+ 
+     G-vector sticks info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Sum       10487    4197   1165               826215   209039   30805
+ 
+
+
+     bravais-lattice index     =            0
+     lattice parameter (alat)  =      15.0000  a.u.
+     unit-cell volume          =    3328.8158 (a.u.)^3
+     number of atoms/cell      =           16
+     number of atomic types    =            1
+     number of electrons       =        64.00
+     number of Kohn-Sham states=           64
+     kinetic-energy cutoff     =      60.0000  Ry
+     charge density cutoff     =     600.0000  Ry
+     convergence threshold     =      1.0E-09
+     mixing beta               =       0.7000
+     number of iterations used =            8  plain     mixing
+     Exchange-correlation      = SLA PW PBX PBC ( 1  4  3  4 0 0)
+     nstep                     =           50
+
+     Non magnetic calculation with spin-orbit
+
+
+     celldm(1)=  15.000000  celldm(2)=   0.000000  celldm(3)=   0.000000
+     celldm(4)=   0.000000  celldm(5)=   0.000000  celldm(6)=   0.000000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (   0.651819   0.047861  -0.021477 )  
+               a(2) = (   0.047861   1.487093   0.186749 )  
+               a(3) = (  -0.021477   0.186749   1.044563 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  1.539555 -0.054754  0.041444 )  
+               b(2) = ( -0.054754  0.689845 -0.124457 )  
+               b(3) = (  0.041444 -0.124457  0.980441 )  
+
+
+     PseudoPot. # 1 for Si read from file:
+     ./pseudo/Si.rel-pbe-n-kjpaw_psl.1.0.0.UPF
+     MD5 check sum: 516c7a399c3fb0aecfa3742bc839efd8
+     Pseudo is Projector augmented-wave + core cor, Zval =  4.0
+     Generated using "atomic" code by A. Dal Corso v.6.4.1
+     Shape of augmentation charge: PSQ
+     Using radial grid of 1141 points, 10 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   1
+                l(6) =   1
+                l(7) =   2
+                l(8) =   2
+                l(9) =   2
+               l(10) =   2
+     Q(r) pseudized with 0 coefficients 
+
+
+     atomic species   valence    mass     pseudopotential
+        Si             4.00    28.08550     Si( 1.00)
+
+     No symmetry found
+
+
+
+   Cartesian axes
+
+     site n.     atom                  positions (alat units)
+         1           Si  tau(   1) = (   0.1643417   1.4135559   0.9612251  )
+         2           Si  tau(   2) = (   0.3414577   1.5908446   0.8495708  )
+         3           Si  tau(   3) = (   0.1190615   1.3943929   0.4702762  )
+         4           Si  tau(   4) = (   0.5474842   0.8361781   0.6616958  )
+         5           Si  tau(   5) = (   0.4991871   0.1347720   0.3883917  )
+         6           Si  tau(   6) = (   0.3995525   0.6401303   0.7080120  )
+         7           Si  tau(   7) = (   0.1973379   0.7628561   1.0600829  )
+         8           Si  tau(   8) = (   0.4286461   1.2350078   0.6324359  )
+         9           Si  tau(   9) = (   0.4625549   1.1186423   0.1836654  )
+        10           Si  tau(  10) = (   0.3094014   1.1731168   0.4108337  )
+        11           Si  tau(  11) = (   0.3091700   0.5562215   0.7751499  )
+        12           Si  tau(  12) = (   0.1155653   0.4804143   0.1492284  )
+        13           Si  tau(  13) = (   0.5362292   0.6367826   1.0085971  )
+        14           Si  tau(  14) = (   0.6309703   1.3411767   0.4402492  )
+        15           Si  tau(  15) = (   0.6289298   0.4672514   0.9579217  )
+        16           Si  tau(  16) = (   0.1865173   0.2491653   0.2088167  )
+
+     number of k points=   260  Methfessel-Paxton smearing, width (Ry)=  0.0200
+
+     Number of k-points >= 100: set verbosity='high' to print them.
+
+     Dense  grid:   826215 G-vectors     FFT dimensions: (  80, 180, 125)
+
+     Smooth grid:   209039 G-vectors     FFT dimensions: (  50, 120,  80)
+
+     Estimated max dynamical RAM per process >      22.75 GB
+
+     Initial potential from superposition of free atoms
+
+     starting charge   63.99118, renormalised to   64.00000
+     Starting wfcs are  128 randomized atomic wfcs
+
+     Program PWSCF v.6.4.1 starts on 26Jun2019 at 11:33:30 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     1 processors
+
+     MPI processes distributed on     1 nodes
+     Waiting for input...
+     Reading input from standard input
+     Message from routine read_cards :
+     DEPRECATED: no units specified in CELL_PARAMETERS card
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  3
+               file Si.rel-pbe-n-kjpaw_psl.1.0.0.UPF: wavefunction(s)  3S 3P 3P renormalized
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+ 
+     G-vector sticks info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Sum       10487    4197   1165               826215   209039   30805
+ 
+
+
+     bravais-lattice index     =            0
+     lattice parameter (alat)  =      15.0000  a.u.
+     unit-cell volume          =    3328.8158 (a.u.)^3
+     number of atoms/cell      =           16
+     number of atomic types    =            1
+     number of electrons       =        64.00
+     number of Kohn-Sham states=           64
+     kinetic-energy cutoff     =      60.0000  Ry
+     charge density cutoff     =     600.0000  Ry
+     convergence threshold     =      1.0E-09
+     mixing beta               =       0.7000
+     number of iterations used =            8  plain     mixing
+     Exchange-correlation      = SLA PW PBX PBC ( 1  4  3  4 0 0)
+     nstep                     =           50
+
+     Non magnetic calculation with spin-orbit
+
+
+     celldm(1)=  15.000000  celldm(2)=   0.000000  celldm(3)=   0.000000
+     celldm(4)=   0.000000  celldm(5)=   0.000000  celldm(6)=   0.000000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (   0.651819   0.047861  -0.021477 )  
+               a(2) = (   0.047861   1.487093   0.186749 )  
+               a(3) = (  -0.021477   0.186749   1.044563 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  1.539555 -0.054754  0.041444 )  
+               b(2) = ( -0.054754  0.689845 -0.124457 )  
+               b(3) = (  0.041444 -0.124457  0.980441 )  
+
+
+     PseudoPot. # 1 for Si read from file:
+     ./pseudo/Si.rel-pbe-n-kjpaw_psl.1.0.0.UPF
+     MD5 check sum: 516c7a399c3fb0aecfa3742bc839efd8
+     Pseudo is Projector augmented-wave + core cor, Zval =  4.0
+     Generated using "atomic" code by A. Dal Corso v.6.4.1
+     Shape of augmentation charge: PSQ
+     Using radial grid of 1141 points, 10 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   1
+                l(6) =   1
+                l(7) =   2
+                l(8) =   2
+                l(9) =   2
+               l(10) =   2
+     Q(r) pseudized with 0 coefficients 
+
+
+     atomic species   valence    mass     pseudopotential
+        Si             4.00    28.08550     Si( 1.00)
+
+     No symmetry found
+
+
+
+   Cartesian axes
+
+     site n.     atom                  positions (alat units)
+         1           Si  tau(   1) = (   0.1643417   1.4135559   0.9612251  )
+         2           Si  tau(   2) = (   0.3414577   1.5908446   0.8495708  )
+         3           Si  tau(   3) = (   0.1190615   1.3943929   0.4702762  )
+         4           Si  tau(   4) = (   0.5474842   0.8361781   0.6616958  )
+         5           Si  tau(   5) = (   0.4991871   0.1347720   0.3883917  )
+         6           Si  tau(   6) = (   0.3995525   0.6401303   0.7080120  )
+         7           Si  tau(   7) = (   0.1973379   0.7628561   1.0600829  )
+         8           Si  tau(   8) = (   0.4286461   1.2350078   0.6324359  )
+         9           Si  tau(   9) = (   0.4625549   1.1186423   0.1836654  )
+        10           Si  tau(  10) = (   0.3094014   1.1731168   0.4108337  )
+        11           Si  tau(  11) = (   0.3091700   0.5562215   0.7751499  )
+        12           Si  tau(  12) = (   0.1155653   0.4804143   0.1492284  )
+        13           Si  tau(  13) = (   0.5362292   0.6367826   1.0085971  )
+        14           Si  tau(  14) = (   0.6309703   1.3411767   0.4402492  )
+        15           Si  tau(  15) = (   0.6289298   0.4672514   0.9579217  )
+        16           Si  tau(  16) = (   0.1865173   0.2491653   0.2088167  )
+
+     number of k points=   260  Methfessel-Paxton smearing, width (Ry)=  0.0200
+
+     Number of k-points >= 100: set verbosity='high' to print them.
+
+     Dense  grid:   826215 G-vectors     FFT dimensions: (  80, 180, 125)
+
+     Smooth grid:   209039 G-vectors     FFT dimensions: (  50, 120,  80)
+
+     Estimated max dynamical RAM per process >      22.75 GB
+
+     Initial potential from superposition of free atoms
+
+     starting charge   63.99118, renormalised to   64.00000
+     Starting wfcs are  128 randomized atomic wfcs
+     Checking if some PAW data can be deallocated... 
+
+     total cpu time spent up to now is     2053.0 secs
+
+     Self-consistent Calculation
+
+     iteration #  1     ecut=    60.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  1.00E-02,  avg # of iterations =  3.0
+
+     total cpu time spent up to now is     6990.6 secs
+
+     total energy              =    -738.91944271 Ry
+     Harris-Foulkes estimate   =    -741.30566280 Ry
+     estimated scf accuracy    <       3.12282077 Ry
+
+     iteration #  2     ecut=    60.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap
+     ethr =  4.88E-03,  avg # of iterations =  6.2
+
+     total cpu time spent up to now is    13574.0 secs
+
+     total energy              =    -735.13919908 Ry
+     Harris-Foulkes estimate   =    -745.15607563 Ry
+     estimated scf accuracy    <      44.88064738 Ry
+
+     iteration #  3     ecut=    60.00 Ry     beta= 0.70
+     Davidson diagonalization with overlap

@@ -1,0 +1,4 @@
+
+freedom check in wyckoff position
+wyckoff_letter = atomic_site[-1]
+ParseSpaceGroup(ispg, ichoice=1).wyckoff_freedom(atomic_site[-1])

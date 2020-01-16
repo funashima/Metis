@@ -3,7 +3,7 @@ import os
 import re
 
 
-class ParseTestInput(object):
+class ParseConfigStructure(object):
     def __init__(self, inputfile):
         if os.path.isfile(inputfile):
             self.inputfile = inputfile
@@ -11,9 +11,11 @@ class ParseTestInput(object):
             print('file:{} is not found.'.format(inputfile))
             exit()
         self.main()
+        self.get_chemical_composit_ratio()
 
     def set_default_value(self):
-        self.space_group = None
+        self.min_spg_index = 8
+        self.max_spg_index = 230
         self.ichoice = 1
         self.max_coa_ratio = 2.0
         self.atom_info = []
@@ -21,6 +23,14 @@ class ParseTestInput(object):
         self.delata_apf = 0.9
         self.thr_bond_ratio = 0.75
         self.max_try = 500
+        self.nnode = 1
+        self.submit_job = False
+        self.eliminate_redundancy = True
+
+    def get_chemical_composit_ratio(self):
+        self.chem_comp_ratio = ''
+        for info in self.atom_info:
+            self.chem_comp_ratio += info['element'] + str(info['natoms'])
 
     def main(self):
         atom_info_region = False
@@ -36,7 +46,7 @@ class ParseTestInput(object):
                     atom_info_region = False
                     continue
                 element = None
-                wypos = None
+                natoms = None
                 semi_core = []
                 for data in linebuf.split(';'):
                     if '=' in data:
@@ -46,13 +56,13 @@ class ParseTestInput(object):
                             key = key.lower()
                             if key == 'element':
                                 element = value
-                            if key == 'wyckoff_position':
-                                wypos = value.replace(',', ' ').split()
+                            if key == 'natoms':
+                                natoms = int(value)
                             if key == 'semi_core':
                                 semi_core = value.replace(',', ' ').split()
-                if (element is not None) and (wypos is not None):
+                if (element is not None) and (natoms is not None):
                     info = {'element': element,
-                            'wyckoff_position': wypos,
+                            'natoms': natoms,
                             'semi_core': semi_core}
                     self.atom_info.append(info)
                 else:
@@ -67,8 +77,10 @@ class ParseTestInput(object):
                         continue
                     key, value = [x.strip() for x in linebuf.split('=')[:2]]
                     key = key.lower()
-                    if key == 'space_group':
-                        self.space_group = value
+                    if key == 'min_spg_index':
+                        self.min_spg_index = int(value)
+                    if key == 'max_spg_index':
+                        self.max_spg_index = int(value)
                     elif key == 'ichoice':
                         self.ichoice = int(value)
                     elif key == 'max_coa_ratio':
@@ -81,3 +93,13 @@ class ParseTestInput(object):
                         self.delta_apf = float(value)
                     elif key == 'thr_bond_ratio':
                         self.thr_bond_ratio = float(value)
+                    elif key == 'nnode':
+                        self.nnode = int(value)
+                    elif key == 'submit_job':
+                        if re.search('(t|y)', value.lower()):
+                            self.submit_job = True
+                    elif key == 'eliminate_redundancy':
+                        if re.search('(t|y)', value.lower()):
+                            self.eliminate_redundancy = True
+                        elif re.search('(f|n)', value.lower()):
+                            self.eliminate_redundancy = False

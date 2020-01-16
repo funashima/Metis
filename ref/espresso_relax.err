@@ -1,0 +1,16 @@
+--------------------------------------------------------------------------
+A deprecated MCA variable value was specified in the environment or
+on the command line.  Deprecated MCA variables should be avoided;
+they may disappear in future releases.
+
+  Deprecated variable: pls_rsh_agent
+  New variable:        plm_rsh_agent
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+A deprecated MCA variable value was specified in the environment or
+on the command line.  Deprecated MCA variables should be avoided;
+they may disappear in future releases.
+
+  Deprecated variable: pls_rsh_agent
+  New variable:        plm_rsh_agent
+--------------------------------------------------------------------------

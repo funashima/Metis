@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import re
+import sys
 import xml.etree.ElementTree as ET
 
 
@@ -52,42 +53,51 @@ class ParseQEPseudoPotential(object):
                             'core_correction']:
                 self.set_attr_bool_value(header, keyword)
 
-    def show_info(self):
-        print()
-        print('** Basic info:{}'.format(self.pp_file))
-        print()
-        print('Element:{}'.format(self.element))
-        print('pseudo_type = {}'.format(self.pseudo_type))
-        print('relativistic type:{}'.format(self.relativistic))
-        print('spin-orbit ...', end='')
-        if self.has_so:
-            print('yes')
+    def show_info(self, filename=None):
+        def sub_show_info(fout):
+            fout.write('\n')
+            fout.write('** Basic info:{}\n'.format(self.pp_file))
+            fout.write('\n')
+            fout.write('Element:{}\n'.format(self.element))
+            fout.write('pseudo_type = {}\n'.format(self.pseudo_type))
+            fout.write('relativistic type:{}\n'.format(self.relativistic))
+            fout.write('spin-orbit ... ')
+            if self.has_so:
+                fout.write('yes\n')
+            else:
+                fout.write('no\n')
+            fout.write('paw type ... ')
+            if self.is_paw:
+                fout.write('yes\n')
+            else:
+                fout.write('no\n')
+            fout.write('ultrasoft type ... ')
+            if self.is_ultrasoft:
+                fout.write('yes\n')
+            else:
+                fout.write('no\n')
+            fout.write('including 1/r coloumb potential ... ')
+            if self.is_coulomb:
+                fout.write('yes\n')
+            else:
+                fout.write('no\n')
+            fout.write('core correction ... ')
+            if self.core_correction:
+                fout.write('yes\n')
+            else:
+                fout.write('no\n')
+            fout.write('num of valence electrons = {}\n'.
+                       format(self.z_valence))
+            fout.write('Total Pseudo Eenrgy = {:.5g}(Ry)\n'.
+                       format(self.total_psenergy))
+            fout.write('cut off energy for wavefunction   = {:8.4f} (Ry)\n'.
+                       format(self.wfc_cutoff))
+            fout.write('cut off energy for charge density = {:8.4f} (Ry)\n'.
+                       format(self.rho_cutoff))
+            fout.write('\n')
+
+        if filename is None:
+            sub_show_info(sys.stdout)
         else:
-            print('no')
-        print('paw type ... ', end='')
-        if self.is_paw:
-            print('yes')
-        else:
-            print('no')
-        print('ultrasoft type ... ', end='')
-        if self.is_ultrasoft:
-            print('yes')
-        else:
-            print('no')
-        print('including 1/r coloumb potential ... ', end='')
-        if self.is_coulomb:
-            print('yes')
-        else:
-            print('no')
-        print('core correction ... ', end='')
-        if self.core_correction:
-            print('yes')
-        else:
-            print('no')
-        print('num of valence electrons = {}'.format(self.z_valence))
-        print('Total Pseudo Eenrgy = {:.5g}(Ry)'.format(self.total_psenergy))
-        print('cut off energy for wavefunction   = {:8.4f} (Ry)'.
-              format(self.wfc_cutoff))
-        print('cut off energy for charge density = {:8.4f} (Ry)'.
-              format(self.rho_cutoff))
-        print()
+            with open(filename, 'a') as fout:
+                sub_show_info(fout)

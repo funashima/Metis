@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+from Metis.Espresso.Metis import Metis
+#import sys
+import argparse
+
+configfile = 'crystal.in'
+parser = argparse.ArgumentParser(
+             prog='metis',
+             usage='Search Crystal Structure Program metis',
+             description='description',
+             epilog='end',
+             add_help=True)
+
+parser.add_argument('inputfile',
+                    nargs='?',
+                    action='store',
+                    default='crystal.in',
+                    help='inputfile for metis')
+args = parser.parse_args()
+configfile = args.inputfile
+
+Metis(configfile)

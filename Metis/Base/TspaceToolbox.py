@@ -14,7 +14,7 @@ class TspaceToolbox(object):
     def get_sub_lattices(self):
         half = Fraction('1/2')
         tr1 = Fraction('1/3')
-        tr2 = Fraction('1/3')
+        tr2 = Fraction('2/3')
         if self.il in [0, 1]:
             pattern = []
         elif self.il == 2:
@@ -73,15 +73,21 @@ class TspaceToolbox(object):
                 ary[i] = [0, 1]
             else:
                 ary[i] = [int(y) for y in x]
-        return [flatten for inner in ary for flatten in inner]
+        #
+        # return [flatten for inner in ary for flatten in inner]
+        #
+        # ref: effective python
+        #   chapter 1 section 8
+        #
+        return [x for row in ary for x in row]
 
     def to_matrix_representation(self, code):
         tsp_code = code.strip().lower()
-        vectors = {'x': [1, 0, 0], 
+        vectors = {'x': [1, 0, 0],
                    'y': [0, 1, 0],
                    'z': [0, 0, 1],
-                   'w': [1 -1, 0],
-                   '-x': [-1, 0, 0], 
+                   'w': [1, -1, 0],
+                   '-x': [-1, 0, 0],
                    '-y': [0, -1, 0],
                    '-z': [0, 0, -1],
                    '-w': [-1, 1, 0]}
@@ -91,11 +97,11 @@ class TspaceToolbox(object):
         self.unknown_operator
 
     def to_charcode(self, row):
-        vectors = {'x': [1, 0, 0], 
+        vectors = {'x': [1, 0, 0],
                    'y': [0, 1, 0],
                    'z': [0, 0, 1],
-                   'w': [1 -1, 0],
-                   '-x': [-1, 0, 0], 
+                   'w': [1, -1, 0],
+                   '-x': [-1, 0, 0],
                    '-y': [0, -1, 0],
                    '-z': [0, 0, -1],
                    '-w': [-1, 1, 0]}
@@ -144,6 +150,9 @@ class TspaceToolbox(object):
 
     def deg2rad(self, angle):
         return float(angle) * math.pi / 180.0
+
+    def rad2deg(self, angle):
+        return float(angle) * 180.0 / math.pi
 
     def deg2cosine(self, angle):
         rad_angle = self.deg2rad(angle)
@@ -233,7 +242,7 @@ class TspaceToolbox(object):
         return dv
 
     def _measure_length(self, u, v):
-        dv = self.get_nearest_dd(self.delta_vecs(u,v))
+        dv = self.get_nearest_dd(self.delta_vecs(u, v))
         lvec = self.init_vec()
         for i in range(3):  # a, b, c
             for j in range(3):  # x, y, z
@@ -254,3 +263,35 @@ class TspaceToolbox(object):
                 for k in range(3):
                     matrix[i][j] += r1[i][k] * r2[k][j]
         return matrix
+
+    def matrix_dot_vector(self, mtx, vec):
+        res = [0, 0, 0]
+        for i in range(3):
+            for j in range(3):
+                res[i] += mtx[i][j] * vec[j]
+        return res
+
+    def hex2trig_lattice_params(self, a, c):
+        a_trg = Fraction('1/3') * math.sqrt(3 * (a**2) + c**2)
+        ca = (2 * c**2 - 3 * a**2) / (2 * (3 * a**2 + c**2))
+        alpha = self.rad2deg(math.acos(ca))
+        return [a_trg, alpha]
+
+    def trig2hex_lattice_params(self, a_trg, alpha):
+        ca = self.deg2cosine(alpha)
+        a = a_trg * math.sqrt(2*(1 - ca))
+        c = a_trg * math.sqrt(3*(1 + 2*ca))
+        return [a, c]
+
+    def hex2trig(self, r):
+        matrix = [[1, 0, 1],
+                  [-1, 1, 1],
+                  [0, -1, 1]]
+        return self.matrix_dot_vector(matrix, r)
+
+    def trig2hex(self, r):
+        tr = Fraction('1/3')
+        matrix = [[2*tr, -tr, -tr],
+                  [tr, tr, -2*tr],
+                  [tr, tr, tr]]
+        return self.matrix_dot_vector(matrix, r)

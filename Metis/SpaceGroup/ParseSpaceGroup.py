@@ -9,6 +9,7 @@ class ParseSpaceGroup(object):
         self.wyckoff_obj = ParseWyckoff()
 
     def set_space_group(self, ispg, ichoice=1):
+        ispg = ParseGenerator().get_ispg(ispg)
         spg_obj = self.generator_obj.generator_list[ispg-1][ichoice-1]
         self.schname = spg_obj.schname
         self.hmname = spg_obj.hmname
@@ -17,6 +18,7 @@ class ParseSpaceGroup(object):
         self.npos = wyckoff_obj.npos
         self.wyckoff_position_list = wyckoff_obj.position
         self.set_position_index_list()
+        return self
 
     def check_freedom(self):
         self.wyckoff_freedom = {}
